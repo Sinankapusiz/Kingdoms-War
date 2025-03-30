@@ -1,0 +1,87 @@
+@import url("main.css");
+.cityImg{
+    height: 75%;
+}
+.cityNameLabel{
+    background-color: var(--neutral-color);
+    color: black;
+    padding: 0px 5px;
+    height: 25%;
+    font-size: calc(var(--game-campaign-map-height));
+    align-content: center;
+}
+.city{
+    height: 12%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transform: translate(-50%,-50%);
+}
+.city:hover{
+    border: 2px solid var(--select-color);
+}
+#city1{
+    top: 81%;
+    left: 14%;
+}
+#city2{
+    top: 78%;
+    left: 30%;
+}
+#city3{
+    top: 52%;
+    left: 23%;
+}
+#city4{
+    top: 64%;
+    left: 41%;
+}
+#city5{
+    top: 55%;
+    left: 60%;
+}
+#city6{
+    top: 77%;
+    left: 50%;
+}
+#city7{
+    top: 82%;
+    left: 66%;
+}
+#city8{
+    top: 74%;
+    left: 70%;
+}
+#city9{
+    top: 55%;
+    left: 82%;
+}
+#city10{
+    top: 40%;
+    left: 84%;
+}
+#city11{
+    top: 24%;
+    left: 80%;
+}
+#city12{
+    top: 13%;
+    left: 49%;
+}
+#city13{
+    top: 47%;
+    left: 45%;
+}
+#city14{
+    top: 28%;
+    left: 38%;
+}
+#city15{
+    top: 16%;
+    left: 21%;
+}
+#city16{
+    top: 35%;
+    left: 14%;
+}
