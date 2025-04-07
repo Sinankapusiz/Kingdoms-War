@@ -1,0 +1,101 @@
+[
+    {
+        "yapi_adi": "Çiftlik",
+        "yapi_resmi": "",
+        "yapi_seviyesi": 1,
+        "yapi_getirisi": {
+            "food": 10
+        },
+        "yapi_tanimi": "Çiftlik, yiyecek üretmeni sağlar.",
+        "yapi_kosulu":"food",
+        "yapi_yapilan_malzeme":""
+    },
+    {
+        "yapi_adi": "Pazar",
+        "yapi_resmi": "",
+        "yapi_seviyesi": 1,
+        "yapi_getirisi": {
+            "gold": 5
+        },
+        "yapi_tanimi": "Pazar, şehir içi ticaret yapmanı ve para kazanmanı sağlar. Ticaret ortaklarına yakın şehirlerdeki pazarlar daha çok kazandırır.",
+        "yapi_kosulu":"",
+        "yapi_yapilan_malzeme":""
+    },
+    {
+        "yapi_adi": "Oduncu",
+        "yapi_resmi": "",
+        "yapi_seviyesi": 1,
+        "yapi_getirisi": {
+            "wood": 10
+        },
+        "yapi_tanimi": "Oduncu, odun üretmeni sağlar. Üretilen odunlar ile yapıların seviyesini arttırabilirsin.",
+        "yapi_kosulu":"wood",
+        "yapi_yapilan_malzeme":""
+    },
+    {
+        "yapi_adi": "Taş Madeni",
+        "yapi_resmi": "",
+        "yapi_seviyesi": 1,
+        "yapi_getirisi": {
+            "stone": 10
+        },
+        "yapi_tanimi": "Taş Madeni, taş üretmeni sağlar. Üretilen taşlar ile yapıların seviyesini arttırabilirsin.",
+        "yapi_kosulu":"stone",
+        "yapi_yapilan_malzeme":""
+    },
+    {
+        "yapi_adi": "Demir Madeni",
+        "yapi_resmi": "",
+        "yapi_seviyesi": 1,
+        "yapi_getirisi": {
+            "iron": 10
+        },
+        "yapi_tanimi": "Demir Madeni, demir üretmeni sağlar. Üretilen demirler ile yapılar ve askerler için silahlar yapabilirsin.",
+        "yapi_kosulu":"iron",
+        "yapi_yapilan_malzeme":""
+    },
+    {
+        "yapi_adi": "Altın Madeni",
+        "yapi_resmi": "",
+        "yapi_seviyesi": 1,
+        "yapi_getirisi": {
+            "gold": 10
+        },
+        "yapi_tanimi": "Altın Madeni, altın üretmeni sağlar. Üretilen altinlar ile asker üretebilir veya ticarette kullanabilirsin.",
+        "yapi_kosulu":"gold",
+        "yapi_yapilan_malzeme":""
+    },
+    {
+        "yapi_adi": "Demirci",
+        "yapi_resmi": "",
+        "yapi_seviyesi": 1,
+        "yapi_getirisi": {
+            "gold": 2
+        },
+        "yapi_tanimi": "Demirci, halkın kullanması içi aletler üretir. Yapılı olduğu şehirlerde çiftliklere ve pazar yeri getirilerine ekstra getiri sağlar.Pazar için +1 gold, Çiftlik için +5 food",
+        "yapi_kosulu":"Demir Madeni",
+        "yapi_yapilan_malzeme":""
+    },
+    {
+        "yapi_adi": "Silahçı",
+        "yapi_resmi": "",
+        "yapi_seviyesi": 1,
+        "yapi_getirisi": {
+            "gold": 2
+        },
+        "yapi_tanimi": "Silahçı, asker üretmek için gerekli silahları üretirsin. Kılıç, Kalkan, Yay, Zırh",
+        "yapi_kosulu":"",
+        "yapi_yapilan_malzeme":["sword","shield","armor"]
+    },
+    {
+        "yapi_adi": "Mücevherci",
+        "yapi_resmi": "",
+        "yapi_seviyesi": 1,
+        "yapi_getirisi": {
+            "gold": 2
+        },
+        "yapi_tanimi": "Mücevherci, yapılı olduğu şehirde pazar +2 gold kazandırır.",
+        "yapi_kosulu":"Altın Madeni",
+        "yapi_yapilan_malzeme":""
+    }
+]

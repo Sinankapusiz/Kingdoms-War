@@ -1,0 +1,62 @@
+[
+    {
+        "ulke_lideri_adi": "Zyphor Valtor",
+        "ulke_lideri_resmi": "",
+        "ulke_lideri_karekter_ozellikleri": [
+            "dürüst",
+            "barışçıl",
+            "zeki"
+        ],
+        "komutan_yetenekleri": ""
+    },
+    {
+        "ulke_lideri_adi": "Kaelthar Morgrim",
+        "ulke_lideri_resmi": "",
+        "ulke_lideri_karekter_ozellikleri": [
+            "dürüst değil",
+            "saldırgan",
+            "zeki"
+        ],
+        "komutan_yetenekleri": ""
+    },
+    {
+        "ulke_lideri_adi": "Drogath Ironbane",
+        "ulke_lideri_resmi": "",
+        "ulke_lideri_karekter_ozellikleri": [
+            "dürüst",
+            "saldırgan",
+            "aptal"
+        ],
+        "komutan_yetenekleri": ""
+    },
+    {
+        "ulke_lideri_adi": "Vaelin Duskbane",
+        "ulke_lideri_resmi": "",
+        "ulke_lideri_karekter_ozellikleri": [
+            "dürüst",
+            "barışçıl",
+            "zeki"
+        ],
+        "komutan_yetenekleri": ""
+    },
+    {
+        "ulke_lideri_adi": "Malakar Voidborn",
+        "ulke_lideri_resmi": "",
+        "ulke_lideri_karekter_ozellikleri": [
+            "dürüst değil",
+            "saldırgan",
+            "aptal"
+        ],
+        "komutan_yetenekleri": ""
+    },
+    {
+        "ulke_lideri_adi": "Thalrik Shadowclaw",
+        "ulke_lideri_resmi": "",
+        "ulke_lideri_karekter_ozellikleri": [
+            "dürüst",
+            "barışçıl",
+            "aptal"
+        ],
+        "komutan_yetenekleri": ""
+    }
+]

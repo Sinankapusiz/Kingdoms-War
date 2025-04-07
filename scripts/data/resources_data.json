@@ -1,0 +1,9 @@
+{
+    "kaynaklar": {
+        "food": "food",
+        "wood": "wood",
+        "stone": "stone",
+        "iron": "iron",
+        "gold": "gold"
+    }
+}

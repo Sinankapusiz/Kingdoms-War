@@ -1,0 +1,21 @@
+{
+    "asker_uniteleri":{
+        "Piyade":{
+            "unite_adi":"Piyade",
+            "unite_sayisi":100,
+            "unite_resmi":"",
+            "unite_hizi":3,
+            "unite_morali":3,
+            "unite_disiplin":2,
+            "unite_deneyim":1,
+            "unite_dayaniklilik":2,
+            "unite_hucum":2,
+            "unite_yakin_dovus":3,           
+            "unite_savunma":3,
+            "unite_zırh_seviyesi":1,
+            "unite_cephane":0
+        },
+        "Okçu":"Okçu",
+        "Atlı":"Atlı"
+    }
+}

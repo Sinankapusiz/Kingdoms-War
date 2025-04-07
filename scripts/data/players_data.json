@@ -1,0 +1,32 @@
+[
+    {
+      "oyuncu_adi": "player1",
+      "oyuncu_ulkesi": "Vorthelia",
+      "oyuncu_turu": "computer"
+    },
+    {
+      "oyuncu_adi": "player2",
+      "oyuncu_ulkesi": "Arcadia",
+      "oyuncu_turu": "computer"
+    },
+    {
+      "oyuncu_adi": "player3",
+      "oyuncu_ulkesi": "Aetheria",
+      "oyuncu_turu": "computer"
+    },
+    {
+      "oyuncu_adi": "player4",
+      "oyuncu_ulkesi": "Celestia",
+      "oyuncu_turu": "computer"
+    },
+    {
+      "oyuncu_adi": "player5",
+      "oyuncu_ulkesi": "Zephyria",
+      "oyuncu_turu": "computer"
+    },
+    {
+      "oyuncu_adi": "player6",
+      "oyuncu_ulkesi": "Thalorien",
+      "oyuncu_turu": "computer"
+    }
+  ]

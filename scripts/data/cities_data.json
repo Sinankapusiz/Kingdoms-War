@@ -1,0 +1,258 @@
+[
+    {
+        "sehir_adi": "Eldoria",
+        "sehir_sahibi": "Vorthelia",
+        "sehir_nufusu": 6250,
+        "sehir_sur_seviyesi": 3,
+        "sehir_bolgesi": "region1",
+        "konum": {
+            "top": "81",
+            "left": "14"
+        },
+        "sehir_bolge_karakteri": "Ilıman iklim, Düz Ova",
+        "sehir_bolge_ticaret_degeri": 85,
+        "sehir_bolge_kaynagi": "food",
+        "sehir_yollari":"",
+        "sehir_yapilari":""
+    },
+    {
+        "sehir_adi": "Drakenhold",
+        "sehir_sahibi": "Vorthelia",
+        "sehir_nufusu": 4500,
+        "sehir_sur_seviyesi": 2,
+        "sehir_bolgesi": "region2",
+        "konum": {
+            "top": "78",
+            "left": "30"
+        },
+        "sehir_bolge_karakteri": "Ilıman iklim, Düz Ova",
+        "sehir_bolge_ticaret_degeri": 70,
+        "sehir_bolge_kaynagi": "wood",
+        "sehir_yollari":"",
+        "sehir_yapilari":""
+    },
+    {
+        "sehir_adi": "Vorthal",
+        "sehir_sahibi": "Vorthelia",
+        "sehir_nufusu": 5500,
+        "sehir_sur_seviyesi": 3,
+        "sehir_bolgesi": "region3",
+        "konum": {
+            "top": "52",
+            "left": "23"
+        },
+        "sehir_bolge_karakteri": "Ilıman iklim, Düz Ova",
+        "sehir_bolge_ticaret_degeri": 90,
+        "sehir_bolge_kaynagi": "stone",
+        "sehir_yollari":"",
+        "sehir_yapilari":""
+    },
+    {
+        "sehir_adi": "Grimspire",
+        "sehir_sahibi": "Arcadia",
+        "sehir_nufusu": 3750,
+        "sehir_sur_seviyesi": 1,
+        "sehir_bolgesi": "region4",
+        "konum": {
+            "top": "64",
+            "left": "41"
+        },
+        "sehir_bolge_karakteri": "Ilıman iklim, Düz Ova",
+        "sehir_bolge_ticaret_degeri": 60,
+        "sehir_bolge_kaynagi": "iron",
+        "sehir_yollari":"",
+        "sehir_yapilari":""
+    },
+    {
+        "sehir_adi": "Mythralis",
+        "sehir_sahibi": "Arcadia",
+        "sehir_nufusu": 3000,
+        "sehir_sur_seviyesi": 1,
+        "sehir_bolgesi": "region5",
+        "konum": {
+            "top": "55",
+            "left": "60"
+        },
+        "sehir_bolge_karakteri": "Çöl iklim, Düz Çöl",
+        "sehir_bolge_ticaret_degeri": 50,
+        "sehir_bolge_kaynagi": "food",
+        "sehir_yollari":"",
+        "sehir_yapilari":""
+    },
+    {
+        "sehir_adi": "Stormmere",
+        "sehir_sahibi": "Aetheria",
+        "sehir_nufusu": 4250,
+        "sehir_sur_seviyesi": 2,
+        "sehir_bolgesi": "region6",
+        "konum": {
+            "top": "77",
+            "left": "50"
+        },
+        "sehir_bolge_karakteri": "Ilıman iklim, Düz Ova",
+        "sehir_bolge_ticaret_degeri": 75,
+        "sehir_bolge_kaynagi": "gold",
+        "sehir_yollari":"",
+        "sehir_yapilari":""
+    },
+    {
+        "sehir_adi": "Darkhaven",
+        "sehir_sahibi": "Aetheria",
+        "sehir_nufusu": 3500,
+        "sehir_sur_seviyesi": 1,
+        "sehir_bolgesi": "region7",
+        "konum": {
+            "top": "82",
+            "left": "66"
+        },
+        "sehir_bolge_karakteri": "Ilıman iklim, Düz Ova",
+        "sehir_bolge_ticaret_degeri": 55,
+        "sehir_bolge_kaynagi": "wood",
+        "sehir_yollari":"",
+        "sehir_yapilari":""
+    },
+    {
+        "sehir_adi": "Silverkeep",
+        "sehir_sahibi": "Aetheria",
+        "sehir_nufusu": 5000,
+        "sehir_sur_seviyesi": 3,
+        "sehir_bolgesi": "region8",
+        "konum": {
+            "top": "74",
+            "left": "70"
+        },
+        "sehir_bolge_karakteri": "Ilıman iklim, Düz Ova",
+        "sehir_bolge_ticaret_degeri": 80,
+        "sehir_bolge_kaynagi": "food",
+        "sehir_yollari":"",
+        "sehir_yapilari":""
+    },
+    {
+        "sehir_adi": "Ironvale",
+        "sehir_sahibi": "Celestia",
+        "sehir_nufusu": 4000,
+        "sehir_sur_seviyesi": 2,
+        "sehir_bolgesi": "region9",
+        "konum": {
+            "top": "55",
+            "left": "82"
+        },
+        "sehir_bolge_karakteri": "Çöl iklim, Düz Çöl",
+        "sehir_bolge_ticaret_degeri": 68,
+        "sehir_bolge_kaynagi": "iron",
+        "sehir_yollari":"",
+        "sehir_yapilari":""
+    },
+    {
+        "sehir_adi": "Frosthelm",
+        "sehir_sahibi": "Celestia",
+        "sehir_nufusu": 2750,
+        "sehir_sur_seviyesi": 1,
+        "sehir_bolgesi": "region10",
+        "konum": {
+            "top": "40",
+            "left": "84"
+        },
+        "sehir_bolge_karakteri": "Çöl iklim, Düz Çöl",
+        "sehir_bolge_ticaret_degeri": 45,
+        "sehir_bolge_kaynagi": "food",
+        "sehir_yollari":"",
+        "sehir_yapilari":""
+    },
+    {
+        "sehir_adi": "Shadowfen",
+        "sehir_sahibi": "Zephyria",
+        "sehir_nufusu": 2250,
+        "sehir_sur_seviyesi": 1,
+        "sehir_bolgesi": "region11",
+        "konum": {
+            "top": "24",
+            "left": "80"
+        },
+        "sehir_bolge_karakteri": "Soğuk iklim, Düz Ova",
+        "sehir_bolge_ticaret_degeri": 40,
+        "sehir_bolge_kaynagi": "food",
+        "sehir_yollari":"",
+        "sehir_yapilari":""
+    },
+    {
+        "sehir_adi": "Ravenhold",
+        "sehir_sahibi": "Zephyria",
+        "sehir_nufusu": 3250,
+        "sehir_sur_seviyesi": 2,
+        "sehir_bolgesi": "region12",
+        "konum": {
+            "top": "13",
+            "left": "49"
+        },
+        "sehir_bolge_karakteri": "Soğuk iklim, Düz Ova",
+        "sehir_bolge_ticaret_degeri": 58,
+        "sehir_bolge_kaynagi": "wood",
+        "sehir_yollari":"",
+        "sehir_yapilari":""
+    },
+    {
+        "sehir_adi": "Brighthaven",
+        "sehir_sahibi": "Zephyria",
+        "sehir_nufusu": 5250,
+        "sehir_sur_seviyesi": 3,
+        "sehir_bolgesi": "region13",
+        "konum": {
+            "top": "47",
+            "left": "45"
+        },
+        "sehir_bolge_karakteri": "",
+        "sehir_bolge_ticaret_degeri": 88,
+        "sehir_bolge_kaynagi": "stone",
+        "sehir_yollari":"",
+        "sehir_yapilari":""
+    },
+    {
+        "sehir_adi": "Daggerfall",
+        "sehir_sahibi": "Thalorien",
+        "sehir_nufusu": 4875,
+        "sehir_sur_seviyesi": 2,
+        "sehir_bolgesi": "region14",
+        "konum": {
+            "top": "28",
+            "left": "38"
+        },
+        "sehir_bolge_karakteri": "Soğuk iklim, Düz Ova",
+        "sehir_bolge_ticaret_degeri": 77,
+        "sehir_bolge_kaynagi": "iron",
+        "sehir_yollari":"",
+        "sehir_yapilari":""
+    },
+    {
+        "sehir_adi": "Moonshade",
+        "sehir_sahibi": "Thalorien",
+        "sehir_nufusu": 2500,
+        "sehir_sur_seviyesi": 1,
+        "sehir_bolgesi": "region15",
+        "konum": {
+            "top": "16",
+            "left": "21"
+        },
+        "sehir_bolge_karakteri": "Soğuk iklim, Düz Ova",
+        "sehir_bolge_ticaret_degeri": 38,
+        "sehir_bolge_kaynagi": "food",
+        "sehir_yollari":"",
+        "sehir_yapilari":""
+    },
+    {
+        "sehir_adi": "Thundertide",
+        "sehir_sahibi": "Thalorien",
+        "sehir_nufusu": 4375,
+        "sehir_sur_seviyesi": 2,
+        "sehir_bolgesi": "region16",
+        "konum": {
+            "top": "35",
+            "left": "14"
+        },
+        "sehir_bolge_karakteri": "Soğuk iklim, Düz Ova",
+        "sehir_bolge_ticaret_degeri": 72,
+        "sehir_bolge_kaynagi": "gold",
+        "sehir_yollari":"",
+        "sehir_yapilari":""
+    }
+]

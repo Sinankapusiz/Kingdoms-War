@@ -1,0 +1,60 @@
+[
+    {
+        "ulke_adi": "Vorthelia",
+        "ulke_bayragi": "Kırmızı arka plan üzerinde altın rengi bir aslan",
+        "ulke_lideri": "Zyphor Valtor",
+        "ulke_sahip_oldugu_sehirler": [
+            "Eldoria",
+            "Drakenhold",
+            "Vorthal"
+        ]
+    },
+    {
+        "ulke_adi": "Arcadia",
+        "ulke_bayragi": "Yeşil arka plan üzerinde bir ağacın altına yerleştirilmiş gümüş bir kalkan",
+        "ulke_lideri": "Kaelthar Morgrim",
+        "ulke_sahip_oldugu_sehirler": [
+            "Grimspire",
+            "Mythralis"
+        ]
+    },
+    {
+        "ulke_adi": "Aetheria",
+        "ulke_bayragi": "Siyah arka plan üzerinde yeşil bir ejderha, kanatları açık",
+        "ulke_lideri": "Drogath Ironbane",
+        "ulke_sahip_oldugu_sehirler": [
+            "Stormmere",
+            "Darkhaven",
+            "Silverkeep"
+        ]
+    },
+    {
+        "ulke_adi": "Celestia",
+        "ulke_bayragi": "Altın sarısı arka plan üzerinde parlak bir güneş motifi",
+        "ulke_lideri": "Vaelin Duskbane",
+        "ulke_sahip_oldugu_sehirler": [
+            "Ironvale",
+            "Frosthelm"
+        ]
+    },
+    {
+        "ulke_adi": "Zephyria",
+        "ulke_bayragi": "Gri arka plan üzerinde yatay bir kılıç ve kalkan, kalkanın ortasında bir aslan başı",
+        "ulke_lideri": "Malakar Voidborn",
+        "ulke_sahip_oldugu_sehirler": [
+            "Shadowfen",
+            "Ravenhold",
+            "Brighthaven"
+        ]
+    },
+    {
+        "ulke_adi": "Thalorien",
+        "ulke_bayragi": "Koyu mavi arka planda, ortada altın sarısı bir yıldırım simgesi, yıldırımın etrafında gri ve beyaz bulutlar",
+        "ulke_lideri": "Thalrik Shadowclaw",
+        "ulke_sahip_oldugu_sehirler": [
+            "Daggerfall",
+            "Moonshade",
+            "Thundertide"
+        ]
+    }
+]

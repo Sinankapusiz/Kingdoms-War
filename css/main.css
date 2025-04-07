@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 :root{
-    --game-campaign-map-height:80%;
+    --game-campaign-map-height:100%;
     --select-color:#acff2f71;
     --enemy-color:rgba(255, 0, 0, 0.5);
     --ally-color:rgba(0, 128, 0, 0.5);
@@ -85,6 +85,7 @@ body{
     position: absolute;
     transform: translate(0%,-100%);
     top: 100%;
+    display: none;
 }
 #bolgeler{
     position: relative;
