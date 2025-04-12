@@ -1,56 +1,69 @@
-*{
+* {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
 }
-:root{
-    --game-campaign-map-height:100%;
-    --select-color:#acff2f71;
-    --enemy-color:rgba(255, 0, 0, 0.5);
-    --ally-color:rgba(0, 128, 0, 0.5);
-    --neutral-color:rgba(255, 255, 255, 0.5);
-    --player-color:rgba(0, 0, 139, 0.5);
+
+:root {
+    --game-campaign-map-height: 100%;
+    --select-color: #acff2f71;
+    --enemy-color: rgba(255, 0, 0, 0.5);
+    --ally-color: rgba(0, 128, 0, 0.5);
+    --neutral-color: rgba(255, 255, 255, 0.5);
+    --player-color: rgba(0, 0, 139, 0.5);
 
 }
-body{
+
+body {
     background-color: #2bc9cf;
     background-image: url("/image/wave.jpg");
     background-size: 200px;
 }
-.game-container{
+
+.game-container {
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: row;
 }
-.game-campaign-map{
+
+.game-campaign-map {
     height: var(--game-campaign-map-height);
     padding: 20px;
     display: flex;
     justify-content: center;
 }
-#map1,#kita-arazi,.map-gc,map{
-    height:100%;
+
+#map1,
+#kita-arazi,
+.map-gc,
+map {
+    height: 100%;
 }
-.map{
+
+.map {
     position: relative;
 }
-.game-content{
+
+.game-content {
     width: 100%;
 }
 
-.game-menu{
+.game-menu {
     width: 300px;
     height: 100%;
     background-color: brown;
 }
-.game-menu,.menu{
+
+.game-menu,
+.menu {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.menu{
+
+.menu {
     width: 100%;
     gap: 5px;
     padding: 1rem;
@@ -58,36 +71,42 @@ body{
     font-size: 1rem;
     font-weight: 900;
 }
-.game-menu-btn{
+
+.game-menu-btn {
     width: 100%;
     height: 50px;
 }
-.game-logo{
+
+.game-logo {
     width: 200px;
     height: 100px;
     background-color: white;
 }
 
-.bolge{
+.bolge {
     stroke: #0000007d;
     stroke-width: 5px;
     fill: rgba(200, 255, 1, 0);
 }
-.bolge:hover{
+
+.bolge:hover {
     stroke-width: 10px;
     stroke: var(--select-color);
     fill: rgba(200, 255, 1, 0.329);
 }
-.game-footer{
+
+.game-footer {
     height: 20%;
     width: 100%;
     background-color: aqua;
     position: absolute;
-    transform: translate(0%,-100%);
+    transform: translate(0%, -100%);
     top: 100%;
     display: none;
 }
-#bolgeler{
+
+#bolgeler {
     position: relative;
     z-index: 1;
 }
+

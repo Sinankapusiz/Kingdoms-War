@@ -15,7 +15,35 @@
             "unite_zırh_seviyesi":1,
             "unite_cephane":0
         },
-        "Okçu":"Okçu",
-        "Atlı":"Atlı"
+        "Okçu":{
+            "unite_adi":"Okçu",
+            "unite_sayisi":100,
+            "unite_resmi":"",
+            "unite_hizi":3,
+            "unite_morali":2,
+            "unite_disiplin":2,
+            "unite_deneyim":1,
+            "unite_dayaniklilik":2,
+            "unite_hucum":1,
+            "unite_yakin_dovus":2,           
+            "unite_savunma":1,
+            "unite_zırh_seviyesi":1,
+            "unite_cephane":10
+        },
+        "Atlı":{
+            "unite_adi":"Atlı",
+            "unite_sayisi":50,
+            "unite_resmi":"",
+            "unite_hizi":5,
+            "unite_morali":4,
+            "unite_disiplin":3,
+            "unite_deneyim":1,
+            "unite_dayaniklilik":3,
+            "unite_hucum":4,
+            "unite_yakin_dovus":3,           
+            "unite_savunma":2,
+            "unite_zırh_seviyesi":1,
+            "unite_cephane":0
+        }
     }
 }

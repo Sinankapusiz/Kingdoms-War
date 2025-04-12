@@ -1,0 +1,54 @@
+.flag-pole-color {
+    fill: black;
+}
+
+#sembol-1,
+#sembol-2,
+#sembol-3,
+#sembol-4,
+#sembol-5,
+#sembol-6 {
+    transform: translate(44%, 18%);
+}
+
+#flag-1-arkaplan {
+    fill: red;
+}
+
+#flag-2-arkaplan {
+    fill: black;
+}
+#flag-3-arkaplan {
+    fill: black;
+}
+#flag-4-arkaplan {
+    fill: blue;
+}
+#flag-5-arkaplan {
+    fill: white;
+}
+#flag-6-arkaplan {
+    fill: #ff0;
+}
+
+#sembol-1 {
+    fill: #ff0;
+}
+
+#sembol-2 {
+    fill: white;
+}
+#sembol-3 {
+    fill: red;
+}
+
+#sembol-4 {
+    fill: #ff0;
+}
+#sembol-5 {
+    fill: red;
+}
+
+#sembol-6 {
+    fill: black;
+}
