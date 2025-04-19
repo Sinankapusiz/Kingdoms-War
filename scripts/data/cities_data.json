@@ -1,258 +1,258 @@
 [
     {
-        "sehir_adi": "Eldoria",
-        "sehir_sahibi": "Vorthelia",
-        "sehir_nufusu": 6250,
-        "sehir_sur_seviyesi": 3,
-        "sehir_bolgesi": "region1",
-        "konum": {
+        "cityName": "Eldoria",
+        "cityOwner": "Vorthelia",
+        "cityPopulation": 6250,
+        "cityWallLevel": 3,
+        "cityRegion": "region1",
+        "cityLocation": {
             "top": "81",
             "left": "14"
         },
-        "sehir_bolge_karakteri": "Ilıman iklim, Düz Ova",
-        "sehir_bolge_ticaret_degeri": 85,
-        "sehir_bolge_kaynagi": "food",
-        "sehir_yollari":"",
-        "sehir_yapilari":""
+        "cityRegionCharacter": "Ilıman iklim, Düz Ova",
+        "cityRegionTradeValue": 85,
+        "cityRegionResource": "food",
+        "cityRoads":"",
+        "cityBuildings":""
     },
     {
-        "sehir_adi": "Drakenhold",
-        "sehir_sahibi": "Vorthelia",
-        "sehir_nufusu": 4500,
-        "sehir_sur_seviyesi": 2,
-        "sehir_bolgesi": "region2",
-        "konum": {
+        "cityName": "Drakenhold",
+        "cityOwner": "Vorthelia",
+        "cityPopulation": 4500,
+        "cityWallLevel": 2,
+        "cityRegion": "region2",
+        "cityLocation": {
             "top": "78",
             "left": "30"
         },
-        "sehir_bolge_karakteri": "Ilıman iklim, Düz Ova",
-        "sehir_bolge_ticaret_degeri": 70,
-        "sehir_bolge_kaynagi": "wood",
-        "sehir_yollari":"",
-        "sehir_yapilari":""
+        "cityRegionCharacter": "Ilıman iklim, Düz Ova",
+        "cityRegionTradeValue": 70,
+        "cityRegionResource": "wood",
+        "cityRoads":"",
+        "cityBuildings":""
     },
     {
-        "sehir_adi": "Vorthal",
-        "sehir_sahibi": "Vorthelia",
-        "sehir_nufusu": 5500,
-        "sehir_sur_seviyesi": 3,
-        "sehir_bolgesi": "region3",
-        "konum": {
+        "cityName": "Vorthal",
+        "cityOwner": "Vorthelia",
+        "cityPopulation": 5500,
+        "cityWallLevel": 3,
+        "cityRegion": "region3",
+        "cityLocation": {
             "top": "52",
             "left": "23"
         },
-        "sehir_bolge_karakteri": "Ilıman iklim, Düz Ova",
-        "sehir_bolge_ticaret_degeri": 90,
-        "sehir_bolge_kaynagi": "stone",
-        "sehir_yollari":"",
-        "sehir_yapilari":""
+        "cityRegionCharacter": "Ilıman iklim, Düz Ova",
+        "cityRegionTradeValue": 90,
+        "cityRegionResource": "stone",
+        "cityRoads":"",
+        "cityBuildings":""
     },
     {
-        "sehir_adi": "Grimspire",
-        "sehir_sahibi": "Arcadia",
-        "sehir_nufusu": 3750,
-        "sehir_sur_seviyesi": 1,
-        "sehir_bolgesi": "region4",
-        "konum": {
+        "cityName": "Grimspire",
+        "cityOwner": "Arcadia",
+        "cityPopulation": 3750,
+        "cityWallLevel": 1,
+        "cityRegion": "region4",
+        "cityLocation": {
             "top": "64",
             "left": "41"
         },
-        "sehir_bolge_karakteri": "Ilıman iklim, Düz Ova",
-        "sehir_bolge_ticaret_degeri": 60,
-        "sehir_bolge_kaynagi": "iron",
-        "sehir_yollari":"",
-        "sehir_yapilari":""
+        "cityRegionCharacter": "Ilıman iklim, Düz Ova",
+        "cityRegionTradeValue": 60,
+        "cityRegionResource": "iron",
+        "cityRoads":"",
+        "cityBuildings":""
     },
     {
-        "sehir_adi": "Mythralis",
-        "sehir_sahibi": "Arcadia",
-        "sehir_nufusu": 3000,
-        "sehir_sur_seviyesi": 1,
-        "sehir_bolgesi": "region5",
-        "konum": {
+        "cityName": "Mythralis",
+        "cityOwner": "Arcadia",
+        "cityPopulation": 3000,
+        "cityWallLevel": 1,
+        "cityRegion": "region5",
+        "cityLocation": {
             "top": "55",
             "left": "60"
         },
-        "sehir_bolge_karakteri": "Çöl iklim, Düz Çöl",
-        "sehir_bolge_ticaret_degeri": 50,
-        "sehir_bolge_kaynagi": "food",
-        "sehir_yollari":"",
-        "sehir_yapilari":""
+        "cityRegionCharacter": "Çöl iklim, Düz Çöl",
+        "cityRegionTradeValue": 50,
+        "cityRegionResource": "food",
+        "cityRoads":"",
+        "cityBuildings":""
     },
     {
-        "sehir_adi": "Stormmere",
-        "sehir_sahibi": "Aetheria",
-        "sehir_nufusu": 4250,
-        "sehir_sur_seviyesi": 2,
-        "sehir_bolgesi": "region6",
-        "konum": {
+        "cityName": "Stormmere",
+        "cityOwner": "Aetheria",
+        "cityPopulation": 4250,
+        "cityWallLevel": 2,
+        "cityRegion": "region6",
+        "cityLocation": {
             "top": "77",
             "left": "50"
         },
-        "sehir_bolge_karakteri": "Ilıman iklim, Düz Ova",
-        "sehir_bolge_ticaret_degeri": 75,
-        "sehir_bolge_kaynagi": "gold",
-        "sehir_yollari":"",
-        "sehir_yapilari":""
+        "cityRegionCharacter": "Ilıman iklim, Düz Ova",
+        "cityRegionTradeValue": 75,
+        "cityRegionResource": "gold",
+        "cityRoads":"",
+        "cityBuildings":""
     },
     {
-        "sehir_adi": "Darkhaven",
-        "sehir_sahibi": "Aetheria",
-        "sehir_nufusu": 3500,
-        "sehir_sur_seviyesi": 1,
-        "sehir_bolgesi": "region7",
-        "konum": {
+        "cityName": "Darkhaven",
+        "cityOwner": "Aetheria",
+        "cityPopulation": 3500,
+        "cityWallLevel": 1,
+        "cityRegion": "region7",
+        "cityLocation": {
             "top": "83",
             "left": "63"
         },
-        "sehir_bolge_karakteri": "Ilıman iklim, Düz Ova",
-        "sehir_bolge_ticaret_degeri": 55,
-        "sehir_bolge_kaynagi": "wood",
-        "sehir_yollari":"",
-        "sehir_yapilari":""
+        "cityRegionCharacter": "Ilıman iklim, Düz Ova",
+        "cityRegionTradeValue": 55,
+        "cityRegionResource": "wood",
+        "cityRoads":"",
+        "cityBuildings":""
     },
     {
-        "sehir_adi": "Silverkeep",
-        "sehir_sahibi": "Aetheria",
-        "sehir_nufusu": 5000,
-        "sehir_sur_seviyesi": 3,
-        "sehir_bolgesi": "region8",
-        "konum": {
+        "cityName": "Silverkeep",
+        "cityOwner": "Aetheria",
+        "cityPopulation": 5000,
+        "cityWallLevel": 3,
+        "cityRegion": "region8",
+        "cityLocation": {
             "top": "74",
             "left": "70"
         },
-        "sehir_bolge_karakteri": "Ilıman iklim, Düz Ova",
-        "sehir_bolge_ticaret_degeri": 80,
-        "sehir_bolge_kaynagi": "food",
-        "sehir_yollari":"",
-        "sehir_yapilari":""
+        "cityRegionCharacter": "Ilıman iklim, Düz Ova",
+        "cityRegionTradeValue": 80,
+        "cityRegionResource": "food",
+        "cityRoads":"",
+        "cityBuildings":""
     },
     {
-        "sehir_adi": "Ironvale",
-        "sehir_sahibi": "Celestia",
-        "sehir_nufusu": 4000,
-        "sehir_sur_seviyesi": 2,
-        "sehir_bolgesi": "region9",
-        "konum": {
+        "cityName": "Ironvale",
+        "cityOwner": "Celestia",
+        "cityPopulation": 4000,
+        "cityWallLevel": 2,
+        "cityRegion": "region9",
+        "cityLocation": {
             "top": "55",
             "left": "82"
         },
-        "sehir_bolge_karakteri": "Çöl iklim, Düz Çöl",
-        "sehir_bolge_ticaret_degeri": 68,
-        "sehir_bolge_kaynagi": "iron",
-        "sehir_yollari":"",
-        "sehir_yapilari":""
+        "cityRegionCharacter": "Çöl iklim, Düz Çöl",
+        "cityRegionTradeValue": 68,
+        "cityRegionResource": "iron",
+        "cityRoads":"",
+        "cityBuildings":""
     },
     {
-        "sehir_adi": "Frosthelm",
-        "sehir_sahibi": "Celestia",
-        "sehir_nufusu": 2750,
-        "sehir_sur_seviyesi": 1,
-        "sehir_bolgesi": "region10",
-        "konum": {
+        "cityName": "Frosthelm",
+        "cityOwner": "Celestia",
+        "cityPopulation": 2750,
+        "cityWallLevel": 1,
+        "cityRegion": "region10",
+        "cityLocation": {
             "top": "40",
             "left": "84"
         },
-        "sehir_bolge_karakteri": "Çöl iklim, Düz Çöl",
-        "sehir_bolge_ticaret_degeri": 45,
-        "sehir_bolge_kaynagi": "food",
-        "sehir_yollari":"",
-        "sehir_yapilari":""
+        "cityRegionCharacter": "Çöl iklim, Düz Çöl",
+        "cityRegionTradeValue": 45,
+        "cityRegionResource": "food",
+        "cityRoads":"",
+        "cityBuildings":""
     },
     {
-        "sehir_adi": "Shadowfen",
-        "sehir_sahibi": "Zephyria",
-        "sehir_nufusu": 2250,
-        "sehir_sur_seviyesi": 1,
-        "sehir_bolgesi": "region11",
-        "konum": {
+        "cityName": "Shadowfen",
+        "cityOwner": "Zephyria",
+        "cityPopulation": 2250,
+        "cityWallLevel": 1,
+        "cityRegion": "region11",
+        "cityLocation": {
             "top": "24",
             "left": "80"
         },
-        "sehir_bolge_karakteri": "Soğuk iklim, Düz Ova",
-        "sehir_bolge_ticaret_degeri": 40,
-        "sehir_bolge_kaynagi": "food",
-        "sehir_yollari":"",
-        "sehir_yapilari":""
+        "cityRegionCharacter": "Soğuk iklim, Düz Ova",
+        "cityRegionTradeValue": 40,
+        "cityRegionResource": "food",
+        "cityRoads":"",
+        "cityBuildings":""
     },
     {
-        "sehir_adi": "Ravenhold",
-        "sehir_sahibi": "Zephyria",
-        "sehir_nufusu": 3250,
-        "sehir_sur_seviyesi": 2,
-        "sehir_bolgesi": "region12",
-        "konum": {
+        "cityName": "Ravenhold",
+        "cityOwner": "Zephyria",
+        "cityPopulation": 3250,
+        "cityWallLevel": 2,
+        "cityRegion": "region12",
+        "cityLocation": {
             "top": "13",
             "left": "49"
         },
-        "sehir_bolge_karakteri": "Soğuk iklim, Düz Ova",
-        "sehir_bolge_ticaret_degeri": 58,
-        "sehir_bolge_kaynagi": "wood",
-        "sehir_yollari":"",
-        "sehir_yapilari":""
+        "cityRegionCharacter": "Soğuk iklim, Düz Ova",
+        "cityRegionTradeValue": 58,
+        "cityRegionResource": "wood",
+        "cityRoads":"",
+        "cityBuildings":""
     },
     {
-        "sehir_adi": "Brighthaven",
-        "sehir_sahibi": "Zephyria",
-        "sehir_nufusu": 5250,
-        "sehir_sur_seviyesi": 3,
-        "sehir_bolgesi": "region13",
-        "konum": {
+        "cityName": "Brighthaven",
+        "cityOwner": "Zephyria",
+        "cityPopulation": 5250,
+        "cityWallLevel": 3,
+        "cityRegion": "region13",
+        "cityLocation": {
             "top": "47",
             "left": "45"
         },
-        "sehir_bolge_karakteri": "",
-        "sehir_bolge_ticaret_degeri": 88,
-        "sehir_bolge_kaynagi": "stone",
-        "sehir_yollari":"",
-        "sehir_yapilari":""
+        "cityRegionCharacter": "",
+        "cityRegionTradeValue": 88,
+        "cityRegionResource": "stone",
+        "cityRoads":"",
+        "cityBuildings":""
     },
     {
-        "sehir_adi": "Daggerfall",
-        "sehir_sahibi": "Thalorien",
-        "sehir_nufusu": 4875,
-        "sehir_sur_seviyesi": 2,
-        "sehir_bolgesi": "region14",
-        "konum": {
+        "cityName": "Daggerfall",
+        "cityOwner": "Thalorien",
+        "cityPopulation": 4875,
+        "cityWallLevel": 2,
+        "cityRegion": "region14",
+        "cityLocation": {
             "top": "28",
             "left": "38"
         },
-        "sehir_bolge_karakteri": "Soğuk iklim, Düz Ova",
-        "sehir_bolge_ticaret_degeri": 77,
-        "sehir_bolge_kaynagi": "iron",
-        "sehir_yollari":"",
-        "sehir_yapilari":""
+        "cityRegionCharacter": "Soğuk iklim, Düz Ova",
+        "cityRegionTradeValue": 77,
+        "cityRegionResource": "iron",
+        "cityRoads":"",
+        "cityBuildings":""
     },
     {
-        "sehir_adi": "Moonshade",
-        "sehir_sahibi": "Thalorien",
-        "sehir_nufusu": 2500,
-        "sehir_sur_seviyesi": 1,
-        "sehir_bolgesi": "region15",
-        "konum": {
+        "cityName": "Moonshade",
+        "cityOwner": "Thalorien",
+        "cityPopulation": 2500,
+        "cityWallLevel": 1,
+        "cityRegion": "region15",
+        "cityLocation": {
             "top": "16",
             "left": "21"
         },
-        "sehir_bolge_karakteri": "Soğuk iklim, Düz Ova",
-        "sehir_bolge_ticaret_degeri": 38,
-        "sehir_bolge_kaynagi": "food",
-        "sehir_yollari":"",
-        "sehir_yapilari":""
+        "cityRegionCharacter": "Soğuk iklim, Düz Ova",
+        "cityRegionTradeValue": 38,
+        "cityRegionResource": "food",
+        "cityRoads":"",
+        "cityBuildings":""
     },
     {
-        "sehir_adi": "Thundertide",
-        "sehir_sahibi": "Thalorien",
-        "sehir_nufusu": 4375,
-        "sehir_sur_seviyesi": 2,
-        "sehir_bolgesi": "region16",
-        "konum": {
+        "cityName": "Thundertide",
+        "cityOwner": "Thalorien",
+        "cityPopulation": 4375,
+        "cityWallLevel": 2,
+        "cityRegion": "region16",
+        "cityLocation": {
             "top": "35",
             "left": "14"
         },
-        "sehir_bolge_karakteri": "Soğuk iklim, Düz Ova",
-        "sehir_bolge_ticaret_degeri": 72,
-        "sehir_bolge_kaynagi": "gold",
-        "sehir_yollari":"",
-        "sehir_yapilari":""
+        "cityRegionCharacter": "Soğuk iklim, Düz Ova",
+        "cityRegionTradeValue": 72,
+        "cityRegionResource": "gold",
+        "cityRoads":"",
+        "cityBuildings":""
     }
 ]

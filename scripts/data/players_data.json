@@ -1,32 +1,38 @@
 [
     {
-      "oyuncu_adi": "player1",
-      "oyuncu_ulkesi": "Vorthelia",
-      "oyuncu_turu": "computer"
+      "playerId":"01",
+      "playerName": "player1",
+      "playerCountry": "Vorthelia",
+      "playerType": "computer"
     },
     {
-      "oyuncu_adi": "player2",
-      "oyuncu_ulkesi": "Arcadia",
-      "oyuncu_turu": "computer"
+      "playerId":"02",
+      "playerName": "player2",
+      "playerCountry": "Arcadia",
+      "playerType": "computer"
     },
     {
-      "oyuncu_adi": "player3",
-      "oyuncu_ulkesi": "Aetheria",
-      "oyuncu_turu": "computer"
+      "playerId":"03",
+      "playerName": "player3",
+      "playerCountry": "Aetheria",
+      "playerType": "computer"
     },
     {
-      "oyuncu_adi": "player4",
-      "oyuncu_ulkesi": "Celestia",
-      "oyuncu_turu": "computer"
+      "playerId":"04",
+      "playerName": "player4",
+      "playerCountry": "Celestia",
+      "playerType": "computer"
     },
     {
-      "oyuncu_adi": "player5",
-      "oyuncu_ulkesi": "Zephyria",
-      "oyuncu_turu": "computer"
+      "playerId":"05",
+      "playerName": "player5",
+      "playerCountry": "Zephyria",
+      "playerType": "computer"
     },
     {
-      "oyuncu_adi": "player6",
-      "oyuncu_ulkesi": "Thalorien",
-      "oyuncu_turu": "computer"
+      "playerId":"06",
+      "playerName": "player6",
+      "playerCountry": "Thalorien",
+      "playerType": "computer"
     }
   ]
