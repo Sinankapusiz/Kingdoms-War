@@ -30,7 +30,6 @@ class Map {
                     cityFlagBackground.id = country.countryFlag.countryFlagBackgroundId;
 
                     const cityRegion = document.getElementById(city.cityRegionId);
-                    console.log(cityRegion);
                     cityRegion.style.fill = country.countryRegion.regionColor;
                     cityRegion.style.stroke = country.countryRegion.regionBorderColor;
                     cityRegion.style.strokeWidth = "10px";
@@ -47,10 +46,27 @@ class Map {
 
 class Game {
     map = new Map();
+    gameActions = new GameActions();
     constructor() {
         this.countryArray = new Array();
         this.playerArray = new Array();
+        this.cityArray = new Array();
+        this.buildingArray = new Array();
     }
+    async getBuildingData(path, buildingArray) {
+        try {
+            const response = await fetch(path);
+            const buildings = await response.json();
+            buildings.forEach(building => {
+                buildingArray.push(
+                    new Building(building.buildingId, building.buildingName, building.buildingImage, building.buildingLevel, building.buildingProfit, building.buildingDefinition, building.buildingCondition, building.buildingCraftMaterial)
+                );
+            });
+
+        } catch (error) {
+            console.error('Ülke verisi alınırken hata oluştu:', error);
+        }
+    };
     async getCountriesData(path, countryArray) {
         try {
             const response = await fetch(path);
@@ -78,12 +94,14 @@ class Game {
             console.error('Oyuncu verisi alınırken hata oluştu:', error);
         }
     };
-    async getCitiesData(path) {
+    async getCitiesData(path, cityArray) {
         try {
             const response = await fetch(path);
             const cities = await response.json();
             cities.forEach(city => {
-
+                cityArray.push(
+                    new City(city.cityName, city.cityOwner, city.cityPopulation, city.cityWallLevel, city.cityRegion, city.cityRegionResource, city.cityBuildings)
+                );
             });
         } catch (error) {
             console.error('Şehir verisi alınırken hata oluştu:', error);
@@ -113,14 +131,95 @@ class Game {
         console.log(this.countryArray);
         await this.getPlayersData('./scripts/data/players_data.json', this.playerArray); // getPlayersData fonksiyonunu bekliyoruz
         console.log(this.playerArray); // Veri alındıktan sonra playerArray'i yazdırıyoruz
-        this.playerArray.forEach(player => this.writeConcoleAllPlayerInfo(player));
-
+        await this.getCitiesData('./scripts/data/cities_data.json', this.cityArray);
+        console.log(this.cityArray);
+        await this.getBuildingData('./scripts/data/buildings_data.json', this.buildingArray);
+        console.log(this.buildingArray);
+        //this.playerArray.forEach(player => this.writeConcoleAllPlayerInfo(player));
         this.map.createCampaignMap();
+        this.gameLoop(0, 20, 5, true);
     };
     update() {
-
+        console.log("Update Fonsiyonu Çalıştırıldı.");
+        this.playerArray.forEach(player => {
+            if (player.playerType === "computer") {
+                const randomActionIndex = Math.floor(Math.random() * 3);
+                console.log(randomActionIndex);
+                switch (randomActionIndex) {
+                    case 1:
+                        console.log(player.playerCountry.countryName + " ülkesi(" + player.playerName + ") aşağıdaki eylem gerçekleşti.");
+                        this.gameActions.economicActions();
+                        console.log("-------------------------------");
+                        break;
+                    case 2:
+                        console.log(player.playerCountry.countryName + " ülkesi(" + player.playerName + ") aşağıdaki eylem gerçekleşti.");
+                        this.gameActions.militaryActions();
+                        console.log("-------------------------------");
+                        break;
+                    case 3:
+                        console.log(player.playerCountry.countryName + " ülkesi(" + player.playerName + ") aşağıdaki eylem gerçekleşti.");
+                        this.gameActions.diplomaticActions();
+                        console.log("-------------------------------");
+                        break;
+                    default:
+                        console.log("Eylem gerçekleşmedi.");
+                        break;
+                }
+            }
+        });
+    };
+    gameLoop(time, gameDuraction, infoInterval, loop) {
+        console.log("Döngü Başladı");
+        if (loop) {
+            const loop = setInterval(() => {
+                time++;
+                if (time % infoInterval === 0) {
+                    this.update();
+                }
+                if (time >= gameDuraction) {
+                    clearInterval(loop);
+                    //console.clear();
+                    console.log("Oyun bitti.");
+                }
+            }, 1000);
+        }
     };
 };
+class GameActions {
+    economicActions() {
+        //Ekomik eylemler.
+        console.log("Ekonomik Eylem Gerçekleştirildi.");
+    };
+    militaryActions() {
+        //Askeri eylemler.
+        console.log("Askeri Eylem Gerçekleştirildi.");
+    };
+    diplomaticActions() {
+        // Diplomatik eylemler.
+        console.log("Diplomatik Eylem Gerçekleştirildi.");
+    };
+}
+class Building {
+    constructor(
+        buildingId,
+        buildingName,
+        buildingImage,
+        buildingLevel,
+        buildingProfit,
+        buildingDefinition,
+        buildingCondition,
+        buildingCraftMaterial
+    ) {
+        this.buildingId = buildingId;
+        this.buildingName = buildingName;
+        this.buildingImage = buildingImage;
+        this.buildingLevel = buildingLevel;
+        this.buildingProfit = buildingProfit;
+        this.buildingDefinition = buildingDefinition;
+        this.buildingCondition = buildingCondition;
+        this.buildingCraftMaterial = buildingCraftMaterial;
+    }
+}
 class Player {
     constructor(playerId, playerName, playerCountry, playerType) {
         this.playerId = playerId;
@@ -146,7 +245,25 @@ class Country {
         this.countryResource = countryResource;
     }
 }
-
+class City {
+    constructor(
+        cityName,
+        cityOwner,
+        cityPopulation,
+        cityWallLevel,
+        cityRegion,
+        cityRegionResource,
+        cityBuildings
+    ) {
+        this.cityName = cityName;
+        this.cityOwner = cityOwner;
+        this.cityPopulation = cityPopulation;
+        this.cityWallLevel = cityWallLevel;
+        this.cityRegion = cityRegion;
+        this.cityRegionResource = cityRegionResource;
+        this.cityBuildings = cityBuildings;
+    }
+}
 const game = new Game();
 game.start();
 

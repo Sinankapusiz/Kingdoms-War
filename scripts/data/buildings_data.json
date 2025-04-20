@@ -1,101 +1,114 @@
 [
     {
-        "yapi_adi": "Çiftlik",
-        "yapi_resmi": "",
-        "yapi_seviyesi": 1,
-        "yapi_getirisi": {
+        "buildingId": "01",
+        "buildingName": "Çiftlik",     
+        "buildingImage": "",
+        "buildingLevel": 1,
+        "buildingProfit": {
             "food": 10
         },
-        "yapi_tanimi": "Çiftlik, yiyecek üretmeni sağlar.",
-        "yapi_kosulu":"food",
-        "yapi_yapilan_malzeme":""
+        "buildingDefinition": "Çiftlik, yiyecek üretmeni sağlar.",
+        "buildingCondition": "food",
+        "buildingCraftMaterial": "./image/Buildings/farm-img.png"
     },
     {
-        "yapi_adi": "Pazar",
-        "yapi_resmi": "",
-        "yapi_seviyesi": 1,
-        "yapi_getirisi": {
+        "buildingId": "02",
+        "buildingName": "Pazar",   
+        "buildingImage": "",
+        "buildingLevel": 1,
+        "buildingProfit": {
             "gold": 5
         },
-        "yapi_tanimi": "Pazar, şehir içi ticaret yapmanı ve para kazanmanı sağlar. Ticaret ortaklarına yakın şehirlerdeki pazarlar daha çok kazandırır.",
-        "yapi_kosulu":"",
-        "yapi_yapilan_malzeme":""
+        "buildingDefinition": "Pazar, şehir içi ticaret yapmanı ve para kazanmanı sağlar. Ticaret ortaklarına yakın şehirlerdeki pazarlar daha çok kazandırır.",
+        "buildingCondition": "",
+        "buildingCraftMaterial": "./image/Buildings/bazaar-img.png"
     },
     {
-        "yapi_adi": "Oduncu",
-        "yapi_resmi": "",
-        "yapi_seviyesi": 1,
-        "yapi_getirisi": {
+        "buildingId": "03",
+        "buildingName": "Oduncu",      
+        "buildingImage": "",
+        "buildingLevel": 1,
+        "buildingProfit": {
             "wood": 10
         },
-        "yapi_tanimi": "Oduncu, odun üretmeni sağlar. Üretilen odunlar ile yapıların seviyesini arttırabilirsin.",
-        "yapi_kosulu":"wood",
-        "yapi_yapilan_malzeme":""
+        "buildingDefinition": "Oduncu, odun üretmeni sağlar. Üretilen odunlar ile yapıların seviyesini arttırabilirsin.",
+        "buildingCondition": "wood",
+        "buildingCraftMaterial": "./image/Buildings/woodcutter-img.png"
     },
     {
-        "yapi_adi": "Taş Madeni",
-        "yapi_resmi": "",
-        "yapi_seviyesi": 1,
-        "yapi_getirisi": {
+        "buildingId": "04",
+        "buildingName": "Taş Madeni",
+        "buildingImage": "",
+        "buildingLevel": 1,
+        "buildingProfit": {
             "stone": 10
         },
-        "yapi_tanimi": "Taş Madeni, taş üretmeni sağlar. Üretilen taşlar ile yapıların seviyesini arttırabilirsin.",
-        "yapi_kosulu":"stone",
-        "yapi_yapilan_malzeme":""
+        "buildingDefinition": "Taş Madeni, taş üretmeni sağlar. Üretilen taşlar ile yapıların seviyesini arttırabilirsin.",
+        "buildingCondition": "stone",
+        "buildingCraftMaterial": "./image/Buildings/stone-mine-img.png"
     },
     {
-        "yapi_adi": "Demir Madeni",
-        "yapi_resmi": "",
-        "yapi_seviyesi": 1,
-        "yapi_getirisi": {
+        "buildingId": "05",
+        "buildingName": "Demir Madeni",     
+        "buildingImage": "",
+        "buildingLevel": 1,
+        "buildingProfit": {
             "iron": 10
         },
-        "yapi_tanimi": "Demir Madeni, demir üretmeni sağlar. Üretilen demirler ile yapılar ve askerler için silahlar yapabilirsin.",
-        "yapi_kosulu":"iron",
-        "yapi_yapilan_malzeme":""
+        "buildingDefinition": "Demir Madeni, demir üretmeni sağlar. Üretilen demirler ile yapılar ve askerler için silahlar yapabilirsin.",
+        "buildingCondition": "iron",
+        "buildingCraftMaterial": ""
     },
     {
-        "yapi_adi": "Altın Madeni",
-        "yapi_resmi": "",
-        "yapi_seviyesi": 1,
-        "yapi_getirisi": {
+        "buildingId": "06",
+        "buildingName": "Altın Madeni",    
+        "buildingImage": "",
+        "buildingLevel": 1,
+        "buildingProfit": {
             "gold": 10
         },
-        "yapi_tanimi": "Altın Madeni, altın üretmeni sağlar. Üretilen altinlar ile asker üretebilir veya ticarette kullanabilirsin.",
-        "yapi_kosulu":"gold",
-        "yapi_yapilan_malzeme":""
+        "buildingDefinition": "Altın Madeni, altın üretmeni sağlar. Üretilen altinlar ile asker üretebilir veya ticarette kullanabilirsin.",
+        "buildingCondition": "gold",
+        "buildingCraftMaterial": ""
     },
     {
-        "yapi_adi": "Demirci",
-        "yapi_resmi": "",
-        "yapi_seviyesi": 1,
-        "yapi_getirisi": {
+        "buildingId": "07",
+        "buildingName": "Demirci",
+        "buildingImage": "",
+        "buildingLevel": 1,
+        "buildingProfit": {
             "gold": 2
         },
-        "yapi_tanimi": "Demirci, halkın kullanması içi aletler üretir. Yapılı olduğu şehirlerde çiftliklere ve pazar yeri getirilerine ekstra getiri sağlar.Pazar için +1 gold, Çiftlik için +5 food",
-        "yapi_kosulu":"Demir Madeni",
-        "yapi_yapilan_malzeme":""
+        "buildingDefinition": "Demirci, halkın kullanması içi aletler üretir. Yapılı olduğu şehirlerde çiftliklere ve pazar yeri getirilerine ekstra getiri sağlar.Pazar için +1 gold, Çiftlik için +5 food",
+        "buildingCondition": "Demir Madeni",
+        "buildingCraftMaterial": ""
     },
     {
-        "yapi_adi": "Silahçı",
-        "yapi_resmi": "",
-        "yapi_seviyesi": 1,
-        "yapi_getirisi": {
+        "buildingId": "08",
+        "buildingName": "Silahçı",
+        "buildingImage": "",
+        "buildingLevel": 1,
+        "buildingProfit": {
             "gold": 2
         },
-        "yapi_tanimi": "Silahçı, asker üretmek için gerekli silahları üretirsin. Kılıç, Kalkan, Yay, Zırh",
-        "yapi_kosulu":"",
-        "yapi_yapilan_malzeme":["sword","shield","armor"]
+        "buildingDefinition": "Silahçı, asker üretmek için gerekli silahları üretirsin. Kılıç, Kalkan, Yay, Zırh",
+        "buildingCondition": "",
+        "buildingCraftMaterial": [
+            "sword",
+            "shield",
+            "armor"
+        ]
     },
     {
-        "yapi_adi": "Mücevherci",
-        "yapi_resmi": "",
-        "yapi_seviyesi": 1,
-        "yapi_getirisi": {
+        "buildingId": "09",
+        "buildingName": "Mücevherci",
+        "buildingImage": "",
+        "buildingLevel": 1,
+        "buildingProfit": {
             "gold": 2
         },
-        "yapi_tanimi": "Mücevherci, yapılı olduğu şehirde pazar +2 gold kazandırır.",
-        "yapi_kosulu":"Altın Madeni",
-        "yapi_yapilan_malzeme":""
+        "buildingDefinition": "Mücevherci, yapılı olduğu şehirde pazar +2 gold kazandırır.",
+        "buildingCondition": "Altın Madeni",
+        "buildingCraftMaterial": ""
     }
 ]
