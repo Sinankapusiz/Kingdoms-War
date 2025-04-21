@@ -111,7 +111,7 @@ map {
     z-index: 1;
 }
 
-.player-country-info-bar{
+#player-country-info-bar{
     z-index: 5;
     top: 0px;
     left: 0px;
@@ -119,4 +119,38 @@ map {
     height: 8%;
     width: 100vw;
     background-color: rgba(255, 255, 0, 0.396);
+}
+#game-time-bar{
+    position: absolute;
+    width: 10%;
+    height: 14%;
+    background-color: brown;
+    z-index: 5;
+    transform-origin: right;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    padding: 0.2%;
+    gap: 1%;
+}
+#play-pause-btn-div{
+    height: 100%;
+    width: 50%;   
+    display: flex;
+    flex-direction: row;
+}
+#play-game-btn,#pause-game-btn{
+    height: 100%;
+    width: 100%;
+}
+#pause-game-btn{
+    display: none;
+}
+#time-speed-btn-div{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+#time-speed-half-btn,#time-speed-normal-btn,#time-speed-double-btn{
+    height: 100%;
 }

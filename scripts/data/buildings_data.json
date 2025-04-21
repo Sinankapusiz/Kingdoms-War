@@ -2,50 +2,50 @@
     {
         "buildingId": "01",
         "buildingName": "Çiftlik",     
-        "buildingImage": "",
+        "buildingImage": "./image/Buildings/farm-img.png",
         "buildingLevel": 1,
         "buildingProfit": {
             "food": 10
         },
         "buildingDefinition": "Çiftlik, yiyecek üretmeni sağlar.",
         "buildingCondition": "food",
-        "buildingCraftMaterial": "./image/Buildings/farm-img.png"
+        "buildingCraftMaterial": ""
     },
     {
         "buildingId": "02",
         "buildingName": "Pazar",   
-        "buildingImage": "",
+        "buildingImage": "./image/Buildings/bazaar-img.png",
         "buildingLevel": 1,
         "buildingProfit": {
             "gold": 5
         },
         "buildingDefinition": "Pazar, şehir içi ticaret yapmanı ve para kazanmanı sağlar. Ticaret ortaklarına yakın şehirlerdeki pazarlar daha çok kazandırır.",
         "buildingCondition": "",
-        "buildingCraftMaterial": "./image/Buildings/bazaar-img.png"
+        "buildingCraftMaterial": ""
     },
     {
         "buildingId": "03",
         "buildingName": "Oduncu",      
-        "buildingImage": "",
+        "buildingImage": "./image/Buildings/woodcutter-img.png",
         "buildingLevel": 1,
         "buildingProfit": {
             "wood": 10
         },
         "buildingDefinition": "Oduncu, odun üretmeni sağlar. Üretilen odunlar ile yapıların seviyesini arttırabilirsin.",
         "buildingCondition": "wood",
-        "buildingCraftMaterial": "./image/Buildings/woodcutter-img.png"
+        "buildingCraftMaterial": ""
     },
     {
         "buildingId": "04",
         "buildingName": "Taş Madeni",
-        "buildingImage": "",
+        "buildingImage": "./image/Buildings/stone-mine-img.png",
         "buildingLevel": 1,
         "buildingProfit": {
             "stone": 10
         },
         "buildingDefinition": "Taş Madeni, taş üretmeni sağlar. Üretilen taşlar ile yapıların seviyesini arttırabilirsin.",
         "buildingCondition": "stone",
-        "buildingCraftMaterial": "./image/Buildings/stone-mine-img.png"
+        "buildingCraftMaterial": ""
     },
     {
         "buildingId": "05",

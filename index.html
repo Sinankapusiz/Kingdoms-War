@@ -18,16 +18,28 @@
             <div class="game-menu">
                 <img src="" alt="Game Logo" title="Game Logo" class="game-logo">
                 <div class="menu">
-                    <button class="game-menu-btn">YENİ OYUN</button>
+                    <button class="game-menu-btn" id="new-game-btn">YENİ OYUN</button>
+                    <button class="game-menu-btn">OYUNA DURDUR</button>
                     <button class="game-menu-btn">OYUNA DEVAM ET</button>
                     <button class="game-menu-btn">OYUN YÜKLE</button>
                     <button class="game-menu-btn">AYARLAR</button>
                 </div>
             </div>
             <div class="game-content">
-                
+
                 <div class="game-campaign-map">
-                    <div class="player-country-info-bar"></div>
+                    <div id="player-country-info-bar"></div>
+                    <div id="game-time-bar">
+                        <div id="play-pause-btn-div">
+                            <button id="play-game-btn">▶️</button>
+                            <button id="pause-game-btn">⏸️</button>
+                        </div>
+                        <div id="time-speed-btn-div">
+                            <button id="time-speed-half-btn">0.5X</button>
+                            <button id="time-speed-normal-btn">1.0X</button>
+                            <button id="time-speed-double-btn">2.0X</button>
+                        </div>
+                    </div>
                     <div class="map">
                         <svg id="map1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                             viewBox="0 0 2410 1935">
@@ -68,21 +80,23 @@
                             </g>
                         </svg>
                         <div id="city1" class="city">
-                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 130 91">
+                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130 91">
                                 <g id="flag" data-name="flag">
                                     <g id="map1">
                                         <g id="city-flag">
                                             <g id="direk">
-                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1" height="47.7" />
-                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1" height="19.79"
-                                                    transform="translate(82.47 -47.53) rotate(90)" />
+                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1"
+                                                    height="47.7" />
+                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1"
+                                                    height="19.79" transform="translate(82.47 -47.53) rotate(90)" />
                                             </g>
-                                            <polygon id="flag-1-arkaplan" 
+                                            <polygon id="flag-1-arkaplan"
                                                 points="73 40.56 65 48.07 57 40.56 57 18.01 73 18.01 73 40.56" />
-                                            <path id="sembol-1"  d="M9,16.78c2.18.3-.37,4,2.69,2.9.42,0,1.16.31,1.09.78-.8-.66-.22.4-.3.76-.35-.7-.65-.1-.68.37-.62-1.12-4-.59-3.25-2.48-1.37-.83-2.29.36-.6-2.05-.1,1.88-5.6,2.61-2.94,3.35.88,0,1,.73.65,1.37-.26-.76-.33-.29-.5.18-.17-.67-.49-.39-.76,0-.6-1.1-1.34-1.13-.92-2.69-.83-1.64.79-.68,1.26-1.53C4.7,16.63,2.27,16.7,4,15c2.09-2.39-.24-3.8-2.34-2.29,1.73-.93,1.46-2.86.53-4.16,1.7-.12,1.11,1.3,1.71,2.21-.12-1.56,2.28-1.55.49-.21-.45,1,1.29,1.84.81,3,.22,1.07-2.7,2.93-.53,3,1.11-1.79,5.87-2.78,1.77-2C7.91,14.17,5.07,12.33,6,11,5.87,9.2,5.85,8.56,8.12,8.1c-1.22,1,2.84-.23,2.24,1.44-.13.86-1.18-.14-1.51.9.21.48,1.24.24,1.15-.28,1.13.37-.66,2,1.08,1.22-.22.44-.09.62.43,1,1.07-.86.08-3,1.75-2.93-.46.41.45.32.69.43-.83.18-.12.53.22.62-1.85.81-1,4-3.65,4.3,1.32-.13,2.28-.6,3.49-.5-.79.3.27.38.31.77-.62-.25-.51.16-.27.53C11.31,15.65,11.27,15.56,9,16.78ZM7.72,10.33a3.17,3.17,0,0,0-.65.35c.53-1.15.06-.55-.13.25.89-.77.37-.15.33.51.19-.17.31-.42.5-.56.13.45,1,1.75,1.14.69.23.39.54,1,1,1-.52-.28-1-1.74-1.25-.66-.35-.4-.16-1.35-.72-.55C8.17,10,7,11.72,7.72,10.33ZM9.65,14.7a1.63,1.63,0,0,0,.85-.31c-.14.2-.36.32-.44.56.26-.25.61-.48.68-.85A3.64,3.64,0,0,1,9.65,14.7ZM8.35,9c-.16,0-.29.23-.46.33l.59-.12C8.42,9.18,8.27,9.19,8.35,9Z"/>
+                                            <path id="sembol-1"
+                                                d="M9,16.78c2.18.3-.37,4,2.69,2.9.42,0,1.16.31,1.09.78-.8-.66-.22.4-.3.76-.35-.7-.65-.1-.68.37-.62-1.12-4-.59-3.25-2.48-1.37-.83-2.29.36-.6-2.05-.1,1.88-5.6,2.61-2.94,3.35.88,0,1,.73.65,1.37-.26-.76-.33-.29-.5.18-.17-.67-.49-.39-.76,0-.6-1.1-1.34-1.13-.92-2.69-.83-1.64.79-.68,1.26-1.53C4.7,16.63,2.27,16.7,4,15c2.09-2.39-.24-3.8-2.34-2.29,1.73-.93,1.46-2.86.53-4.16,1.7-.12,1.11,1.3,1.71,2.21-.12-1.56,2.28-1.55.49-.21-.45,1,1.29,1.84.81,3,.22,1.07-2.7,2.93-.53,3,1.11-1.79,5.87-2.78,1.77-2C7.91,14.17,5.07,12.33,6,11,5.87,9.2,5.85,8.56,8.12,8.1c-1.22,1,2.84-.23,2.24,1.44-.13.86-1.18-.14-1.51.9.21.48,1.24.24,1.15-.28,1.13.37-.66,2,1.08,1.22-.22.44-.09.62.43,1,1.07-.86.08-3,1.75-2.93-.46.41.45.32.69.43-.83.18-.12.53.22.62-1.85.81-1,4-3.65,4.3,1.32-.13,2.28-.6,3.49-.5-.79.3.27.38.31.77-.62-.25-.51.16-.27.53C11.31,15.65,11.27,15.56,9,16.78ZM7.72,10.33a3.17,3.17,0,0,0-.65.35c.53-1.15.06-.55-.13.25.89-.77.37-.15.33.51.19-.17.31-.42.5-.56.13.45,1,1.75,1.14.69.23.39.54,1,1,1-.52-.28-1-1.74-1.25-.66-.35-.4-.16-1.35-.72-.55C8.17,10,7,11.72,7.72,10.33ZM9.65,14.7a1.63,1.63,0,0,0,.85-.31c-.14.2-.36.32-.44.56.26-.25.61-.48.68-.85A3.64,3.64,0,0,1,9.65,14.7ZM8.35,9c-.16,0-.29.23-.46.33l.59-.12C8.42,9.18,8.27,9.19,8.35,9Z" />
                                         </g>
-                                        <image 
+                                        <image
                                             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAABbCAYAAAC/Ml0aAAAACXBIWXMAAAsSAAALEgHS3X78AAAEo0lEQVR4nO3d7WsURxwH8N+e8dJYg9AK8aE+EY01NoKVCgpaUdGX9W2LoqDF9/VlX/T+gb4tiAiW2lakgi/sGxsFKxSqtL4RHwIJjUlOz7vcxcsllzvvbsr8uhfW8y67tzezO5d+P7DsTtjb2dn53uzsnqAlhCCAyP/+CgBDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEAVjDICTuXBZy8VsGvVT3z6IZEYp//yTkEla53XW4nX9titzKECxV/dPwf4L128E9nx63wshCWN/O6MdfhNJe1f2DySIwBAGY6xzB6Z+JBH1/fZD/cvLYYdq4tgdX0SCt9E9TQbj/cIgeDT+b30YQzNJK/+DWAKypEaEd/fHgKQ2PJah3XQ/t3bm1qRa08tl2s+iDEPvul/ntmxe+Duyz7aapIGzv3UB01LENRmmlf5oKQv/m9byAmVrpH+W3hvjtizG5XnPwdExHefBC7Fu5Pvxl7JyzvH9Xn+qmGN3egb7NStuhY47wjb2O6SiXypWv7PK5mnJdO/r8j2AeP6u8vflCkfy21y/lvzWUy4VRe/OSvT7VajmeTC+Zys5clYV8ofi5XHd1Rn92lo/u/Wi1jgvkJjWVV97eodH40lKpfIUWaO/ugX5f7W30W4OOIPj5WOPjVSr0ZGSC1ws5uPtDpfV6lZrKKz1ebnaORsYTrvvt3ObvVti2PzrFX6ZdQ7CYjCdSobTG6PcI8l6Zyc5oO35mfJjGRkeoUhG0ctU6+mDLNm11eTqfbI6Kr8uh1G10EJ4nM1qOmxx+SE9/v05z0/8dv1QhGipUqNjRTXuOfEa9A7u01LsQOeolJqcCr7fK2CBkc7N8v1Qt/vg+PfrtyhtH7YgQvdcVoXwpR4PXfqDC3Cz1f7Iv0PamMtnQRgMyeY4QT6aVHzOfTb8VAqeuDotWLovQ3V+vUTadVF5/I3I0SGWmA6uvHiODIIdIHd+OkT9vuu6z4h2LIhbRvVs3lNffiAkTYuOCoPPbkUtOeNrv3ahFM6/0zE9qvS6VtE6IvTIuCDq/HdOpuKf95JzhxfgzLedQa+zFZCD1uDEqCLofF00jJ8M6JsR+GBUEXY+LpnqZfmXMmRkTBF2Pi6aSL49Maq8xQdDxuGiyMF8e1VM3CJZlRYM8CV2Pi6Yysb0N3yyuOnBiExG9by/d9tpYhb9+PB/Gua09dOaswZflubw0RDRpL0UhjtfdseHP0HV3tqxuOxTLHeHotNeBjiLAcvKp2LFwZ8s31kKIYjOXqKkguB7MsqrBqAalukih/MORNlftWGdnc+cLIZS+dVMaBE8Vvh0WcowsUdNvQYoU7U4mRwfP/00I4e3Nl0KBB8Erx22IakLTWRMWE25Lzo4le7vg2K4O000P2UExNgh+OUYcp1ZGGjnhqqV8aA4VEf0LkON7Lll6FgYAAAAASUVORK5CYII=" />
                                     </g>
                                 </g>
@@ -90,21 +104,23 @@
                             <label for="" class="cityNameLabel">CityName</label>
                         </div>
                         <div id="city2" class="city">
-                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 130 91">
+                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130 91">
                                 <g id="flag" data-name="flag">
                                     <g id="map1">
                                         <g id="city-flag">
                                             <g id="direk">
-                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1" height="47.7" />
-                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1" height="19.79"
-                                                    transform="translate(82.47 -47.53) rotate(90)" />
+                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1"
+                                                    height="47.7" />
+                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1"
+                                                    height="19.79" transform="translate(82.47 -47.53) rotate(90)" />
                                             </g>
-                                            <polygon id="flag-2-arkaplan" 
+                                            <polygon id="flag-2-arkaplan"
                                                 points="73 40.56 65 48.07 57 40.56 57 18.01 73 18.01 73 40.56" />
-                                            <path id="sembol-2" class="flag-sembol-color" d="M4.92,15a3.09,3.09,0,0,1,6.17.05A3.09,3.09,0,0,1,4.92,15Zm-.31-1.13L1.53,15l3.08,1.14A3.31,3.31,0,0,1,4.61,13.87Zm.19,2.72-1.37,3,3-1.37A3.24,3.24,0,0,1,4.8,16.59Zm3.2-8L6.86,11.62a3.25,3.25,0,0,1,2.28,0ZM6.41,11.8l-3-1.37,1.37,3A3.34,3.34,0,0,1,6.41,11.8Zm3.17,0a3.18,3.18,0,0,1,1.62,1.61l1.38-3Zm1.62,4.78a3.26,3.26,0,0,1-1.61,1.62l3,1.37ZM8,21.52a28.25,28.25,0,0,1,1.16-3.14,3.31,3.31,0,0,1-2.32,0Zm3.38-5.38L14.47,15l-3.08-1.14A3.28,3.28,0,0,1,11.4,16.14Z"/>
+                                            <path id="sembol-2" class="flag-sembol-color"
+                                                d="M4.92,15a3.09,3.09,0,0,1,6.17.05A3.09,3.09,0,0,1,4.92,15Zm-.31-1.13L1.53,15l3.08,1.14A3.31,3.31,0,0,1,4.61,13.87Zm.19,2.72-1.37,3,3-1.37A3.24,3.24,0,0,1,4.8,16.59Zm3.2-8L6.86,11.62a3.25,3.25,0,0,1,2.28,0ZM6.41,11.8l-3-1.37,1.37,3A3.34,3.34,0,0,1,6.41,11.8Zm3.17,0a3.18,3.18,0,0,1,1.62,1.61l1.38-3Zm1.62,4.78a3.26,3.26,0,0,1-1.61,1.62l3,1.37ZM8,21.52a28.25,28.25,0,0,1,1.16-3.14,3.31,3.31,0,0,1-2.32,0Zm3.38-5.38L14.47,15l-3.08-1.14A3.28,3.28,0,0,1,11.4,16.14Z" />
                                         </g>
-                                        <image 
+                                        <image
                                             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAABbCAYAAAC/Ml0aAAAACXBIWXMAAAsSAAALEgHS3X78AAAEo0lEQVR4nO3d7WsURxwH8N+e8dJYg9AK8aE+EY01NoKVCgpaUdGX9W2LoqDF9/VlX/T+gb4tiAiW2lakgi/sGxsFKxSqtL4RHwIJjUlOz7vcxcsllzvvbsr8uhfW8y67tzezO5d+P7DsTtjb2dn53uzsnqAlhCCAyP/+CgBDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEAVjDICTuXBZy8VsGvVT3z6IZEYp//yTkEla53XW4nX9titzKECxV/dPwf4L128E9nx63wshCWN/O6MdfhNJe1f2DySIwBAGY6xzB6Z+JBH1/fZD/cvLYYdq4tgdX0SCt9E9TQbj/cIgeDT+b30YQzNJK/+DWAKypEaEd/fHgKQ2PJah3XQ/t3bm1qRa08tl2s+iDEPvul/ntmxe+Duyz7aapIGzv3UB01LENRmmlf5oKQv/m9byAmVrpH+W3hvjtizG5XnPwdExHefBC7Fu5Pvxl7JyzvH9Xn+qmGN3egb7NStuhY47wjb2O6SiXypWv7PK5mnJdO/r8j2AeP6u8vflCkfy21y/lvzWUy4VRe/OSvT7VajmeTC+Zys5clYV8ofi5XHd1Rn92lo/u/Wi1jgvkJjWVV97eodH40lKpfIUWaO/ugX5f7W30W4OOIPj5WOPjVSr0ZGSC1ws5uPtDpfV6lZrKKz1ebnaORsYTrvvt3ObvVti2PzrFX6ZdQ7CYjCdSobTG6PcI8l6Zyc5oO35mfJjGRkeoUhG0ctU6+mDLNm11eTqfbI6Kr8uh1G10EJ4nM1qOmxx+SE9/v05z0/8dv1QhGipUqNjRTXuOfEa9A7u01LsQOeolJqcCr7fK2CBkc7N8v1Qt/vg+PfrtyhtH7YgQvdcVoXwpR4PXfqDC3Cz1f7Iv0PamMtnQRgMyeY4QT6aVHzOfTb8VAqeuDotWLovQ3V+vUTadVF5/I3I0SGWmA6uvHiODIIdIHd+OkT9vuu6z4h2LIhbRvVs3lNffiAkTYuOCoPPbkUtOeNrv3ahFM6/0zE9qvS6VtE6IvTIuCDq/HdOpuKf95JzhxfgzLedQa+zFZCD1uDEqCLofF00jJ8M6JsR+GBUEXY+LpnqZfmXMmRkTBF2Pi6aSL49Maq8xQdDxuGiyMF8e1VM3CJZlRYM8CV2Pi6Yysb0N3yyuOnBiExG9by/d9tpYhb9+PB/Gua09dOaswZflubw0RDRpL0UhjtfdseHP0HV3tqxuOxTLHeHotNeBjiLAcvKp2LFwZ8s31kKIYjOXqKkguB7MsqrBqAalukih/MORNlftWGdnc+cLIZS+dVMaBE8Vvh0WcowsUdNvQYoU7U4mRwfP/00I4e3Nl0KBB8Erx22IakLTWRMWE25Lzo4le7vg2K4O000P2UExNgh+OUYcp1ZGGjnhqqV8aA4VEf0LkON7Lll6FgYAAAAASUVORK5CYII=" />
                                     </g>
                                 </g>
@@ -112,21 +128,23 @@
                             <label for="" class="cityNameLabel">CityName</label>
                         </div>
                         <div id="city3" class="city">
-                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 130 91">
+                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130 91">
                                 <g id="flag" data-name="flag">
                                     <g id="map1">
                                         <g id="city-flag">
                                             <g id="direk">
-                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1" height="47.7" />
-                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1" height="19.79"
-                                                    transform="translate(82.47 -47.53) rotate(90)" />
+                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1"
+                                                    height="47.7" />
+                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1"
+                                                    height="19.79" transform="translate(82.47 -47.53) rotate(90)" />
                                             </g>
-                                            <polygon id="flag-3-arkaplan" 
+                                            <polygon id="flag-3-arkaplan"
                                                 points="73 40.56 65 48.07 57 40.56 57 18.01 73 18.01 73 40.56" />
-                                            <path id="sembol-3"  d="M9,16.78c2.18.3-.37,4,2.69,2.9.42,0,1.16.31,1.09.78-.8-.66-.22.4-.3.76-.35-.7-.65-.1-.68.37-.62-1.12-4-.59-3.25-2.48-1.37-.83-2.29.36-.6-2.05-.1,1.88-5.6,2.61-2.94,3.35.88,0,1,.73.65,1.37-.26-.76-.33-.29-.5.18-.17-.67-.49-.39-.76,0-.6-1.1-1.34-1.13-.92-2.69-.83-1.64.79-.68,1.26-1.53C4.7,16.63,2.27,16.7,4,15c2.09-2.39-.24-3.8-2.34-2.29,1.73-.93,1.46-2.86.53-4.16,1.7-.12,1.11,1.3,1.71,2.21-.12-1.56,2.28-1.55.49-.21-.45,1,1.29,1.84.81,3,.22,1.07-2.7,2.93-.53,3,1.11-1.79,5.87-2.78,1.77-2C7.91,14.17,5.07,12.33,6,11,5.87,9.2,5.85,8.56,8.12,8.1c-1.22,1,2.84-.23,2.24,1.44-.13.86-1.18-.14-1.51.9.21.48,1.24.24,1.15-.28,1.13.37-.66,2,1.08,1.22-.22.44-.09.62.43,1,1.07-.86.08-3,1.75-2.93-.46.41.45.32.69.43-.83.18-.12.53.22.62-1.85.81-1,4-3.65,4.3,1.32-.13,2.28-.6,3.49-.5-.79.3.27.38.31.77-.62-.25-.51.16-.27.53C11.31,15.65,11.27,15.56,9,16.78ZM7.72,10.33a3.17,3.17,0,0,0-.65.35c.53-1.15.06-.55-.13.25.89-.77.37-.15.33.51.19-.17.31-.42.5-.56.13.45,1,1.75,1.14.69.23.39.54,1,1,1-.52-.28-1-1.74-1.25-.66-.35-.4-.16-1.35-.72-.55C8.17,10,7,11.72,7.72,10.33ZM9.65,14.7a1.63,1.63,0,0,0,.85-.31c-.14.2-.36.32-.44.56.26-.25.61-.48.68-.85A3.64,3.64,0,0,1,9.65,14.7ZM8.35,9c-.16,0-.29.23-.46.33l.59-.12C8.42,9.18,8.27,9.19,8.35,9Z"/>
+                                            <path id="sembol-3"
+                                                d="M9,16.78c2.18.3-.37,4,2.69,2.9.42,0,1.16.31,1.09.78-.8-.66-.22.4-.3.76-.35-.7-.65-.1-.68.37-.62-1.12-4-.59-3.25-2.48-1.37-.83-2.29.36-.6-2.05-.1,1.88-5.6,2.61-2.94,3.35.88,0,1,.73.65,1.37-.26-.76-.33-.29-.5.18-.17-.67-.49-.39-.76,0-.6-1.1-1.34-1.13-.92-2.69-.83-1.64.79-.68,1.26-1.53C4.7,16.63,2.27,16.7,4,15c2.09-2.39-.24-3.8-2.34-2.29,1.73-.93,1.46-2.86.53-4.16,1.7-.12,1.11,1.3,1.71,2.21-.12-1.56,2.28-1.55.49-.21-.45,1,1.29,1.84.81,3,.22,1.07-2.7,2.93-.53,3,1.11-1.79,5.87-2.78,1.77-2C7.91,14.17,5.07,12.33,6,11,5.87,9.2,5.85,8.56,8.12,8.1c-1.22,1,2.84-.23,2.24,1.44-.13.86-1.18-.14-1.51.9.21.48,1.24.24,1.15-.28,1.13.37-.66,2,1.08,1.22-.22.44-.09.62.43,1,1.07-.86.08-3,1.75-2.93-.46.41.45.32.69.43-.83.18-.12.53.22.62-1.85.81-1,4-3.65,4.3,1.32-.13,2.28-.6,3.49-.5-.79.3.27.38.31.77-.62-.25-.51.16-.27.53C11.31,15.65,11.27,15.56,9,16.78ZM7.72,10.33a3.17,3.17,0,0,0-.65.35c.53-1.15.06-.55-.13.25.89-.77.37-.15.33.51.19-.17.31-.42.5-.56.13.45,1,1.75,1.14.69.23.39.54,1,1,1-.52-.28-1-1.74-1.25-.66-.35-.4-.16-1.35-.72-.55C8.17,10,7,11.72,7.72,10.33ZM9.65,14.7a1.63,1.63,0,0,0,.85-.31c-.14.2-.36.32-.44.56.26-.25.61-.48.68-.85A3.64,3.64,0,0,1,9.65,14.7ZM8.35,9c-.16,0-.29.23-.46.33l.59-.12C8.42,9.18,8.27,9.19,8.35,9Z" />
                                         </g>
-                                        <image 
+                                        <image
                                             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAABbCAYAAAC/Ml0aAAAACXBIWXMAAAsSAAALEgHS3X78AAAEo0lEQVR4nO3d7WsURxwH8N+e8dJYg9AK8aE+EY01NoKVCgpaUdGX9W2LoqDF9/VlX/T+gb4tiAiW2lakgi/sGxsFKxSqtL4RHwIJjUlOz7vcxcsllzvvbsr8uhfW8y67tzezO5d+P7DsTtjb2dn53uzsnqAlhCCAyP/+CgBDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEAVjDICTuXBZy8VsGvVT3z6IZEYp//yTkEla53XW4nX9titzKECxV/dPwf4L128E9nx63wshCWN/O6MdfhNJe1f2DySIwBAGY6xzB6Z+JBH1/fZD/cvLYYdq4tgdX0SCt9E9TQbj/cIgeDT+b30YQzNJK/+DWAKypEaEd/fHgKQ2PJah3XQ/t3bm1qRa08tl2s+iDEPvul/ntmxe+Duyz7aapIGzv3UB01LENRmmlf5oKQv/m9byAmVrpH+W3hvjtizG5XnPwdExHefBC7Fu5Pvxl7JyzvH9Xn+qmGN3egb7NStuhY47wjb2O6SiXypWv7PK5mnJdO/r8j2AeP6u8vflCkfy21y/lvzWUy4VRe/OSvT7VajmeTC+Zys5clYV8ofi5XHd1Rn92lo/u/Wi1jgvkJjWVV97eodH40lKpfIUWaO/ugX5f7W30W4OOIPj5WOPjVSr0ZGSC1ws5uPtDpfV6lZrKKz1ebnaORsYTrvvt3ObvVti2PzrFX6ZdQ7CYjCdSobTG6PcI8l6Zyc5oO35mfJjGRkeoUhG0ctU6+mDLNm11eTqfbI6Kr8uh1G10EJ4nM1qOmxx+SE9/v05z0/8dv1QhGipUqNjRTXuOfEa9A7u01LsQOeolJqcCr7fK2CBkc7N8v1Qt/vg+PfrtyhtH7YgQvdcVoXwpR4PXfqDC3Cz1f7Iv0PamMtnQRgMyeY4QT6aVHzOfTb8VAqeuDotWLovQ3V+vUTadVF5/I3I0SGWmA6uvHiODIIdIHd+OkT9vuu6z4h2LIhbRvVs3lNffiAkTYuOCoPPbkUtOeNrv3ahFM6/0zE9qvS6VtE6IvTIuCDq/HdOpuKf95JzhxfgzLedQa+zFZCD1uDEqCLofF00jJ8M6JsR+GBUEXY+LpnqZfmXMmRkTBF2Pi6aSL49Maq8xQdDxuGiyMF8e1VM3CJZlRYM8CV2Pi6Yysb0N3yyuOnBiExG9by/d9tpYhb9+PB/Gua09dOaswZflubw0RDRpL0UhjtfdseHP0HV3tqxuOxTLHeHotNeBjiLAcvKp2LFwZ8s31kKIYjOXqKkguB7MsqrBqAalukih/MORNlftWGdnc+cLIZS+dVMaBE8Vvh0WcowsUdNvQYoU7U4mRwfP/00I4e3Nl0KBB8Erx22IakLTWRMWE25Lzo4le7vg2K4O000P2UExNgh+OUYcp1ZGGjnhqqV8aA4VEf0LkON7Lll6FgYAAAAASUVORK5CYII=" />
                                     </g>
                                 </g>
@@ -134,21 +152,23 @@
                             <label for="" class="cityNameLabel">CityName</label>
                         </div>
                         <div id="city4" class="city">
-                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 130 91">
+                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130 91">
                                 <g id="flag" data-name="flag">
                                     <g id="map1">
                                         <g id="city-flag">
                                             <g id="direk">
-                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1" height="47.7" />
-                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1" height="19.79"
-                                                    transform="translate(82.47 -47.53) rotate(90)" />
+                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1"
+                                                    height="47.7" />
+                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1"
+                                                    height="19.79" transform="translate(82.47 -47.53) rotate(90)" />
                                             </g>
-                                            <polygon id="flag-2-arkaplan" 
+                                            <polygon id="flag-2-arkaplan"
                                                 points="73 40.56 65 48.07 57 40.56 57 18.01 73 18.01 73 40.56" />
-                                            <path id="sembol-2"  d="M6.56,21.77c-.42-1.21.62-.39,1.27-2.82C6,18.65,4.07,22.7,5.24,20c-2,.74.78-.25,1.25-1A2.41,2.41,0,0,0,4,19.71c0-.33.55-.57.82-.92C1.13,19.1,10.24,18.54,7,16c-1,1.13-2.92.25-3.9-.48-.19-.31-1.28-2-.34-1.89,0-.42-.32-1,.36-.83.47-.39-.5-1.84.33-1.69.08-.33-.31-1.08.35-.83-.1-.6.63-.42.92-.41.57.23.17-.81.76-.35.13-.31-.11-1.12.49-.74,0-.28,1.48-1.09,1.44-.43.19-.46.44-.47.65,0,.29-.34.55-.48.71,0,0-.65,1.44.23,1.38.45.55-.41.4.37.47.72.59-.39.21.56.74.37.76-.1,1.43.31,1.22,1.24,1-.28-.49,1.48.37,1.4l0,.3c.64-.24.32.46.35.84.95,0-.25,2.21-1.12,2.05-.68.91-2.49.82-3.53.48C8.24,19,11,18.27,12.68,19l-1.22-.22c.27.35.85.64.88,1A2.45,2.45,0,0,0,9.88,19c.45.82,3.17,1.55,1.2,1,.48.72,1.38,1.05.08.47.53,1.5-1.23-1.87-2.45-1.64C7.56,20,12.13,22.21,9.7,21c.26,1.86,0-.53-1-.73s0,1.36.18,1.74l-.18-.24-.12.19a2.59,2.59,0,0,0-.51-1,1.32,1.32,0,0,0-.25.91l-.12-.17-.23.36A4.48,4.48,0,0,0,8,20.13C7.07,20.19,6.83,21.18,6.56,21.77Z"/>
+                                            <path id="sembol-2"
+                                                d="M6.56,21.77c-.42-1.21.62-.39,1.27-2.82C6,18.65,4.07,22.7,5.24,20c-2,.74.78-.25,1.25-1A2.41,2.41,0,0,0,4,19.71c0-.33.55-.57.82-.92C1.13,19.1,10.24,18.54,7,16c-1,1.13-2.92.25-3.9-.48-.19-.31-1.28-2-.34-1.89,0-.42-.32-1,.36-.83.47-.39-.5-1.84.33-1.69.08-.33-.31-1.08.35-.83-.1-.6.63-.42.92-.41.57.23.17-.81.76-.35.13-.31-.11-1.12.49-.74,0-.28,1.48-1.09,1.44-.43.19-.46.44-.47.65,0,.29-.34.55-.48.71,0,0-.65,1.44.23,1.38.45.55-.41.4.37.47.72.59-.39.21.56.74.37.76-.1,1.43.31,1.22,1.24,1-.28-.49,1.48.37,1.4l0,.3c.64-.24.32.46.35.84.95,0-.25,2.21-1.12,2.05-.68.91-2.49.82-3.53.48C8.24,19,11,18.27,12.68,19l-1.22-.22c.27.35.85.64.88,1A2.45,2.45,0,0,0,9.88,19c.45.82,3.17,1.55,1.2,1,.48.72,1.38,1.05.08.47.53,1.5-1.23-1.87-2.45-1.64C7.56,20,12.13,22.21,9.7,21c.26,1.86,0-.53-1-.73s0,1.36.18,1.74l-.18-.24-.12.19a2.59,2.59,0,0,0-.51-1,1.32,1.32,0,0,0-.25.91l-.12-.17-.23.36A4.48,4.48,0,0,0,8,20.13C7.07,20.19,6.83,21.18,6.56,21.77Z" />
                                         </g>
-                                        <image 
+                                        <image
                                             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAABbCAYAAAC/Ml0aAAAACXBIWXMAAAsSAAALEgHS3X78AAAEo0lEQVR4nO3d7WsURxwH8N+e8dJYg9AK8aE+EY01NoKVCgpaUdGX9W2LoqDF9/VlX/T+gb4tiAiW2lakgi/sGxsFKxSqtL4RHwIJjUlOz7vcxcsllzvvbsr8uhfW8y67tzezO5d+P7DsTtjb2dn53uzsnqAlhCCAyP/+CgBDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEAVjDICTuXBZy8VsGvVT3z6IZEYp//yTkEla53XW4nX9titzKECxV/dPwf4L128E9nx63wshCWN/O6MdfhNJe1f2DySIwBAGY6xzB6Z+JBH1/fZD/cvLYYdq4tgdX0SCt9E9TQbj/cIgeDT+b30YQzNJK/+DWAKypEaEd/fHgKQ2PJah3XQ/t3bm1qRa08tl2s+iDEPvul/ntmxe+Duyz7aapIGzv3UB01LENRmmlf5oKQv/m9byAmVrpH+W3hvjtizG5XnPwdExHefBC7Fu5Pvxl7JyzvH9Xn+qmGN3egb7NStuhY47wjb2O6SiXypWv7PK5mnJdO/r8j2AeP6u8vflCkfy21y/lvzWUy4VRe/OSvT7VajmeTC+Zys5clYV8ofi5XHd1Rn92lo/u/Wi1jgvkJjWVV97eodH40lKpfIUWaO/ugX5f7W30W4OOIPj5WOPjVSr0ZGSC1ws5uPtDpfV6lZrKKz1ebnaORsYTrvvt3ObvVti2PzrFX6ZdQ7CYjCdSobTG6PcI8l6Zyc5oO35mfJjGRkeoUhG0ctU6+mDLNm11eTqfbI6Kr8uh1G10EJ4nM1qOmxx+SE9/v05z0/8dv1QhGipUqNjRTXuOfEa9A7u01LsQOeolJqcCr7fK2CBkc7N8v1Qt/vg+PfrtyhtH7YgQvdcVoXwpR4PXfqDC3Cz1f7Iv0PamMtnQRgMyeY4QT6aVHzOfTb8VAqeuDotWLovQ3V+vUTadVF5/I3I0SGWmA6uvHiODIIdIHd+OkT9vuu6z4h2LIhbRvVs3lNffiAkTYuOCoPPbkUtOeNrv3ahFM6/0zE9qvS6VtE6IvTIuCDq/HdOpuKf95JzhxfgzLedQa+zFZCD1uDEqCLofF00jJ8M6JsR+GBUEXY+LpnqZfmXMmRkTBF2Pi6aSL49Maq8xQdDxuGiyMF8e1VM3CJZlRYM8CV2Pi6Yysb0N3yyuOnBiExG9by/d9tpYhb9+PB/Gua09dOaswZflubw0RDRpL0UhjtfdseHP0HV3tqxuOxTLHeHotNeBjiLAcvKp2LFwZ8s31kKIYjOXqKkguB7MsqrBqAalukih/MORNlftWGdnc+cLIZS+dVMaBE8Vvh0WcowsUdNvQYoU7U4mRwfP/00I4e3Nl0KBB8Erx22IakLTWRMWE25Lzo4le7vg2K4O000P2UExNgh+OUYcp1ZGGjnhqqV8aA4VEf0LkON7Lll6FgYAAAAASUVORK5CYII=" />
                                     </g>
                                 </g>
@@ -156,21 +176,23 @@
                             <label for="" class="cityNameLabel">CityName</label>
                         </div>
                         <div id="city5" class="city">
-                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 130 91">
+                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130 91">
                                 <g id="flag" data-name="flag">
                                     <g id="map1">
                                         <g id="city-flag">
                                             <g id="direk">
-                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1" height="47.7" />
-                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1" height="19.79"
-                                                    transform="translate(82.47 -47.53) rotate(90)" />
+                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1"
+                                                    height="47.7" />
+                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1"
+                                                    height="19.79" transform="translate(82.47 -47.53) rotate(90)" />
                                             </g>
-                                            <polygon id="flag-5-arkaplan" 
+                                            <polygon id="flag-5-arkaplan"
                                                 points="73 40.56 65 48.07 57 40.56 57 18.01 73 18.01 73 40.56" />
-                                            <path id="sembol-5"  d="M9,16.78c2.18.3-.37,4,2.69,2.9.42,0,1.16.31,1.09.78-.8-.66-.22.4-.3.76-.35-.7-.65-.1-.68.37-.62-1.12-4-.59-3.25-2.48-1.37-.83-2.29.36-.6-2.05-.1,1.88-5.6,2.61-2.94,3.35.88,0,1,.73.65,1.37-.26-.76-.33-.29-.5.18-.17-.67-.49-.39-.76,0-.6-1.1-1.34-1.13-.92-2.69-.83-1.64.79-.68,1.26-1.53C4.7,16.63,2.27,16.7,4,15c2.09-2.39-.24-3.8-2.34-2.29,1.73-.93,1.46-2.86.53-4.16,1.7-.12,1.11,1.3,1.71,2.21-.12-1.56,2.28-1.55.49-.21-.45,1,1.29,1.84.81,3,.22,1.07-2.7,2.93-.53,3,1.11-1.79,5.87-2.78,1.77-2C7.91,14.17,5.07,12.33,6,11,5.87,9.2,5.85,8.56,8.12,8.1c-1.22,1,2.84-.23,2.24,1.44-.13.86-1.18-.14-1.51.9.21.48,1.24.24,1.15-.28,1.13.37-.66,2,1.08,1.22-.22.44-.09.62.43,1,1.07-.86.08-3,1.75-2.93-.46.41.45.32.69.43-.83.18-.12.53.22.62-1.85.81-1,4-3.65,4.3,1.32-.13,2.28-.6,3.49-.5-.79.3.27.38.31.77-.62-.25-.51.16-.27.53C11.31,15.65,11.27,15.56,9,16.78ZM7.72,10.33a3.17,3.17,0,0,0-.65.35c.53-1.15.06-.55-.13.25.89-.77.37-.15.33.51.19-.17.31-.42.5-.56.13.45,1,1.75,1.14.69.23.39.54,1,1,1-.52-.28-1-1.74-1.25-.66-.35-.4-.16-1.35-.72-.55C8.17,10,7,11.72,7.72,10.33ZM9.65,14.7a1.63,1.63,0,0,0,.85-.31c-.14.2-.36.32-.44.56.26-.25.61-.48.68-.85A3.64,3.64,0,0,1,9.65,14.7ZM8.35,9c-.16,0-.29.23-.46.33l.59-.12C8.42,9.18,8.27,9.19,8.35,9Z"/>
+                                            <path id="sembol-5"
+                                                d="M9,16.78c2.18.3-.37,4,2.69,2.9.42,0,1.16.31,1.09.78-.8-.66-.22.4-.3.76-.35-.7-.65-.1-.68.37-.62-1.12-4-.59-3.25-2.48-1.37-.83-2.29.36-.6-2.05-.1,1.88-5.6,2.61-2.94,3.35.88,0,1,.73.65,1.37-.26-.76-.33-.29-.5.18-.17-.67-.49-.39-.76,0-.6-1.1-1.34-1.13-.92-2.69-.83-1.64.79-.68,1.26-1.53C4.7,16.63,2.27,16.7,4,15c2.09-2.39-.24-3.8-2.34-2.29,1.73-.93,1.46-2.86.53-4.16,1.7-.12,1.11,1.3,1.71,2.21-.12-1.56,2.28-1.55.49-.21-.45,1,1.29,1.84.81,3,.22,1.07-2.7,2.93-.53,3,1.11-1.79,5.87-2.78,1.77-2C7.91,14.17,5.07,12.33,6,11,5.87,9.2,5.85,8.56,8.12,8.1c-1.22,1,2.84-.23,2.24,1.44-.13.86-1.18-.14-1.51.9.21.48,1.24.24,1.15-.28,1.13.37-.66,2,1.08,1.22-.22.44-.09.62.43,1,1.07-.86.08-3,1.75-2.93-.46.41.45.32.69.43-.83.18-.12.53.22.62-1.85.81-1,4-3.65,4.3,1.32-.13,2.28-.6,3.49-.5-.79.3.27.38.31.77-.62-.25-.51.16-.27.53C11.31,15.65,11.27,15.56,9,16.78ZM7.72,10.33a3.17,3.17,0,0,0-.65.35c.53-1.15.06-.55-.13.25.89-.77.37-.15.33.51.19-.17.31-.42.5-.56.13.45,1,1.75,1.14.69.23.39.54,1,1,1-.52-.28-1-1.74-1.25-.66-.35-.4-.16-1.35-.72-.55C8.17,10,7,11.72,7.72,10.33ZM9.65,14.7a1.63,1.63,0,0,0,.85-.31c-.14.2-.36.32-.44.56.26-.25.61-.48.68-.85A3.64,3.64,0,0,1,9.65,14.7ZM8.35,9c-.16,0-.29.23-.46.33l.59-.12C8.42,9.18,8.27,9.19,8.35,9Z" />
                                         </g>
-                                        <image 
+                                        <image
                                             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAABbCAYAAAC/Ml0aAAAACXBIWXMAAAsSAAALEgHS3X78AAAEo0lEQVR4nO3d7WsURxwH8N+e8dJYg9AK8aE+EY01NoKVCgpaUdGX9W2LoqDF9/VlX/T+gb4tiAiW2lakgi/sGxsFKxSqtL4RHwIJjUlOz7vcxcsllzvvbsr8uhfW8y67tzezO5d+P7DsTtjb2dn53uzsnqAlhCCAyP/+CgBDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEAVjDICTuXBZy8VsGvVT3z6IZEYp//yTkEla53XW4nX9titzKECxV/dPwf4L128E9nx63wshCWN/O6MdfhNJe1f2DySIwBAGY6xzB6Z+JBH1/fZD/cvLYYdq4tgdX0SCt9E9TQbj/cIgeDT+b30YQzNJK/+DWAKypEaEd/fHgKQ2PJah3XQ/t3bm1qRa08tl2s+iDEPvul/ntmxe+Duyz7aapIGzv3UB01LENRmmlf5oKQv/m9byAmVrpH+W3hvjtizG5XnPwdExHefBC7Fu5Pvxl7JyzvH9Xn+qmGN3egb7NStuhY47wjb2O6SiXypWv7PK5mnJdO/r8j2AeP6u8vflCkfy21y/lvzWUy4VRe/OSvT7VajmeTC+Zys5clYV8ofi5XHd1Rn92lo/u/Wi1jgvkJjWVV97eodH40lKpfIUWaO/ugX5f7W30W4OOIPj5WOPjVSr0ZGSC1ws5uPtDpfV6lZrKKz1ebnaORsYTrvvt3ObvVti2PzrFX6ZdQ7CYjCdSobTG6PcI8l6Zyc5oO35mfJjGRkeoUhG0ctU6+mDLNm11eTqfbI6Kr8uh1G10EJ4nM1qOmxx+SE9/v05z0/8dv1QhGipUqNjRTXuOfEa9A7u01LsQOeolJqcCr7fK2CBkc7N8v1Qt/vg+PfrtyhtH7YgQvdcVoXwpR4PXfqDC3Cz1f7Iv0PamMtnQRgMyeY4QT6aVHzOfTb8VAqeuDotWLovQ3V+vUTadVF5/I3I0SGWmA6uvHiODIIdIHd+OkT9vuu6z4h2LIhbRvVs3lNffiAkTYuOCoPPbkUtOeNrv3ahFM6/0zE9qvS6VtE6IvTIuCDq/HdOpuKf95JzhxfgzLedQa+zFZCD1uDEqCLofF00jJ8M6JsR+GBUEXY+LpnqZfmXMmRkTBF2Pi6aSL49Maq8xQdDxuGiyMF8e1VM3CJZlRYM8CV2Pi6Yysb0N3yyuOnBiExG9by/d9tpYhb9+PB/Gua09dOaswZflubw0RDRpL0UhjtfdseHP0HV3tqxuOxTLHeHotNeBjiLAcvKp2LFwZ8s31kKIYjOXqKkguB7MsqrBqAalukih/MORNlftWGdnc+cLIZS+dVMaBE8Vvh0WcowsUdNvQYoU7U4mRwfP/00I4e3Nl0KBB8Erx22IakLTWRMWE25Lzo4le7vg2K4O000P2UExNgh+OUYcp1ZGGjnhqqV8aA4VEf0LkON7Lll6FgYAAAAASUVORK5CYII=" />
                                     </g>
                                 </g>
@@ -178,21 +200,23 @@
                             <label for="" class="cityNameLabel">CityName</label>
                         </div>
                         <div id="city6" class="city">
-                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 130 91">
+                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130 91">
                                 <g id="flag" data-name="flag">
                                     <g id="map1">
                                         <g id="city-flag">
                                             <g id="direk">
-                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1" height="47.7" />
-                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1" height="19.79"
-                                                    transform="translate(82.47 -47.53) rotate(90)" />
+                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1"
+                                                    height="47.7" />
+                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1"
+                                                    height="19.79" transform="translate(82.47 -47.53) rotate(90)" />
                                             </g>
-                                            <polygon id="flag-3-arkaplan" 
+                                            <polygon id="flag-3-arkaplan"
                                                 points="73 40.56 65 48.07 57 40.56 57 18.01 73 18.01 73 40.56" />
-                                            <path id="sembol-3"  d="M6.81,17.46c-.4.36-.82.81-.49,1.38a1.77,1.77,0,0,0,1,.76,1.23,1.23,0,0,0,1.4-.74A4.7,4.7,0,0,0,9,17.18a11.46,11.46,0,0,0-.2-1.69l.7.34c.18-1.13,1.34-1,1.93-1.57.07-.07.31,0,.46.08s.33.17.58.3l-.14-1.54h.07l.47,1.18a2.5,2.5,0,0,1,2.33.43A8.27,8.27,0,0,0,10,10.43c.26.31.42.48.56.66.56.77.59,1.75,0,2.13a2.54,2.54,0,0,1-1.36.38c-.27,0-.52-.44-.77-.68s-.22-.24-.35-.34A2.93,2.93,0,0,0,7.33,12c-.23-.09-1,.75-1.09,1.08H7l.42,0c0,.16.08.37,0,.45a.58.58,0,0,1-.46.15,4.64,4.64,0,0,1-.64-.17c-1.15-.17-1.58-.92-1.09-2a9.13,9.13,0,0,1,.7-1.06,8.1,8.1,0,0,0-5,4.26,2.39,2.39,0,0,1,2.33-.46l.47-1.16.06,0-.12,1.51c.91-.5.91-.5,1.68.11a.29.29,0,0,0,.16.07c.68,0,1,.44,1.14,1l.64-.34.67,1.08a2.12,2.12,0,0,1,.25,1.86A.92.92,0,0,1,7,19c-.5-.21-.52-.62-.4-1.07A5.21,5.21,0,0,1,6.81,17.46Z"/>
+                                            <path id="sembol-3"
+                                                d="M6.81,17.46c-.4.36-.82.81-.49,1.38a1.77,1.77,0,0,0,1,.76,1.23,1.23,0,0,0,1.4-.74A4.7,4.7,0,0,0,9,17.18a11.46,11.46,0,0,0-.2-1.69l.7.34c.18-1.13,1.34-1,1.93-1.57.07-.07.31,0,.46.08s.33.17.58.3l-.14-1.54h.07l.47,1.18a2.5,2.5,0,0,1,2.33.43A8.27,8.27,0,0,0,10,10.43c.26.31.42.48.56.66.56.77.59,1.75,0,2.13a2.54,2.54,0,0,1-1.36.38c-.27,0-.52-.44-.77-.68s-.22-.24-.35-.34A2.93,2.93,0,0,0,7.33,12c-.23-.09-1,.75-1.09,1.08H7l.42,0c0,.16.08.37,0,.45a.58.58,0,0,1-.46.15,4.64,4.64,0,0,1-.64-.17c-1.15-.17-1.58-.92-1.09-2a9.13,9.13,0,0,1,.7-1.06,8.1,8.1,0,0,0-5,4.26,2.39,2.39,0,0,1,2.33-.46l.47-1.16.06,0-.12,1.51c.91-.5.91-.5,1.68.11a.29.29,0,0,0,.16.07c.68,0,1,.44,1.14,1l.64-.34.67,1.08a2.12,2.12,0,0,1,.25,1.86A.92.92,0,0,1,7,19c-.5-.21-.52-.62-.4-1.07A5.21,5.21,0,0,1,6.81,17.46Z" />
                                         </g>
-                                        <image 
+                                        <image
                                             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAABbCAYAAAC/Ml0aAAAACXBIWXMAAAsSAAALEgHS3X78AAAEo0lEQVR4nO3d7WsURxwH8N+e8dJYg9AK8aE+EY01NoKVCgpaUdGX9W2LoqDF9/VlX/T+gb4tiAiW2lakgi/sGxsFKxSqtL4RHwIJjUlOz7vcxcsllzvvbsr8uhfW8y67tzezO5d+P7DsTtjb2dn53uzsnqAlhCCAyP/+CgBDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEAVjDICTuXBZy8VsGvVT3z6IZEYp//yTkEla53XW4nX9titzKECxV/dPwf4L128E9nx63wshCWN/O6MdfhNJe1f2DySIwBAGY6xzB6Z+JBH1/fZD/cvLYYdq4tgdX0SCt9E9TQbj/cIgeDT+b30YQzNJK/+DWAKypEaEd/fHgKQ2PJah3XQ/t3bm1qRa08tl2s+iDEPvul/ntmxe+Duyz7aapIGzv3UB01LENRmmlf5oKQv/m9byAmVrpH+W3hvjtizG5XnPwdExHefBC7Fu5Pvxl7JyzvH9Xn+qmGN3egb7NStuhY47wjb2O6SiXypWv7PK5mnJdO/r8j2AeP6u8vflCkfy21y/lvzWUy4VRe/OSvT7VajmeTC+Zys5clYV8ofi5XHd1Rn92lo/u/Wi1jgvkJjWVV97eodH40lKpfIUWaO/ugX5f7W30W4OOIPj5WOPjVSr0ZGSC1ws5uPtDpfV6lZrKKz1ebnaORsYTrvvt3ObvVti2PzrFX6ZdQ7CYjCdSobTG6PcI8l6Zyc5oO35mfJjGRkeoUhG0ctU6+mDLNm11eTqfbI6Kr8uh1G10EJ4nM1qOmxx+SE9/v05z0/8dv1QhGipUqNjRTXuOfEa9A7u01LsQOeolJqcCr7fK2CBkc7N8v1Qt/vg+PfrtyhtH7YgQvdcVoXwpR4PXfqDC3Cz1f7Iv0PamMtnQRgMyeY4QT6aVHzOfTb8VAqeuDotWLovQ3V+vUTadVF5/I3I0SGWmA6uvHiODIIdIHd+OkT9vuu6z4h2LIhbRvVs3lNffiAkTYuOCoPPbkUtOeNrv3ahFM6/0zE9qvS6VtE6IvTIuCDq/HdOpuKf95JzhxfgzLedQa+zFZCD1uDEqCLofF00jJ8M6JsR+GBUEXY+LpnqZfmXMmRkTBF2Pi6aSL49Maq8xQdDxuGiyMF8e1VM3CJZlRYM8CV2Pi6Yysb0N3yyuOnBiExG9by/d9tpYhb9+PB/Gua09dOaswZflubw0RDRpL0UhjtfdseHP0HV3tqxuOxTLHeHotNeBjiLAcvKp2LFwZ8s31kKIYjOXqKkguB7MsqrBqAalukih/MORNlftWGdnc+cLIZS+dVMaBE8Vvh0WcowsUdNvQYoU7U4mRwfP/00I4e3Nl0KBB8Erx22IakLTWRMWE25Lzo4le7vg2K4O000P2UExNgh+OUYcp1ZGGjnhqqV8aA4VEf0LkON7Lll6FgYAAAAASUVORK5CYII=" />
                                     </g>
                                 </g>
@@ -200,21 +224,23 @@
                             <label for="" class="cityNameLabel">CityName</label>
                         </div>
                         <div id="city7" class="city">
-                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 130 91">
+                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130 91">
                                 <g id="flag" data-name="flag">
                                     <g id="map1">
                                         <g id="city-flag">
                                             <g id="direk">
-                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1" height="47.7" />
-                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1" height="19.79"
-                                                    transform="translate(82.47 -47.53) rotate(90)" />
+                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1"
+                                                    height="47.7" />
+                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1"
+                                                    height="19.79" transform="translate(82.47 -47.53) rotate(90)" />
                                             </g>
-                                            <polygon id="flag-7-arkaplan" 
+                                            <polygon id="flag-7-arkaplan"
                                                 points="73 40.56 65 48.07 57 40.56 57 18.01 73 18.01 73 40.56" />
-                                            <path id="sembol-7"  d="M9,16.78c2.18.3-.37,4,2.69,2.9.42,0,1.16.31,1.09.78-.8-.66-.22.4-.3.76-.35-.7-.65-.1-.68.37-.62-1.12-4-.59-3.25-2.48-1.37-.83-2.29.36-.6-2.05-.1,1.88-5.6,2.61-2.94,3.35.88,0,1,.73.65,1.37-.26-.76-.33-.29-.5.18-.17-.67-.49-.39-.76,0-.6-1.1-1.34-1.13-.92-2.69-.83-1.64.79-.68,1.26-1.53C4.7,16.63,2.27,16.7,4,15c2.09-2.39-.24-3.8-2.34-2.29,1.73-.93,1.46-2.86.53-4.16,1.7-.12,1.11,1.3,1.71,2.21-.12-1.56,2.28-1.55.49-.21-.45,1,1.29,1.84.81,3,.22,1.07-2.7,2.93-.53,3,1.11-1.79,5.87-2.78,1.77-2C7.91,14.17,5.07,12.33,6,11,5.87,9.2,5.85,8.56,8.12,8.1c-1.22,1,2.84-.23,2.24,1.44-.13.86-1.18-.14-1.51.9.21.48,1.24.24,1.15-.28,1.13.37-.66,2,1.08,1.22-.22.44-.09.62.43,1,1.07-.86.08-3,1.75-2.93-.46.41.45.32.69.43-.83.18-.12.53.22.62-1.85.81-1,4-3.65,4.3,1.32-.13,2.28-.6,3.49-.5-.79.3.27.38.31.77-.62-.25-.51.16-.27.53C11.31,15.65,11.27,15.56,9,16.78ZM7.72,10.33a3.17,3.17,0,0,0-.65.35c.53-1.15.06-.55-.13.25.89-.77.37-.15.33.51.19-.17.31-.42.5-.56.13.45,1,1.75,1.14.69.23.39.54,1,1,1-.52-.28-1-1.74-1.25-.66-.35-.4-.16-1.35-.72-.55C8.17,10,7,11.72,7.72,10.33ZM9.65,14.7a1.63,1.63,0,0,0,.85-.31c-.14.2-.36.32-.44.56.26-.25.61-.48.68-.85A3.64,3.64,0,0,1,9.65,14.7ZM8.35,9c-.16,0-.29.23-.46.33l.59-.12C8.42,9.18,8.27,9.19,8.35,9Z"/>
+                                            <path id="sembol-7"
+                                                d="M9,16.78c2.18.3-.37,4,2.69,2.9.42,0,1.16.31,1.09.78-.8-.66-.22.4-.3.76-.35-.7-.65-.1-.68.37-.62-1.12-4-.59-3.25-2.48-1.37-.83-2.29.36-.6-2.05-.1,1.88-5.6,2.61-2.94,3.35.88,0,1,.73.65,1.37-.26-.76-.33-.29-.5.18-.17-.67-.49-.39-.76,0-.6-1.1-1.34-1.13-.92-2.69-.83-1.64.79-.68,1.26-1.53C4.7,16.63,2.27,16.7,4,15c2.09-2.39-.24-3.8-2.34-2.29,1.73-.93,1.46-2.86.53-4.16,1.7-.12,1.11,1.3,1.71,2.21-.12-1.56,2.28-1.55.49-.21-.45,1,1.29,1.84.81,3,.22,1.07-2.7,2.93-.53,3,1.11-1.79,5.87-2.78,1.77-2C7.91,14.17,5.07,12.33,6,11,5.87,9.2,5.85,8.56,8.12,8.1c-1.22,1,2.84-.23,2.24,1.44-.13.86-1.18-.14-1.51.9.21.48,1.24.24,1.15-.28,1.13.37-.66,2,1.08,1.22-.22.44-.09.62.43,1,1.07-.86.08-3,1.75-2.93-.46.41.45.32.69.43-.83.18-.12.53.22.62-1.85.81-1,4-3.65,4.3,1.32-.13,2.28-.6,3.49-.5-.79.3.27.38.31.77-.62-.25-.51.16-.27.53C11.31,15.65,11.27,15.56,9,16.78ZM7.72,10.33a3.17,3.17,0,0,0-.65.35c.53-1.15.06-.55-.13.25.89-.77.37-.15.33.51.19-.17.31-.42.5-.56.13.45,1,1.75,1.14.69.23.39.54,1,1,1-.52-.28-1-1.74-1.25-.66-.35-.4-.16-1.35-.72-.55C8.17,10,7,11.72,7.72,10.33ZM9.65,14.7a1.63,1.63,0,0,0,.85-.31c-.14.2-.36.32-.44.56.26-.25.61-.48.68-.85A3.64,3.64,0,0,1,9.65,14.7ZM8.35,9c-.16,0-.29.23-.46.33l.59-.12C8.42,9.18,8.27,9.19,8.35,9Z" />
                                         </g>
-                                        <image 
+                                        <image
                                             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAABbCAYAAAC/Ml0aAAAACXBIWXMAAAsSAAALEgHS3X78AAAEo0lEQVR4nO3d7WsURxwH8N+e8dJYg9AK8aE+EY01NoKVCgpaUdGX9W2LoqDF9/VlX/T+gb4tiAiW2lakgi/sGxsFKxSqtL4RHwIJjUlOz7vcxcsllzvvbsr8uhfW8y67tzezO5d+P7DsTtjb2dn53uzsnqAlhCCAyP/+CgBDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEAVjDICTuXBZy8VsGvVT3z6IZEYp//yTkEla53XW4nX9titzKECxV/dPwf4L128E9nx63wshCWN/O6MdfhNJe1f2DySIwBAGY6xzB6Z+JBH1/fZD/cvLYYdq4tgdX0SCt9E9TQbj/cIgeDT+b30YQzNJK/+DWAKypEaEd/fHgKQ2PJah3XQ/t3bm1qRa08tl2s+iDEPvul/ntmxe+Duyz7aapIGzv3UB01LENRmmlf5oKQv/m9byAmVrpH+W3hvjtizG5XnPwdExHefBC7Fu5Pvxl7JyzvH9Xn+qmGN3egb7NStuhY47wjb2O6SiXypWv7PK5mnJdO/r8j2AeP6u8vflCkfy21y/lvzWUy4VRe/OSvT7VajmeTC+Zys5clYV8ofi5XHd1Rn92lo/u/Wi1jgvkJjWVV97eodH40lKpfIUWaO/ugX5f7W30W4OOIPj5WOPjVSr0ZGSC1ws5uPtDpfV6lZrKKz1ebnaORsYTrvvt3ObvVti2PzrFX6ZdQ7CYjCdSobTG6PcI8l6Zyc5oO35mfJjGRkeoUhG0ctU6+mDLNm11eTqfbI6Kr8uh1G10EJ4nM1qOmxx+SE9/v05z0/8dv1QhGipUqNjRTXuOfEa9A7u01LsQOeolJqcCr7fK2CBkc7N8v1Qt/vg+PfrtyhtH7YgQvdcVoXwpR4PXfqDC3Cz1f7Iv0PamMtnQRgMyeY4QT6aVHzOfTb8VAqeuDotWLovQ3V+vUTadVF5/I3I0SGWmA6uvHiODIIdIHd+OkT9vuu6z4h2LIhbRvVs3lNffiAkTYuOCoPPbkUtOeNrv3ahFM6/0zE9qvS6VtE6IvTIuCDq/HdOpuKf95JzhxfgzLedQa+zFZCD1uDEqCLofF00jJ8M6JsR+GBUEXY+LpnqZfmXMmRkTBF2Pi6aSL49Maq8xQdDxuGiyMF8e1VM3CJZlRYM8CV2Pi6Yysb0N3yyuOnBiExG9by/d9tpYhb9+PB/Gua09dOaswZflubw0RDRpL0UhjtfdseHP0HV3tqxuOxTLHeHotNeBjiLAcvKp2LFwZ8s31kKIYjOXqKkguB7MsqrBqAalukih/MORNlftWGdnc+cLIZS+dVMaBE8Vvh0WcowsUdNvQYoU7U4mRwfP/00I4e3Nl0KBB8Erx22IakLTWRMWE25Lzo4le7vg2K4O000P2UExNgh+OUYcp1ZGGjnhqqV8aA4VEf0LkON7Lll6FgYAAAAASUVORK5CYII=" />
                                     </g>
                                 </g>
@@ -222,21 +248,23 @@
                             <label for="" class="cityNameLabel">CityName</label>
                         </div>
                         <div id="city8" class="city">
-                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 130 91">
+                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130 91">
                                 <g id="flag" data-name="flag">
                                     <g id="map1">
                                         <g id="city-flag">
                                             <g id="direk">
-                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1" height="47.7" />
-                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1" height="19.79"
-                                                    transform="translate(82.47 -47.53) rotate(90)" />
+                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1"
+                                                    height="47.7" />
+                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1"
+                                                    height="19.79" transform="translate(82.47 -47.53) rotate(90)" />
                                             </g>
-                                            <polygon id="flag-8-arkaplan" 
+                                            <polygon id="flag-8-arkaplan"
                                                 points="73 40.56 65 48.07 57 40.56 57 18.01 73 18.01 73 40.56" />
-                                            <path id="sembol-8"  d="M9,16.78c2.18.3-.37,4,2.69,2.9.42,0,1.16.31,1.09.78-.8-.66-.22.4-.3.76-.35-.7-.65-.1-.68.37-.62-1.12-4-.59-3.25-2.48-1.37-.83-2.29.36-.6-2.05-.1,1.88-5.6,2.61-2.94,3.35.88,0,1,.73.65,1.37-.26-.76-.33-.29-.5.18-.17-.67-.49-.39-.76,0-.6-1.1-1.34-1.13-.92-2.69-.83-1.64.79-.68,1.26-1.53C4.7,16.63,2.27,16.7,4,15c2.09-2.39-.24-3.8-2.34-2.29,1.73-.93,1.46-2.86.53-4.16,1.7-.12,1.11,1.3,1.71,2.21-.12-1.56,2.28-1.55.49-.21-.45,1,1.29,1.84.81,3,.22,1.07-2.7,2.93-.53,3,1.11-1.79,5.87-2.78,1.77-2C7.91,14.17,5.07,12.33,6,11,5.87,9.2,5.85,8.56,8.12,8.1c-1.22,1,2.84-.23,2.24,1.44-.13.86-1.18-.14-1.51.9.21.48,1.24.24,1.15-.28,1.13.37-.66,2,1.08,1.22-.22.44-.09.62.43,1,1.07-.86.08-3,1.75-2.93-.46.41.45.32.69.43-.83.18-.12.53.22.62-1.85.81-1,4-3.65,4.3,1.32-.13,2.28-.6,3.49-.5-.79.3.27.38.31.77-.62-.25-.51.16-.27.53C11.31,15.65,11.27,15.56,9,16.78ZM7.72,10.33a3.17,3.17,0,0,0-.65.35c.53-1.15.06-.55-.13.25.89-.77.37-.15.33.51.19-.17.31-.42.5-.56.13.45,1,1.75,1.14.69.23.39.54,1,1,1-.52-.28-1-1.74-1.25-.66-.35-.4-.16-1.35-.72-.55C8.17,10,7,11.72,7.72,10.33ZM9.65,14.7a1.63,1.63,0,0,0,.85-.31c-.14.2-.36.32-.44.56.26-.25.61-.48.68-.85A3.64,3.64,0,0,1,9.65,14.7ZM8.35,9c-.16,0-.29.23-.46.33l.59-.12C8.42,9.18,8.27,9.19,8.35,9Z"/>
+                                            <path id="sembol-8"
+                                                d="M9,16.78c2.18.3-.37,4,2.69,2.9.42,0,1.16.31,1.09.78-.8-.66-.22.4-.3.76-.35-.7-.65-.1-.68.37-.62-1.12-4-.59-3.25-2.48-1.37-.83-2.29.36-.6-2.05-.1,1.88-5.6,2.61-2.94,3.35.88,0,1,.73.65,1.37-.26-.76-.33-.29-.5.18-.17-.67-.49-.39-.76,0-.6-1.1-1.34-1.13-.92-2.69-.83-1.64.79-.68,1.26-1.53C4.7,16.63,2.27,16.7,4,15c2.09-2.39-.24-3.8-2.34-2.29,1.73-.93,1.46-2.86.53-4.16,1.7-.12,1.11,1.3,1.71,2.21-.12-1.56,2.28-1.55.49-.21-.45,1,1.29,1.84.81,3,.22,1.07-2.7,2.93-.53,3,1.11-1.79,5.87-2.78,1.77-2C7.91,14.17,5.07,12.33,6,11,5.87,9.2,5.85,8.56,8.12,8.1c-1.22,1,2.84-.23,2.24,1.44-.13.86-1.18-.14-1.51.9.21.48,1.24.24,1.15-.28,1.13.37-.66,2,1.08,1.22-.22.44-.09.62.43,1,1.07-.86.08-3,1.75-2.93-.46.41.45.32.69.43-.83.18-.12.53.22.62-1.85.81-1,4-3.65,4.3,1.32-.13,2.28-.6,3.49-.5-.79.3.27.38.31.77-.62-.25-.51.16-.27.53C11.31,15.65,11.27,15.56,9,16.78ZM7.72,10.33a3.17,3.17,0,0,0-.65.35c.53-1.15.06-.55-.13.25.89-.77.37-.15.33.51.19-.17.31-.42.5-.56.13.45,1,1.75,1.14.69.23.39.54,1,1,1-.52-.28-1-1.74-1.25-.66-.35-.4-.16-1.35-.72-.55C8.17,10,7,11.72,7.72,10.33ZM9.65,14.7a1.63,1.63,0,0,0,.85-.31c-.14.2-.36.32-.44.56.26-.25.61-.48.68-.85A3.64,3.64,0,0,1,9.65,14.7ZM8.35,9c-.16,0-.29.23-.46.33l.59-.12C8.42,9.18,8.27,9.19,8.35,9Z" />
                                         </g>
-                                        <image 
+                                        <image
                                             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAABbCAYAAAC/Ml0aAAAACXBIWXMAAAsSAAALEgHS3X78AAAEo0lEQVR4nO3d7WsURxwH8N+e8dJYg9AK8aE+EY01NoKVCgpaUdGX9W2LoqDF9/VlX/T+gb4tiAiW2lakgi/sGxsFKxSqtL4RHwIJjUlOz7vcxcsllzvvbsr8uhfW8y67tzezO5d+P7DsTtjb2dn53uzsnqAlhCCAyP/+CgBDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEAVjDICTuXBZy8VsGvVT3z6IZEYp//yTkEla53XW4nX9titzKECxV/dPwf4L128E9nx63wshCWN/O6MdfhNJe1f2DySIwBAGY6xzB6Z+JBH1/fZD/cvLYYdq4tgdX0SCt9E9TQbj/cIgeDT+b30YQzNJK/+DWAKypEaEd/fHgKQ2PJah3XQ/t3bm1qRa08tl2s+iDEPvul/ntmxe+Duyz7aapIGzv3UB01LENRmmlf5oKQv/m9byAmVrpH+W3hvjtizG5XnPwdExHefBC7Fu5Pvxl7JyzvH9Xn+qmGN3egb7NStuhY47wjb2O6SiXypWv7PK5mnJdO/r8j2AeP6u8vflCkfy21y/lvzWUy4VRe/OSvT7VajmeTC+Zys5clYV8ofi5XHd1Rn92lo/u/Wi1jgvkJjWVV97eodH40lKpfIUWaO/ugX5f7W30W4OOIPj5WOPjVSr0ZGSC1ws5uPtDpfV6lZrKKz1ebnaORsYTrvvt3ObvVti2PzrFX6ZdQ7CYjCdSobTG6PcI8l6Zyc5oO35mfJjGRkeoUhG0ctU6+mDLNm11eTqfbI6Kr8uh1G10EJ4nM1qOmxx+SE9/v05z0/8dv1QhGipUqNjRTXuOfEa9A7u01LsQOeolJqcCr7fK2CBkc7N8v1Qt/vg+PfrtyhtH7YgQvdcVoXwpR4PXfqDC3Cz1f7Iv0PamMtnQRgMyeY4QT6aVHzOfTb8VAqeuDotWLovQ3V+vUTadVF5/I3I0SGWmA6uvHiODIIdIHd+OkT9vuu6z4h2LIhbRvVs3lNffiAkTYuOCoPPbkUtOeNrv3ahFM6/0zE9qvS6VtE6IvTIuCDq/HdOpuKf95JzhxfgzLedQa+zFZCD1uDEqCLofF00jJ8M6JsR+GBUEXY+LpnqZfmXMmRkTBF2Pi6aSL49Maq8xQdDxuGiyMF8e1VM3CJZlRYM8CV2Pi6Yysb0N3yyuOnBiExG9by/d9tpYhb9+PB/Gua09dOaswZflubw0RDRpL0UhjtfdseHP0HV3tqxuOxTLHeHotNeBjiLAcvKp2LFwZ8s31kKIYjOXqKkguB7MsqrBqAalukih/MORNlftWGdnc+cLIZS+dVMaBE8Vvh0WcowsUdNvQYoU7U4mRwfP/00I4e3Nl0KBB8Erx22IakLTWRMWE25Lzo4le7vg2K4O000P2UExNgh+OUYcp1ZGGjnhqqV8aA4VEf0LkON7Lll6FgYAAAAASUVORK5CYII=" />
                                     </g>
                                 </g>
@@ -244,21 +272,23 @@
                             <label for="" class="cityNameLabel">CityName</label>
                         </div>
                         <div id="city9" class="city">
-                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 130 91">
+                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130 91">
                                 <g id="flag" data-name="flag">
                                     <g id="map1">
                                         <g id="city-flag">
                                             <g id="direk">
-                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1" height="47.7" />
-                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1" height="19.79"
-                                                    transform="translate(82.47 -47.53) rotate(90)" />
+                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1"
+                                                    height="47.7" />
+                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1"
+                                                    height="19.79" transform="translate(82.47 -47.53) rotate(90)" />
                                             </g>
-                                            <polygon id="flag-4-arkaplan" 
+                                            <polygon id="flag-4-arkaplan"
                                                 points="73 40.56 65 48.07 57 40.56 57 18.01 73 18.01 73 40.56" />
-                                            <path id="sembol-4"  d="M4.92,15a3.09,3.09,0,0,1,6.17.05A3.09,3.09,0,0,1,4.92,15Zm-.31-1.13L1.53,15l3.08,1.14A3.31,3.31,0,0,1,4.61,13.87Zm.19,2.72-1.37,3,3-1.37A3.24,3.24,0,0,1,4.8,16.59Zm3.2-8L6.86,11.62a3.25,3.25,0,0,1,2.28,0ZM6.41,11.8l-3-1.37,1.37,3A3.34,3.34,0,0,1,6.41,11.8Zm3.17,0a3.18,3.18,0,0,1,1.62,1.61l1.38-3Zm1.62,4.78a3.26,3.26,0,0,1-1.61,1.62l3,1.37ZM8,21.52a28.25,28.25,0,0,1,1.16-3.14,3.31,3.31,0,0,1-2.32,0Zm3.38-5.38L14.47,15l-3.08-1.14A3.28,3.28,0,0,1,11.4,16.14Z"/>
+                                            <path id="sembol-4"
+                                                d="M4.92,15a3.09,3.09,0,0,1,6.17.05A3.09,3.09,0,0,1,4.92,15Zm-.31-1.13L1.53,15l3.08,1.14A3.31,3.31,0,0,1,4.61,13.87Zm.19,2.72-1.37,3,3-1.37A3.24,3.24,0,0,1,4.8,16.59Zm3.2-8L6.86,11.62a3.25,3.25,0,0,1,2.28,0ZM6.41,11.8l-3-1.37,1.37,3A3.34,3.34,0,0,1,6.41,11.8Zm3.17,0a3.18,3.18,0,0,1,1.62,1.61l1.38-3Zm1.62,4.78a3.26,3.26,0,0,1-1.61,1.62l3,1.37ZM8,21.52a28.25,28.25,0,0,1,1.16-3.14,3.31,3.31,0,0,1-2.32,0Zm3.38-5.38L14.47,15l-3.08-1.14A3.28,3.28,0,0,1,11.4,16.14Z" />
                                         </g>
-                                        <image 
+                                        <image
                                             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAABbCAYAAAC/Ml0aAAAACXBIWXMAAAsSAAALEgHS3X78AAAEo0lEQVR4nO3d7WsURxwH8N+e8dJYg9AK8aE+EY01NoKVCgpaUdGX9W2LoqDF9/VlX/T+gb4tiAiW2lakgi/sGxsFKxSqtL4RHwIJjUlOz7vcxcsllzvvbsr8uhfW8y67tzezO5d+P7DsTtjb2dn53uzsnqAlhCCAyP/+CgBDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEAVjDICTuXBZy8VsGvVT3z6IZEYp//yTkEla53XW4nX9titzKECxV/dPwf4L128E9nx63wshCWN/O6MdfhNJe1f2DySIwBAGY6xzB6Z+JBH1/fZD/cvLYYdq4tgdX0SCt9E9TQbj/cIgeDT+b30YQzNJK/+DWAKypEaEd/fHgKQ2PJah3XQ/t3bm1qRa08tl2s+iDEPvul/ntmxe+Duyz7aapIGzv3UB01LENRmmlf5oKQv/m9byAmVrpH+W3hvjtizG5XnPwdExHefBC7Fu5Pvxl7JyzvH9Xn+qmGN3egb7NStuhY47wjb2O6SiXypWv7PK5mnJdO/r8j2AeP6u8vflCkfy21y/lvzWUy4VRe/OSvT7VajmeTC+Zys5clYV8ofi5XHd1Rn92lo/u/Wi1jgvkJjWVV97eodH40lKpfIUWaO/ugX5f7W30W4OOIPj5WOPjVSr0ZGSC1ws5uPtDpfV6lZrKKz1ebnaORsYTrvvt3ObvVti2PzrFX6ZdQ7CYjCdSobTG6PcI8l6Zyc5oO35mfJjGRkeoUhG0ctU6+mDLNm11eTqfbI6Kr8uh1G10EJ4nM1qOmxx+SE9/v05z0/8dv1QhGipUqNjRTXuOfEa9A7u01LsQOeolJqcCr7fK2CBkc7N8v1Qt/vg+PfrtyhtH7YgQvdcVoXwpR4PXfqDC3Cz1f7Iv0PamMtnQRgMyeY4QT6aVHzOfTb8VAqeuDotWLovQ3V+vUTadVF5/I3I0SGWmA6uvHiODIIdIHd+OkT9vuu6z4h2LIhbRvVs3lNffiAkTYuOCoPPbkUtOeNrv3ahFM6/0zE9qvS6VtE6IvTIuCDq/HdOpuKf95JzhxfgzLedQa+zFZCD1uDEqCLofF00jJ8M6JsR+GBUEXY+LpnqZfmXMmRkTBF2Pi6aSL49Maq8xQdDxuGiyMF8e1VM3CJZlRYM8CV2Pi6Yysb0N3yyuOnBiExG9by/d9tpYhb9+PB/Gua09dOaswZflubw0RDRpL0UhjtfdseHP0HV3tqxuOxTLHeHotNeBjiLAcvKp2LFwZ8s31kKIYjOXqKkguB7MsqrBqAalukih/MORNlftWGdnc+cLIZS+dVMaBE8Vvh0WcowsUdNvQYoU7U4mRwfP/00I4e3Nl0KBB8Erx22IakLTWRMWE25Lzo4le7vg2K4O000P2UExNgh+OUYcp1ZGGjnhqqV8aA4VEf0LkON7Lll6FgYAAAAASUVORK5CYII=" />
                                     </g>
                                 </g>
@@ -266,21 +296,23 @@
                             <label for="" class="cityNameLabel">CityName</label>
                         </div>
                         <div id="city10" class="city">
-                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 130 91">
+                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130 91">
                                 <g id="flag" data-name="flag">
                                     <g id="map1">
                                         <g id="city-flag">
                                             <g id="direk">
-                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1" height="47.7" />
-                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1" height="19.79"
-                                                    transform="translate(82.47 -47.53) rotate(90)" />
+                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1"
+                                                    height="47.7" />
+                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1"
+                                                    height="19.79" transform="translate(82.47 -47.53) rotate(90)" />
                                             </g>
-                                            <polygon id="flag-10-arkaplan" 
+                                            <polygon id="flag-10-arkaplan"
                                                 points="73 40.56 65 48.07 57 40.56 57 18.01 73 18.01 73 40.56" />
-                                            <path id="sembol-10"  d="M9,16.78c2.18.3-.37,4,2.69,2.9.42,0,1.16.31,1.09.78-.8-.66-.22.4-.3.76-.35-.7-.65-.1-.68.37-.62-1.12-4-.59-3.25-2.48-1.37-.83-2.29.36-.6-2.05-.1,1.88-5.6,2.61-2.94,3.35.88,0,1,.73.65,1.37-.26-.76-.33-.29-.5.18-.17-.67-.49-.39-.76,0-.6-1.1-1.34-1.13-.92-2.69-.83-1.64.79-.68,1.26-1.53C4.7,16.63,2.27,16.7,4,15c2.09-2.39-.24-3.8-2.34-2.29,1.73-.93,1.46-2.86.53-4.16,1.7-.12,1.11,1.3,1.71,2.21-.12-1.56,2.28-1.55.49-.21-.45,1,1.29,1.84.81,3,.22,1.07-2.7,2.93-.53,3,1.11-1.79,5.87-2.78,1.77-2C7.91,14.17,5.07,12.33,6,11,5.87,9.2,5.85,8.56,8.12,8.1c-1.22,1,2.84-.23,2.24,1.44-.13.86-1.18-.14-1.51.9.21.48,1.24.24,1.15-.28,1.13.37-.66,2,1.08,1.22-.22.44-.09.62.43,1,1.07-.86.08-3,1.75-2.93-.46.41.45.32.69.43-.83.18-.12.53.22.62-1.85.81-1,4-3.65,4.3,1.32-.13,2.28-.6,3.49-.5-.79.3.27.38.31.77-.62-.25-.51.16-.27.53C11.31,15.65,11.27,15.56,9,16.78ZM7.72,10.33a3.17,3.17,0,0,0-.65.35c.53-1.15.06-.55-.13.25.89-.77.37-.15.33.51.19-.17.31-.42.5-.56.13.45,1,1.75,1.14.69.23.39.54,1,1,1-.52-.28-1-1.74-1.25-.66-.35-.4-.16-1.35-.72-.55C8.17,10,7,11.72,7.72,10.33ZM9.65,14.7a1.63,1.63,0,0,0,.85-.31c-.14.2-.36.32-.44.56.26-.25.61-.48.68-.85A3.64,3.64,0,0,1,9.65,14.7ZM8.35,9c-.16,0-.29.23-.46.33l.59-.12C8.42,9.18,8.27,9.19,8.35,9Z"/>
+                                            <path id="sembol-10"
+                                                d="M9,16.78c2.18.3-.37,4,2.69,2.9.42,0,1.16.31,1.09.78-.8-.66-.22.4-.3.76-.35-.7-.65-.1-.68.37-.62-1.12-4-.59-3.25-2.48-1.37-.83-2.29.36-.6-2.05-.1,1.88-5.6,2.61-2.94,3.35.88,0,1,.73.65,1.37-.26-.76-.33-.29-.5.18-.17-.67-.49-.39-.76,0-.6-1.1-1.34-1.13-.92-2.69-.83-1.64.79-.68,1.26-1.53C4.7,16.63,2.27,16.7,4,15c2.09-2.39-.24-3.8-2.34-2.29,1.73-.93,1.46-2.86.53-4.16,1.7-.12,1.11,1.3,1.71,2.21-.12-1.56,2.28-1.55.49-.21-.45,1,1.29,1.84.81,3,.22,1.07-2.7,2.93-.53,3,1.11-1.79,5.87-2.78,1.77-2C7.91,14.17,5.07,12.33,6,11,5.87,9.2,5.85,8.56,8.12,8.1c-1.22,1,2.84-.23,2.24,1.44-.13.86-1.18-.14-1.51.9.21.48,1.24.24,1.15-.28,1.13.37-.66,2,1.08,1.22-.22.44-.09.62.43,1,1.07-.86.08-3,1.75-2.93-.46.41.45.32.69.43-.83.18-.12.53.22.62-1.85.81-1,4-3.65,4.3,1.32-.13,2.28-.6,3.49-.5-.79.3.27.38.31.77-.62-.25-.51.16-.27.53C11.31,15.65,11.27,15.56,9,16.78ZM7.72,10.33a3.17,3.17,0,0,0-.65.35c.53-1.15.06-.55-.13.25.89-.77.37-.15.33.51.19-.17.31-.42.5-.56.13.45,1,1.75,1.14.69.23.39.54,1,1,1-.52-.28-1-1.74-1.25-.66-.35-.4-.16-1.35-.72-.55C8.17,10,7,11.72,7.72,10.33ZM9.65,14.7a1.63,1.63,0,0,0,.85-.31c-.14.2-.36.32-.44.56.26-.25.61-.48.68-.85A3.64,3.64,0,0,1,9.65,14.7ZM8.35,9c-.16,0-.29.23-.46.33l.59-.12C8.42,9.18,8.27,9.19,8.35,9Z" />
                                         </g>
-                                        <image 
+                                        <image
                                             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAABbCAYAAAC/Ml0aAAAACXBIWXMAAAsSAAALEgHS3X78AAAEo0lEQVR4nO3d7WsURxwH8N+e8dJYg9AK8aE+EY01NoKVCgpaUdGX9W2LoqDF9/VlX/T+gb4tiAiW2lakgi/sGxsFKxSqtL4RHwIJjUlOz7vcxcsllzvvbsr8uhfW8y67tzezO5d+P7DsTtjb2dn53uzsnqAlhCCAyP/+CgBDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEAVjDICTuXBZy8VsGvVT3z6IZEYp//yTkEla53XW4nX9titzKECxV/dPwf4L128E9nx63wshCWN/O6MdfhNJe1f2DySIwBAGY6xzB6Z+JBH1/fZD/cvLYYdq4tgdX0SCt9E9TQbj/cIgeDT+b30YQzNJK/+DWAKypEaEd/fHgKQ2PJah3XQ/t3bm1qRa08tl2s+iDEPvul/ntmxe+Duyz7aapIGzv3UB01LENRmmlf5oKQv/m9byAmVrpH+W3hvjtizG5XnPwdExHefBC7Fu5Pvxl7JyzvH9Xn+qmGN3egb7NStuhY47wjb2O6SiXypWv7PK5mnJdO/r8j2AeP6u8vflCkfy21y/lvzWUy4VRe/OSvT7VajmeTC+Zys5clYV8ofi5XHd1Rn92lo/u/Wi1jgvkJjWVV97eodH40lKpfIUWaO/ugX5f7W30W4OOIPj5WOPjVSr0ZGSC1ws5uPtDpfV6lZrKKz1ebnaORsYTrvvt3ObvVti2PzrFX6ZdQ7CYjCdSobTG6PcI8l6Zyc5oO35mfJjGRkeoUhG0ctU6+mDLNm11eTqfbI6Kr8uh1G10EJ4nM1qOmxx+SE9/v05z0/8dv1QhGipUqNjRTXuOfEa9A7u01LsQOeolJqcCr7fK2CBkc7N8v1Qt/vg+PfrtyhtH7YgQvdcVoXwpR4PXfqDC3Cz1f7Iv0PamMtnQRgMyeY4QT6aVHzOfTb8VAqeuDotWLovQ3V+vUTadVF5/I3I0SGWmA6uvHiODIIdIHd+OkT9vuu6z4h2LIhbRvVs3lNffiAkTYuOCoPPbkUtOeNrv3ahFM6/0zE9qvS6VtE6IvTIuCDq/HdOpuKf95JzhxfgzLedQa+zFZCD1uDEqCLofF00jJ8M6JsR+GBUEXY+LpnqZfmXMmRkTBF2Pi6aSL49Maq8xQdDxuGiyMF8e1VM3CJZlRYM8CV2Pi6Yysb0N3yyuOnBiExG9by/d9tpYhb9+PB/Gua09dOaswZflubw0RDRpL0UhjtfdseHP0HV3tqxuOxTLHeHotNeBjiLAcvKp2LFwZ8s31kKIYjOXqKkguB7MsqrBqAalukih/MORNlftWGdnc+cLIZS+dVMaBE8Vvh0WcowsUdNvQYoU7U4mRwfP/00I4e3Nl0KBB8Erx22IakLTWRMWE25Lzo4le7vg2K4O000P2UExNgh+OUYcp1ZGGjnhqqV8aA4VEf0LkON7Lll6FgYAAAAASUVORK5CYII=" />
                                     </g>
                                 </g>
@@ -288,21 +320,23 @@
                             <label for="" class="cityNameLabel">CityName</label>
                         </div>
                         <div id="city11" class="city">
-                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 130 91">
+                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130 91">
                                 <g id="flag" data-name="flag">
                                     <g id="map1">
                                         <g id="city-flag">
                                             <g id="direk">
-                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1" height="47.7" />
-                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1" height="19.79"
-                                                    transform="translate(82.47 -47.53) rotate(90)" />
+                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1"
+                                                    height="47.7" />
+                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1"
+                                                    height="19.79" transform="translate(82.47 -47.53) rotate(90)" />
                                             </g>
-                                            <polygon id="flag-5-arkaplan" 
+                                            <polygon id="flag-5-arkaplan"
                                                 points="73 40.56 65 48.07 57 40.56 57 18.01 73 18.01 73 40.56" />
-                                            <path id="sembol-5"  d="M12.17,14.86A10.6,10.6,0,0,1,12,17.41a4.7,4.7,0,0,1-1.45,2.46,17,17,0,0,1-2.29,1.68.41.41,0,0,1-.51,0A18.61,18.61,0,0,1,5.62,20,4.87,4.87,0,0,1,4.1,17.82a7.38,7.38,0,0,1-.28-1.93,22.67,22.67,0,0,1,.12-2.73l0-.33c0-.08,0-.11.11-.13.52-.14,1-.27,1.57-.43a10.17,10.17,0,0,0,2.22-1,.23.23,0,0,1,.25,0,10.47,10.47,0,0,0,2.2,1c.52.16,1,.29,1.57.42.09,0,.13.06.13.15C12.08,13.62,12.14,14.41,12.17,14.86Zm-1.51-4a.15.15,0,0,1,0-.11c.28-.49.56-1,.83-1.46a.34.34,0,0,1,.23-.17.54.54,0,0,0,.45-.42.62.62,0,0,0-.91-.7.61.61,0,0,0-.27.73.25.25,0,0,1,0,.17c-.29.52-.59,1-.88,1.53,0,0-.06.07-.08.07l-.64,0a.44.44,0,0,0,0-.1A.3.3,0,0,0,9.22,10a.31.31,0,0,0-.36.16A.32.32,0,0,0,9,10.6l.31.18.22.13-.37.7,1.11.46.34-.54.06,0c.16.09.33.2.5.28a.28.28,0,0,0,.39-.11.31.31,0,0,0-.45-.41L11,11.4ZM6,10.52a.15.15,0,0,1-.16-.09C5.57,9.94,5.29,9.44,5,9a.21.21,0,0,1,0-.2.62.62,0,0,0-.67-.83.62.62,0,0,0,0,1.23.25.25,0,0,1,.14.08l.89,1.54a.18.18,0,0,1,0,.1c-.11.18-.23.35-.34.52l-.1-.08a.32.32,0,0,0-.49.28.31.31,0,0,0,.46.24l.54-.3.34.54,1.11-.47-.37-.69.09-.06c.15-.09.32-.18.47-.28a.3.3,0,0,0,.09-.39A.34.34,0,0,0,6.76,10a.31.31,0,0,0-.2.35s0,.06,0,.1Zm5.11,9c-.15.15-.29.3-.43.46a.08.08,0,0,0,0,.09,6.33,6.33,0,0,0,.44.7c.3.39.62.76.93,1.14l.18.23A11.22,11.22,0,0,0,11.12,19.53Zm-6.88,2A8.43,8.43,0,0,0,5.3,20.12s0-.09,0-.11-.32-.29-.47-.43a11.53,11.53,0,0,0-1.08,2.57Z"/>
+                                            <path id="sembol-5"
+                                                d="M12.17,14.86A10.6,10.6,0,0,1,12,17.41a4.7,4.7,0,0,1-1.45,2.46,17,17,0,0,1-2.29,1.68.41.41,0,0,1-.51,0A18.61,18.61,0,0,1,5.62,20,4.87,4.87,0,0,1,4.1,17.82a7.38,7.38,0,0,1-.28-1.93,22.67,22.67,0,0,1,.12-2.73l0-.33c0-.08,0-.11.11-.13.52-.14,1-.27,1.57-.43a10.17,10.17,0,0,0,2.22-1,.23.23,0,0,1,.25,0,10.47,10.47,0,0,0,2.2,1c.52.16,1,.29,1.57.42.09,0,.13.06.13.15C12.08,13.62,12.14,14.41,12.17,14.86Zm-1.51-4a.15.15,0,0,1,0-.11c.28-.49.56-1,.83-1.46a.34.34,0,0,1,.23-.17.54.54,0,0,0,.45-.42.62.62,0,0,0-.91-.7.61.61,0,0,0-.27.73.25.25,0,0,1,0,.17c-.29.52-.59,1-.88,1.53,0,0-.06.07-.08.07l-.64,0a.44.44,0,0,0,0-.1A.3.3,0,0,0,9.22,10a.31.31,0,0,0-.36.16A.32.32,0,0,0,9,10.6l.31.18.22.13-.37.7,1.11.46.34-.54.06,0c.16.09.33.2.5.28a.28.28,0,0,0,.39-.11.31.31,0,0,0-.45-.41L11,11.4ZM6,10.52a.15.15,0,0,1-.16-.09C5.57,9.94,5.29,9.44,5,9a.21.21,0,0,1,0-.2.62.62,0,0,0-.67-.83.62.62,0,0,0,0,1.23.25.25,0,0,1,.14.08l.89,1.54a.18.18,0,0,1,0,.1c-.11.18-.23.35-.34.52l-.1-.08a.32.32,0,0,0-.49.28.31.31,0,0,0,.46.24l.54-.3.34.54,1.11-.47-.37-.69.09-.06c.15-.09.32-.18.47-.28a.3.3,0,0,0,.09-.39A.34.34,0,0,0,6.76,10a.31.31,0,0,0-.2.35s0,.06,0,.1Zm5.11,9c-.15.15-.29.3-.43.46a.08.08,0,0,0,0,.09,6.33,6.33,0,0,0,.44.7c.3.39.62.76.93,1.14l.18.23A11.22,11.22,0,0,0,11.12,19.53Zm-6.88,2A8.43,8.43,0,0,0,5.3,20.12s0-.09,0-.11-.32-.29-.47-.43a11.53,11.53,0,0,0-1.08,2.57Z" />
                                         </g>
-                                        <image 
+                                        <image
                                             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAABbCAYAAAC/Ml0aAAAACXBIWXMAAAsSAAALEgHS3X78AAAEo0lEQVR4nO3d7WsURxwH8N+e8dJYg9AK8aE+EY01NoKVCgpaUdGX9W2LoqDF9/VlX/T+gb4tiAiW2lakgi/sGxsFKxSqtL4RHwIJjUlOz7vcxcsllzvvbsr8uhfW8y67tzezO5d+P7DsTtjb2dn53uzsnqAlhCCAyP/+CgBDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEAVjDICTuXBZy8VsGvVT3z6IZEYp//yTkEla53XW4nX9titzKECxV/dPwf4L128E9nx63wshCWN/O6MdfhNJe1f2DySIwBAGY6xzB6Z+JBH1/fZD/cvLYYdq4tgdX0SCt9E9TQbj/cIgeDT+b30YQzNJK/+DWAKypEaEd/fHgKQ2PJah3XQ/t3bm1qRa08tl2s+iDEPvul/ntmxe+Duyz7aapIGzv3UB01LENRmmlf5oKQv/m9byAmVrpH+W3hvjtizG5XnPwdExHefBC7Fu5Pvxl7JyzvH9Xn+qmGN3egb7NStuhY47wjb2O6SiXypWv7PK5mnJdO/r8j2AeP6u8vflCkfy21y/lvzWUy4VRe/OSvT7VajmeTC+Zys5clYV8ofi5XHd1Rn92lo/u/Wi1jgvkJjWVV97eodH40lKpfIUWaO/ugX5f7W30W4OOIPj5WOPjVSr0ZGSC1ws5uPtDpfV6lZrKKz1ebnaORsYTrvvt3ObvVti2PzrFX6ZdQ7CYjCdSobTG6PcI8l6Zyc5oO35mfJjGRkeoUhG0ctU6+mDLNm11eTqfbI6Kr8uh1G10EJ4nM1qOmxx+SE9/v05z0/8dv1QhGipUqNjRTXuOfEa9A7u01LsQOeolJqcCr7fK2CBkc7N8v1Qt/vg+PfrtyhtH7YgQvdcVoXwpR4PXfqDC3Cz1f7Iv0PamMtnQRgMyeY4QT6aVHzOfTb8VAqeuDotWLovQ3V+vUTadVF5/I3I0SGWmA6uvHiODIIdIHd+OkT9vuu6z4h2LIhbRvVs3lNffiAkTYuOCoPPbkUtOeNrv3ahFM6/0zE9qvS6VtE6IvTIuCDq/HdOpuKf95JzhxfgzLedQa+zFZCD1uDEqCLofF00jJ8M6JsR+GBUEXY+LpnqZfmXMmRkTBF2Pi6aSL49Maq8xQdDxuGiyMF8e1VM3CJZlRYM8CV2Pi6Yysb0N3yyuOnBiExG9by/d9tpYhb9+PB/Gua09dOaswZflubw0RDRpL0UhjtfdseHP0HV3tqxuOxTLHeHotNeBjiLAcvKp2LFwZ8s31kKIYjOXqKkguB7MsqrBqAalukih/MORNlftWGdnc+cLIZS+dVMaBE8Vvh0WcowsUdNvQYoU7U4mRwfP/00I4e3Nl0KBB8Erx22IakLTWRMWE25Lzo4le7vg2K4O000P2UExNgh+OUYcp1ZGGjnhqqV8aA4VEf0LkON7Lll6FgYAAAAASUVORK5CYII=" />
                                     </g>
                                 </g>
@@ -310,21 +344,23 @@
                             <label for="" class="cityNameLabel">CityName</label>
                         </div>
                         <div id="city12" class="city">
-                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 130 91">
+                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130 91">
                                 <g id="flag" data-name="flag">
                                     <g id="map1">
                                         <g id="city-flag">
                                             <g id="direk">
-                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1" height="47.7" />
-                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1" height="19.79"
-                                                    transform="translate(82.47 -47.53) rotate(90)" />
+                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1"
+                                                    height="47.7" />
+                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1"
+                                                    height="19.79" transform="translate(82.47 -47.53) rotate(90)" />
                                             </g>
-                                            <polygon id="flag-12-arkaplan" 
+                                            <polygon id="flag-12-arkaplan"
                                                 points="73 40.56 65 48.07 57 40.56 57 18.01 73 18.01 73 40.56" />
-                                            <path id="sembol-12"  d="M9,16.78c2.18.3-.37,4,2.69,2.9.42,0,1.16.31,1.09.78-.8-.66-.22.4-.3.76-.35-.7-.65-.1-.68.37-.62-1.12-4-.59-3.25-2.48-1.37-.83-2.29.36-.6-2.05-.1,1.88-5.6,2.61-2.94,3.35.88,0,1,.73.65,1.37-.26-.76-.33-.29-.5.18-.17-.67-.49-.39-.76,0-.6-1.1-1.34-1.13-.92-2.69-.83-1.64.79-.68,1.26-1.53C4.7,16.63,2.27,16.7,4,15c2.09-2.39-.24-3.8-2.34-2.29,1.73-.93,1.46-2.86.53-4.16,1.7-.12,1.11,1.3,1.71,2.21-.12-1.56,2.28-1.55.49-.21-.45,1,1.29,1.84.81,3,.22,1.07-2.7,2.93-.53,3,1.11-1.79,5.87-2.78,1.77-2C7.91,14.17,5.07,12.33,6,11,5.87,9.2,5.85,8.56,8.12,8.1c-1.22,1,2.84-.23,2.24,1.44-.13.86-1.18-.14-1.51.9.21.48,1.24.24,1.15-.28,1.13.37-.66,2,1.08,1.22-.22.44-.09.62.43,1,1.07-.86.08-3,1.75-2.93-.46.41.45.32.69.43-.83.18-.12.53.22.62-1.85.81-1,4-3.65,4.3,1.32-.13,2.28-.6,3.49-.5-.79.3.27.38.31.77-.62-.25-.51.16-.27.53C11.31,15.65,11.27,15.56,9,16.78ZM7.72,10.33a3.17,3.17,0,0,0-.65.35c.53-1.15.06-.55-.13.25.89-.77.37-.15.33.51.19-.17.31-.42.5-.56.13.45,1,1.75,1.14.69.23.39.54,1,1,1-.52-.28-1-1.74-1.25-.66-.35-.4-.16-1.35-.72-.55C8.17,10,7,11.72,7.72,10.33ZM9.65,14.7a1.63,1.63,0,0,0,.85-.31c-.14.2-.36.32-.44.56.26-.25.61-.48.68-.85A3.64,3.64,0,0,1,9.65,14.7ZM8.35,9c-.16,0-.29.23-.46.33l.59-.12C8.42,9.18,8.27,9.19,8.35,9Z"/>
+                                            <path id="sembol-12"
+                                                d="M9,16.78c2.18.3-.37,4,2.69,2.9.42,0,1.16.31,1.09.78-.8-.66-.22.4-.3.76-.35-.7-.65-.1-.68.37-.62-1.12-4-.59-3.25-2.48-1.37-.83-2.29.36-.6-2.05-.1,1.88-5.6,2.61-2.94,3.35.88,0,1,.73.65,1.37-.26-.76-.33-.29-.5.18-.17-.67-.49-.39-.76,0-.6-1.1-1.34-1.13-.92-2.69-.83-1.64.79-.68,1.26-1.53C4.7,16.63,2.27,16.7,4,15c2.09-2.39-.24-3.8-2.34-2.29,1.73-.93,1.46-2.86.53-4.16,1.7-.12,1.11,1.3,1.71,2.21-.12-1.56,2.28-1.55.49-.21-.45,1,1.29,1.84.81,3,.22,1.07-2.7,2.93-.53,3,1.11-1.79,5.87-2.78,1.77-2C7.91,14.17,5.07,12.33,6,11,5.87,9.2,5.85,8.56,8.12,8.1c-1.22,1,2.84-.23,2.24,1.44-.13.86-1.18-.14-1.51.9.21.48,1.24.24,1.15-.28,1.13.37-.66,2,1.08,1.22-.22.44-.09.62.43,1,1.07-.86.08-3,1.75-2.93-.46.41.45.32.69.43-.83.18-.12.53.22.62-1.85.81-1,4-3.65,4.3,1.32-.13,2.28-.6,3.49-.5-.79.3.27.38.31.77-.62-.25-.51.16-.27.53C11.31,15.65,11.27,15.56,9,16.78ZM7.72,10.33a3.17,3.17,0,0,0-.65.35c.53-1.15.06-.55-.13.25.89-.77.37-.15.33.51.19-.17.31-.42.5-.56.13.45,1,1.75,1.14.69.23.39.54,1,1,1-.52-.28-1-1.74-1.25-.66-.35-.4-.16-1.35-.72-.55C8.17,10,7,11.72,7.72,10.33ZM9.65,14.7a1.63,1.63,0,0,0,.85-.31c-.14.2-.36.32-.44.56.26-.25.61-.48.68-.85A3.64,3.64,0,0,1,9.65,14.7ZM8.35,9c-.16,0-.29.23-.46.33l.59-.12C8.42,9.18,8.27,9.19,8.35,9Z" />
                                         </g>
-                                        <image 
+                                        <image
                                             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAABbCAYAAAC/Ml0aAAAACXBIWXMAAAsSAAALEgHS3X78AAAEo0lEQVR4nO3d7WsURxwH8N+e8dJYg9AK8aE+EY01NoKVCgpaUdGX9W2LoqDF9/VlX/T+gb4tiAiW2lakgi/sGxsFKxSqtL4RHwIJjUlOz7vcxcsllzvvbsr8uhfW8y67tzezO5d+P7DsTtjb2dn53uzsnqAlhCCAyP/+CgBDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEAVjDICTuXBZy8VsGvVT3z6IZEYp//yTkEla53XW4nX9titzKECxV/dPwf4L128E9nx63wshCWN/O6MdfhNJe1f2DySIwBAGY6xzB6Z+JBH1/fZD/cvLYYdq4tgdX0SCt9E9TQbj/cIgeDT+b30YQzNJK/+DWAKypEaEd/fHgKQ2PJah3XQ/t3bm1qRa08tl2s+iDEPvul/ntmxe+Duyz7aapIGzv3UB01LENRmmlf5oKQv/m9byAmVrpH+W3hvjtizG5XnPwdExHefBC7Fu5Pvxl7JyzvH9Xn+qmGN3egb7NStuhY47wjb2O6SiXypWv7PK5mnJdO/r8j2AeP6u8vflCkfy21y/lvzWUy4VRe/OSvT7VajmeTC+Zys5clYV8ofi5XHd1Rn92lo/u/Wi1jgvkJjWVV97eodH40lKpfIUWaO/ugX5f7W30W4OOIPj5WOPjVSr0ZGSC1ws5uPtDpfV6lZrKKz1ebnaORsYTrvvt3ObvVti2PzrFX6ZdQ7CYjCdSobTG6PcI8l6Zyc5oO35mfJjGRkeoUhG0ctU6+mDLNm11eTqfbI6Kr8uh1G10EJ4nM1qOmxx+SE9/v05z0/8dv1QhGipUqNjRTXuOfEa9A7u01LsQOeolJqcCr7fK2CBkc7N8v1Qt/vg+PfrtyhtH7YgQvdcVoXwpR4PXfqDC3Cz1f7Iv0PamMtnQRgMyeY4QT6aVHzOfTb8VAqeuDotWLovQ3V+vUTadVF5/I3I0SGWmA6uvHiODIIdIHd+OkT9vuu6z4h2LIhbRvVs3lNffiAkTYuOCoPPbkUtOeNrv3ahFM6/0zE9qvS6VtE6IvTIuCDq/HdOpuKf95JzhxfgzLedQa+zFZCD1uDEqCLofF00jJ8M6JsR+GBUEXY+LpnqZfmXMmRkTBF2Pi6aSL49Maq8xQdDxuGiyMF8e1VM3CJZlRYM8CV2Pi6Yysb0N3yyuOnBiExG9by/d9tpYhb9+PB/Gua09dOaswZflubw0RDRpL0UhjtfdseHP0HV3tqxuOxTLHeHotNeBjiLAcvKp2LFwZ8s31kKIYjOXqKkguB7MsqrBqAalukih/MORNlftWGdnc+cLIZS+dVMaBE8Vvh0WcowsUdNvQYoU7U4mRwfP/00I4e3Nl0KBB8Erx22IakLTWRMWE25Lzo4le7vg2K4O000P2UExNgh+OUYcp1ZGGjnhqqV8aA4VEf0LkON7Lll6FgYAAAAASUVORK5CYII=" />
                                     </g>
                                 </g>
@@ -332,21 +368,23 @@
                             <label for="" class="cityNameLabel">CityName</label>
                         </div>
                         <div id="city13" class="city">
-                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 130 91">
+                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130 91">
                                 <g id="flag" data-name="flag">
                                     <g id="map1">
                                         <g id="city-flag">
                                             <g id="direk">
-                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1" height="47.7" />
-                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1" height="19.79"
-                                                    transform="translate(82.47 -47.53) rotate(90)" />
+                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1"
+                                                    height="47.7" />
+                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1"
+                                                    height="19.79" transform="translate(82.47 -47.53) rotate(90)" />
                                             </g>
-                                            <polygon id="flag-13-arkaplan" 
+                                            <polygon id="flag-13-arkaplan"
                                                 points="73 40.56 65 48.07 57 40.56 57 18.01 73 18.01 73 40.56" />
-                                            <path id="sembol-13"  d="M9,16.78c2.18.3-.37,4,2.69,2.9.42,0,1.16.31,1.09.78-.8-.66-.22.4-.3.76-.35-.7-.65-.1-.68.37-.62-1.12-4-.59-3.25-2.48-1.37-.83-2.29.36-.6-2.05-.1,1.88-5.6,2.61-2.94,3.35.88,0,1,.73.65,1.37-.26-.76-.33-.29-.5.18-.17-.67-.49-.39-.76,0-.6-1.1-1.34-1.13-.92-2.69-.83-1.64.79-.68,1.26-1.53C4.7,16.63,2.27,16.7,4,15c2.09-2.39-.24-3.8-2.34-2.29,1.73-.93,1.46-2.86.53-4.16,1.7-.12,1.11,1.3,1.71,2.21-.12-1.56,2.28-1.55.49-.21-.45,1,1.29,1.84.81,3,.22,1.07-2.7,2.93-.53,3,1.11-1.79,5.87-2.78,1.77-2C7.91,14.17,5.07,12.33,6,11,5.87,9.2,5.85,8.56,8.12,8.1c-1.22,1,2.84-.23,2.24,1.44-.13.86-1.18-.14-1.51.9.21.48,1.24.24,1.15-.28,1.13.37-.66,2,1.08,1.22-.22.44-.09.62.43,1,1.07-.86.08-3,1.75-2.93-.46.41.45.32.69.43-.83.18-.12.53.22.62-1.85.81-1,4-3.65,4.3,1.32-.13,2.28-.6,3.49-.5-.79.3.27.38.31.77-.62-.25-.51.16-.27.53C11.31,15.65,11.27,15.56,9,16.78ZM7.72,10.33a3.17,3.17,0,0,0-.65.35c.53-1.15.06-.55-.13.25.89-.77.37-.15.33.51.19-.17.31-.42.5-.56.13.45,1,1.75,1.14.69.23.39.54,1,1,1-.52-.28-1-1.74-1.25-.66-.35-.4-.16-1.35-.72-.55C8.17,10,7,11.72,7.72,10.33ZM9.65,14.7a1.63,1.63,0,0,0,.85-.31c-.14.2-.36.32-.44.56.26-.25.61-.48.68-.85A3.64,3.64,0,0,1,9.65,14.7ZM8.35,9c-.16,0-.29.23-.46.33l.59-.12C8.42,9.18,8.27,9.19,8.35,9Z"/>
+                                            <path id="sembol-13"
+                                                d="M9,16.78c2.18.3-.37,4,2.69,2.9.42,0,1.16.31,1.09.78-.8-.66-.22.4-.3.76-.35-.7-.65-.1-.68.37-.62-1.12-4-.59-3.25-2.48-1.37-.83-2.29.36-.6-2.05-.1,1.88-5.6,2.61-2.94,3.35.88,0,1,.73.65,1.37-.26-.76-.33-.29-.5.18-.17-.67-.49-.39-.76,0-.6-1.1-1.34-1.13-.92-2.69-.83-1.64.79-.68,1.26-1.53C4.7,16.63,2.27,16.7,4,15c2.09-2.39-.24-3.8-2.34-2.29,1.73-.93,1.46-2.86.53-4.16,1.7-.12,1.11,1.3,1.71,2.21-.12-1.56,2.28-1.55.49-.21-.45,1,1.29,1.84.81,3,.22,1.07-2.7,2.93-.53,3,1.11-1.79,5.87-2.78,1.77-2C7.91,14.17,5.07,12.33,6,11,5.87,9.2,5.85,8.56,8.12,8.1c-1.22,1,2.84-.23,2.24,1.44-.13.86-1.18-.14-1.51.9.21.48,1.24.24,1.15-.28,1.13.37-.66,2,1.08,1.22-.22.44-.09.62.43,1,1.07-.86.08-3,1.75-2.93-.46.41.45.32.69.43-.83.18-.12.53.22.62-1.85.81-1,4-3.65,4.3,1.32-.13,2.28-.6,3.49-.5-.79.3.27.38.31.77-.62-.25-.51.16-.27.53C11.31,15.65,11.27,15.56,9,16.78ZM7.72,10.33a3.17,3.17,0,0,0-.65.35c.53-1.15.06-.55-.13.25.89-.77.37-.15.33.51.19-.17.31-.42.5-.56.13.45,1,1.75,1.14.69.23.39.54,1,1,1-.52-.28-1-1.74-1.25-.66-.35-.4-.16-1.35-.72-.55C8.17,10,7,11.72,7.72,10.33ZM9.65,14.7a1.63,1.63,0,0,0,.85-.31c-.14.2-.36.32-.44.56.26-.25.61-.48.68-.85A3.64,3.64,0,0,1,9.65,14.7ZM8.35,9c-.16,0-.29.23-.46.33l.59-.12C8.42,9.18,8.27,9.19,8.35,9Z" />
                                         </g>
-                                        <image 
+                                        <image
                                             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAABbCAYAAAC/Ml0aAAAACXBIWXMAAAsSAAALEgHS3X78AAAEo0lEQVR4nO3d7WsURxwH8N+e8dJYg9AK8aE+EY01NoKVCgpaUdGX9W2LoqDF9/VlX/T+gb4tiAiW2lakgi/sGxsFKxSqtL4RHwIJjUlOz7vcxcsllzvvbsr8uhfW8y67tzezO5d+P7DsTtjb2dn53uzsnqAlhCCAyP/+CgBDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEAVjDICTuXBZy8VsGvVT3z6IZEYp//yTkEla53XW4nX9titzKECxV/dPwf4L128E9nx63wshCWN/O6MdfhNJe1f2DySIwBAGY6xzB6Z+JBH1/fZD/cvLYYdq4tgdX0SCt9E9TQbj/cIgeDT+b30YQzNJK/+DWAKypEaEd/fHgKQ2PJah3XQ/t3bm1qRa08tl2s+iDEPvul/ntmxe+Duyz7aapIGzv3UB01LENRmmlf5oKQv/m9byAmVrpH+W3hvjtizG5XnPwdExHefBC7Fu5Pvxl7JyzvH9Xn+qmGN3egb7NStuhY47wjb2O6SiXypWv7PK5mnJdO/r8j2AeP6u8vflCkfy21y/lvzWUy4VRe/OSvT7VajmeTC+Zys5clYV8ofi5XHd1Rn92lo/u/Wi1jgvkJjWVV97eodH40lKpfIUWaO/ugX5f7W30W4OOIPj5WOPjVSr0ZGSC1ws5uPtDpfV6lZrKKz1ebnaORsYTrvvt3ObvVti2PzrFX6ZdQ7CYjCdSobTG6PcI8l6Zyc5oO35mfJjGRkeoUhG0ctU6+mDLNm11eTqfbI6Kr8uh1G10EJ4nM1qOmxx+SE9/v05z0/8dv1QhGipUqNjRTXuOfEa9A7u01LsQOeolJqcCr7fK2CBkc7N8v1Qt/vg+PfrtyhtH7YgQvdcVoXwpR4PXfqDC3Cz1f7Iv0PamMtnQRgMyeY4QT6aVHzOfTb8VAqeuDotWLovQ3V+vUTadVF5/I3I0SGWmA6uvHiODIIdIHd+OkT9vuu6z4h2LIhbRvVs3lNffiAkTYuOCoPPbkUtOeNrv3ahFM6/0zE9qvS6VtE6IvTIuCDq/HdOpuKf95JzhxfgzLedQa+zFZCD1uDEqCLofF00jJ8M6JsR+GBUEXY+LpnqZfmXMmRkTBF2Pi6aSL49Maq8xQdDxuGiyMF8e1VM3CJZlRYM8CV2Pi6Yysb0N3yyuOnBiExG9by/d9tpYhb9+PB/Gua09dOaswZflubw0RDRpL0UhjtfdseHP0HV3tqxuOxTLHeHotNeBjiLAcvKp2LFwZ8s31kKIYjOXqKkguB7MsqrBqAalukih/MORNlftWGdnc+cLIZS+dVMaBE8Vvh0WcowsUdNvQYoU7U4mRwfP/00I4e3Nl0KBB8Erx22IakLTWRMWE25Lzo4le7vg2K4O000P2UExNgh+OUYcp1ZGGjnhqqV8aA4VEf0LkON7Lll6FgYAAAAASUVORK5CYII=" />
                                     </g>
                                 </g>
@@ -354,21 +392,23 @@
                             <label for="" class="cityNameLabel">CityName</label>
                         </div>
                         <div id="city14" class="city">
-                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 130 91">
+                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130 91">
                                 <g id="flag" data-name="flag">
                                     <g id="map1">
                                         <g id="city-flag">
                                             <g id="direk">
-                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1" height="47.7" />
-                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1" height="19.79"
-                                                    transform="translate(82.47 -47.53) rotate(90)" />
+                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1"
+                                                    height="47.7" />
+                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1"
+                                                    height="19.79" transform="translate(82.47 -47.53) rotate(90)" />
                                             </g>
-                                            <polygon id="flag-6-arkaplan" 
+                                            <polygon id="flag-6-arkaplan"
                                                 points="73 40.56 65 48.07 57 40.56 57 18.01 73 18.01 73 40.56" />
-                                            <path id="sembol-6"  d="M6.62,23.1l1.32-4.91H5.71l2.08-5H5.5l4-6.28.06,0-1.3,4.88h.8l1,0c.2,0,.25.05.18.25-.53,1.56-1,3.13-1.58,4.69,0,.09,0,.18-.09.32H10.7l-4,6Z"/>
+                                            <path id="sembol-6"
+                                                d="M6.62,23.1l1.32-4.91H5.71l2.08-5H5.5l4-6.28.06,0-1.3,4.88h.8l1,0c.2,0,.25.05.18.25-.53,1.56-1,3.13-1.58,4.69,0,.09,0,.18-.09.32H10.7l-4,6Z" />
                                         </g>
-                                        <image 
+                                        <image
                                             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAABbCAYAAAC/Ml0aAAAACXBIWXMAAAsSAAALEgHS3X78AAAEo0lEQVR4nO3d7WsURxwH8N+e8dJYg9AK8aE+EY01NoKVCgpaUdGX9W2LoqDF9/VlX/T+gb4tiAiW2lakgi/sGxsFKxSqtL4RHwIJjUlOz7vcxcsllzvvbsr8uhfW8y67tzezO5d+P7DsTtjb2dn53uzsnqAlhCCAyP/+CgBDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEAVjDICTuXBZy8VsGvVT3z6IZEYp//yTkEla53XW4nX9titzKECxV/dPwf4L128E9nx63wshCWN/O6MdfhNJe1f2DySIwBAGY6xzB6Z+JBH1/fZD/cvLYYdq4tgdX0SCt9E9TQbj/cIgeDT+b30YQzNJK/+DWAKypEaEd/fHgKQ2PJah3XQ/t3bm1qRa08tl2s+iDEPvul/ntmxe+Duyz7aapIGzv3UB01LENRmmlf5oKQv/m9byAmVrpH+W3hvjtizG5XnPwdExHefBC7Fu5Pvxl7JyzvH9Xn+qmGN3egb7NStuhY47wjb2O6SiXypWv7PK5mnJdO/r8j2AeP6u8vflCkfy21y/lvzWUy4VRe/OSvT7VajmeTC+Zys5clYV8ofi5XHd1Rn92lo/u/Wi1jgvkJjWVV97eodH40lKpfIUWaO/ugX5f7W30W4OOIPj5WOPjVSr0ZGSC1ws5uPtDpfV6lZrKKz1ebnaORsYTrvvt3ObvVti2PzrFX6ZdQ7CYjCdSobTG6PcI8l6Zyc5oO35mfJjGRkeoUhG0ctU6+mDLNm11eTqfbI6Kr8uh1G10EJ4nM1qOmxx+SE9/v05z0/8dv1QhGipUqNjRTXuOfEa9A7u01LsQOeolJqcCr7fK2CBkc7N8v1Qt/vg+PfrtyhtH7YgQvdcVoXwpR4PXfqDC3Cz1f7Iv0PamMtnQRgMyeY4QT6aVHzOfTb8VAqeuDotWLovQ3V+vUTadVF5/I3I0SGWmA6uvHiODIIdIHd+OkT9vuu6z4h2LIhbRvVs3lNffiAkTYuOCoPPbkUtOeNrv3ahFM6/0zE9qvS6VtE6IvTIuCDq/HdOpuKf95JzhxfgzLedQa+zFZCD1uDEqCLofF00jJ8M6JsR+GBUEXY+LpnqZfmXMmRkTBF2Pi6aSL49Maq8xQdDxuGiyMF8e1VM3CJZlRYM8CV2Pi6Yysb0N3yyuOnBiExG9by/d9tpYhb9+PB/Gua09dOaswZflubw0RDRpL0UhjtfdseHP0HV3tqxuOxTLHeHotNeBjiLAcvKp2LFwZ8s31kKIYjOXqKkguB7MsqrBqAalukih/MORNlftWGdnc+cLIZS+dVMaBE8Vvh0WcowsUdNvQYoU7U4mRwfP/00I4e3Nl0KBB8Erx22IakLTWRMWE25Lzo4le7vg2K4O000P2UExNgh+OUYcp1ZGGjnhqqV8aA4VEf0LkON7Lll6FgYAAAAASUVORK5CYII=" />
                                     </g>
                                 </g>
@@ -376,21 +416,23 @@
                             <label for="" class="cityNameLabel">CityName</label>
                         </div>
                         <div id="city15" class="city">
-                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 130 91">
+                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130 91">
                                 <g id="flag" data-name="flag">
                                     <g id="map1">
                                         <g id="city-flag">
                                             <g id="direk">
-                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1" height="47.7" />
-                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1" height="19.79"
-                                                    transform="translate(82.47 -47.53) rotate(90)" />
+                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1"
+                                                    height="47.7" />
+                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1"
+                                                    height="19.79" transform="translate(82.47 -47.53) rotate(90)" />
                                             </g>
-                                            <polygon id="flag-15-arkaplan" 
+                                            <polygon id="flag-15-arkaplan"
                                                 points="73 40.56 65 48.07 57 40.56 57 18.01 73 18.01 73 40.56" />
-                                            <path id="sembol-15"  d="M9,16.78c2.18.3-.37,4,2.69,2.9.42,0,1.16.31,1.09.78-.8-.66-.22.4-.3.76-.35-.7-.65-.1-.68.37-.62-1.12-4-.59-3.25-2.48-1.37-.83-2.29.36-.6-2.05-.1,1.88-5.6,2.61-2.94,3.35.88,0,1,.73.65,1.37-.26-.76-.33-.29-.5.18-.17-.67-.49-.39-.76,0-.6-1.1-1.34-1.13-.92-2.69-.83-1.64.79-.68,1.26-1.53C4.7,16.63,2.27,16.7,4,15c2.09-2.39-.24-3.8-2.34-2.29,1.73-.93,1.46-2.86.53-4.16,1.7-.12,1.11,1.3,1.71,2.21-.12-1.56,2.28-1.55.49-.21-.45,1,1.29,1.84.81,3,.22,1.07-2.7,2.93-.53,3,1.11-1.79,5.87-2.78,1.77-2C7.91,14.17,5.07,12.33,6,11,5.87,9.2,5.85,8.56,8.12,8.1c-1.22,1,2.84-.23,2.24,1.44-.13.86-1.18-.14-1.51.9.21.48,1.24.24,1.15-.28,1.13.37-.66,2,1.08,1.22-.22.44-.09.62.43,1,1.07-.86.08-3,1.75-2.93-.46.41.45.32.69.43-.83.18-.12.53.22.62-1.85.81-1,4-3.65,4.3,1.32-.13,2.28-.6,3.49-.5-.79.3.27.38.31.77-.62-.25-.51.16-.27.53C11.31,15.65,11.27,15.56,9,16.78ZM7.72,10.33a3.17,3.17,0,0,0-.65.35c.53-1.15.06-.55-.13.25.89-.77.37-.15.33.51.19-.17.31-.42.5-.56.13.45,1,1.75,1.14.69.23.39.54,1,1,1-.52-.28-1-1.74-1.25-.66-.35-.4-.16-1.35-.72-.55C8.17,10,7,11.72,7.72,10.33ZM9.65,14.7a1.63,1.63,0,0,0,.85-.31c-.14.2-.36.32-.44.56.26-.25.61-.48.68-.85A3.64,3.64,0,0,1,9.65,14.7ZM8.35,9c-.16,0-.29.23-.46.33l.59-.12C8.42,9.18,8.27,9.19,8.35,9Z"/>
+                                            <path id="sembol-15"
+                                                d="M9,16.78c2.18.3-.37,4,2.69,2.9.42,0,1.16.31,1.09.78-.8-.66-.22.4-.3.76-.35-.7-.65-.1-.68.37-.62-1.12-4-.59-3.25-2.48-1.37-.83-2.29.36-.6-2.05-.1,1.88-5.6,2.61-2.94,3.35.88,0,1,.73.65,1.37-.26-.76-.33-.29-.5.18-.17-.67-.49-.39-.76,0-.6-1.1-1.34-1.13-.92-2.69-.83-1.64.79-.68,1.26-1.53C4.7,16.63,2.27,16.7,4,15c2.09-2.39-.24-3.8-2.34-2.29,1.73-.93,1.46-2.86.53-4.16,1.7-.12,1.11,1.3,1.71,2.21-.12-1.56,2.28-1.55.49-.21-.45,1,1.29,1.84.81,3,.22,1.07-2.7,2.93-.53,3,1.11-1.79,5.87-2.78,1.77-2C7.91,14.17,5.07,12.33,6,11,5.87,9.2,5.85,8.56,8.12,8.1c-1.22,1,2.84-.23,2.24,1.44-.13.86-1.18-.14-1.51.9.21.48,1.24.24,1.15-.28,1.13.37-.66,2,1.08,1.22-.22.44-.09.62.43,1,1.07-.86.08-3,1.75-2.93-.46.41.45.32.69.43-.83.18-.12.53.22.62-1.85.81-1,4-3.65,4.3,1.32-.13,2.28-.6,3.49-.5-.79.3.27.38.31.77-.62-.25-.51.16-.27.53C11.31,15.65,11.27,15.56,9,16.78ZM7.72,10.33a3.17,3.17,0,0,0-.65.35c.53-1.15.06-.55-.13.25.89-.77.37-.15.33.51.19-.17.31-.42.5-.56.13.45,1,1.75,1.14.69.23.39.54,1,1,1-.52-.28-1-1.74-1.25-.66-.35-.4-.16-1.35-.72-.55C8.17,10,7,11.72,7.72,10.33ZM9.65,14.7a1.63,1.63,0,0,0,.85-.31c-.14.2-.36.32-.44.56.26-.25.61-.48.68-.85A3.64,3.64,0,0,1,9.65,14.7ZM8.35,9c-.16,0-.29.23-.46.33l.59-.12C8.42,9.18,8.27,9.19,8.35,9Z" />
                                         </g>
-                                        <image 
+                                        <image
                                             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAABbCAYAAAC/Ml0aAAAACXBIWXMAAAsSAAALEgHS3X78AAAEo0lEQVR4nO3d7WsURxwH8N+e8dJYg9AK8aE+EY01NoKVCgpaUdGX9W2LoqDF9/VlX/T+gb4tiAiW2lakgi/sGxsFKxSqtL4RHwIJjUlOz7vcxcsllzvvbsr8uhfW8y67tzezO5d+P7DsTtjb2dn53uzsnqAlhCCAyP/+CgBDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEAVjDICTuXBZy8VsGvVT3z6IZEYp//yTkEla53XW4nX9titzKECxV/dPwf4L128E9nx63wshCWN/O6MdfhNJe1f2DySIwBAGY6xzB6Z+JBH1/fZD/cvLYYdq4tgdX0SCt9E9TQbj/cIgeDT+b30YQzNJK/+DWAKypEaEd/fHgKQ2PJah3XQ/t3bm1qRa08tl2s+iDEPvul/ntmxe+Duyz7aapIGzv3UB01LENRmmlf5oKQv/m9byAmVrpH+W3hvjtizG5XnPwdExHefBC7Fu5Pvxl7JyzvH9Xn+qmGN3egb7NStuhY47wjb2O6SiXypWv7PK5mnJdO/r8j2AeP6u8vflCkfy21y/lvzWUy4VRe/OSvT7VajmeTC+Zys5clYV8ofi5XHd1Rn92lo/u/Wi1jgvkJjWVV97eodH40lKpfIUWaO/ugX5f7W30W4OOIPj5WOPjVSr0ZGSC1ws5uPtDpfV6lZrKKz1ebnaORsYTrvvt3ObvVti2PzrFX6ZdQ7CYjCdSobTG6PcI8l6Zyc5oO35mfJjGRkeoUhG0ctU6+mDLNm11eTqfbI6Kr8uh1G10EJ4nM1qOmxx+SE9/v05z0/8dv1QhGipUqNjRTXuOfEa9A7u01LsQOeolJqcCr7fK2CBkc7N8v1Qt/vg+PfrtyhtH7YgQvdcVoXwpR4PXfqDC3Cz1f7Iv0PamMtnQRgMyeY4QT6aVHzOfTb8VAqeuDotWLovQ3V+vUTadVF5/I3I0SGWmA6uvHiODIIdIHd+OkT9vuu6z4h2LIhbRvVs3lNffiAkTYuOCoPPbkUtOeNrv3ahFM6/0zE9qvS6VtE6IvTIuCDq/HdOpuKf95JzhxfgzLedQa+zFZCD1uDEqCLofF00jJ8M6JsR+GBUEXY+LpnqZfmXMmRkTBF2Pi6aSL49Maq8xQdDxuGiyMF8e1VM3CJZlRYM8CV2Pi6Yysb0N3yyuOnBiExG9by/d9tpYhb9+PB/Gua09dOaswZflubw0RDRpL0UhjtfdseHP0HV3tqxuOxTLHeHotNeBjiLAcvKp2LFwZ8s31kKIYjOXqKkguB7MsqrBqAalukih/MORNlftWGdnc+cLIZS+dVMaBE8Vvh0WcowsUdNvQYoU7U4mRwfP/00I4e3Nl0KBB8Erx22IakLTWRMWE25Lzo4le7vg2K4O000P2UExNgh+OUYcp1ZGGjnhqqV8aA4VEf0LkON7Lll6FgYAAAAASUVORK5CYII=" />
                                     </g>
                                 </g>
@@ -398,21 +440,23 @@
                             <label for="" class="cityNameLabel">CityName</label>
                         </div>
                         <div id="city16" class="city">
-                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 130 91">
+                            <svg class="cityImg" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 130 91">
                                 <g id="flag" data-name="flag">
                                     <g id="map1">
                                         <g id="city-flag">
                                             <g id="direk">
-                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1" height="47.7" />
-                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1" height="19.79"
-                                                    transform="translate(82.47 -47.53) rotate(90)" />
+                                                <rect class="flag-pole-color" x="64.45" y="10.31" width="1.1"
+                                                    height="47.7" />
+                                                <rect class="flag-pole-color" x="64.45" y="7.57" width="1.1"
+                                                    height="19.79" transform="translate(82.47 -47.53) rotate(90)" />
                                             </g>
-                                            <polygon id="flag-16-arkaplan" 
+                                            <polygon id="flag-16-arkaplan"
                                                 points="73 40.56 65 48.07 57 40.56 57 18.01 73 18.01 73 40.56" />
-                                            <path id="sembol-16"  d="M9,16.78c2.18.3-.37,4,2.69,2.9.42,0,1.16.31,1.09.78-.8-.66-.22.4-.3.76-.35-.7-.65-.1-.68.37-.62-1.12-4-.59-3.25-2.48-1.37-.83-2.29.36-.6-2.05-.1,1.88-5.6,2.61-2.94,3.35.88,0,1,.73.65,1.37-.26-.76-.33-.29-.5.18-.17-.67-.49-.39-.76,0-.6-1.1-1.34-1.13-.92-2.69-.83-1.64.79-.68,1.26-1.53C4.7,16.63,2.27,16.7,4,15c2.09-2.39-.24-3.8-2.34-2.29,1.73-.93,1.46-2.86.53-4.16,1.7-.12,1.11,1.3,1.71,2.21-.12-1.56,2.28-1.55.49-.21-.45,1,1.29,1.84.81,3,.22,1.07-2.7,2.93-.53,3,1.11-1.79,5.87-2.78,1.77-2C7.91,14.17,5.07,12.33,6,11,5.87,9.2,5.85,8.56,8.12,8.1c-1.22,1,2.84-.23,2.24,1.44-.13.86-1.18-.14-1.51.9.21.48,1.24.24,1.15-.28,1.13.37-.66,2,1.08,1.22-.22.44-.09.62.43,1,1.07-.86.08-3,1.75-2.93-.46.41.45.32.69.43-.83.18-.12.53.22.62-1.85.81-1,4-3.65,4.3,1.32-.13,2.28-.6,3.49-.5-.79.3.27.38.31.77-.62-.25-.51.16-.27.53C11.31,15.65,11.27,15.56,9,16.78ZM7.72,10.33a3.17,3.17,0,0,0-.65.35c.53-1.15.06-.55-.13.25.89-.77.37-.15.33.51.19-.17.31-.42.5-.56.13.45,1,1.75,1.14.69.23.39.54,1,1,1-.52-.28-1-1.74-1.25-.66-.35-.4-.16-1.35-.72-.55C8.17,10,7,11.72,7.72,10.33ZM9.65,14.7a1.63,1.63,0,0,0,.85-.31c-.14.2-.36.32-.44.56.26-.25.61-.48.68-.85A3.64,3.64,0,0,1,9.65,14.7ZM8.35,9c-.16,0-.29.23-.46.33l.59-.12C8.42,9.18,8.27,9.19,8.35,9Z"/>
+                                            <path id="sembol-16"
+                                                d="M9,16.78c2.18.3-.37,4,2.69,2.9.42,0,1.16.31,1.09.78-.8-.66-.22.4-.3.76-.35-.7-.65-.1-.68.37-.62-1.12-4-.59-3.25-2.48-1.37-.83-2.29.36-.6-2.05-.1,1.88-5.6,2.61-2.94,3.35.88,0,1,.73.65,1.37-.26-.76-.33-.29-.5.18-.17-.67-.49-.39-.76,0-.6-1.1-1.34-1.13-.92-2.69-.83-1.64.79-.68,1.26-1.53C4.7,16.63,2.27,16.7,4,15c2.09-2.39-.24-3.8-2.34-2.29,1.73-.93,1.46-2.86.53-4.16,1.7-.12,1.11,1.3,1.71,2.21-.12-1.56,2.28-1.55.49-.21-.45,1,1.29,1.84.81,3,.22,1.07-2.7,2.93-.53,3,1.11-1.79,5.87-2.78,1.77-2C7.91,14.17,5.07,12.33,6,11,5.87,9.2,5.85,8.56,8.12,8.1c-1.22,1,2.84-.23,2.24,1.44-.13.86-1.18-.14-1.51.9.21.48,1.24.24,1.15-.28,1.13.37-.66,2,1.08,1.22-.22.44-.09.62.43,1,1.07-.86.08-3,1.75-2.93-.46.41.45.32.69.43-.83.18-.12.53.22.62-1.85.81-1,4-3.65,4.3,1.32-.13,2.28-.6,3.49-.5-.79.3.27.38.31.77-.62-.25-.51.16-.27.53C11.31,15.65,11.27,15.56,9,16.78ZM7.72,10.33a3.17,3.17,0,0,0-.65.35c.53-1.15.06-.55-.13.25.89-.77.37-.15.33.51.19-.17.31-.42.5-.56.13.45,1,1.75,1.14.69.23.39.54,1,1,1-.52-.28-1-1.74-1.25-.66-.35-.4-.16-1.35-.72-.55C8.17,10,7,11.72,7.72,10.33ZM9.65,14.7a1.63,1.63,0,0,0,.85-.31c-.14.2-.36.32-.44.56.26-.25.61-.48.68-.85A3.64,3.64,0,0,1,9.65,14.7ZM8.35,9c-.16,0-.29.23-.46.33l.59-.12C8.42,9.18,8.27,9.19,8.35,9Z" />
                                         </g>
-                                        <image 
+                                        <image
                                             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAABbCAYAAAC/Ml0aAAAACXBIWXMAAAsSAAALEgHS3X78AAAEo0lEQVR4nO3d7WsURxwH8N+e8dJYg9AK8aE+EY01NoKVCgpaUdGX9W2LoqDF9/VlX/T+gb4tiAiW2lakgi/sGxsFKxSqtL4RHwIJjUlOz7vcxcsllzvvbsr8uhfW8y67tzezO5d+P7DsTtjb2dn53uzsnqAlhCCAyP/+CgBDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEARiCAAxBAIYgAEMQgCEIwBAEYAgCMAQBGIIADEEAhiAAQxCAIQjAEARgCAIwBAEYggAMQQCGIABDEIAhCMAQBGAIAjAEAVjDICTuXBZy8VsGvVT3z6IZEYp//yTkEla53XW4nX9titzKECxV/dPwf4L128E9nx63wshCWN/O6MdfhNJe1f2DySIwBAGY6xzB6Z+JBH1/fZD/cvLYYdq4tgdX0SCt9E9TQbj/cIgeDT+b30YQzNJK/+DWAKypEaEd/fHgKQ2PJah3XQ/t3bm1qRa08tl2s+iDEPvul/ntmxe+Duyz7aapIGzv3UB01LENRmmlf5oKQv/m9byAmVrpH+W3hvjtizG5XnPwdExHefBC7Fu5Pvxl7JyzvH9Xn+qmGN3egb7NStuhY47wjb2O6SiXypWv7PK5mnJdO/r8j2AeP6u8vflCkfy21y/lvzWUy4VRe/OSvT7VajmeTC+Zys5clYV8ofi5XHd1Rn92lo/u/Wi1jgvkJjWVV97eodH40lKpfIUWaO/ugX5f7W30W4OOIPj5WOPjVSr0ZGSC1ws5uPtDpfV6lZrKKz1ebnaORsYTrvvt3ObvVti2PzrFX6ZdQ7CYjCdSobTG6PcI8l6Zyc5oO35mfJjGRkeoUhG0ctU6+mDLNm11eTqfbI6Kr8uh1G10EJ4nM1qOmxx+SE9/v05z0/8dv1QhGipUqNjRTXuOfEa9A7u01LsQOeolJqcCr7fK2CBkc7N8v1Qt/vg+PfrtyhtH7YgQvdcVoXwpR4PXfqDC3Cz1f7Iv0PamMtnQRgMyeY4QT6aVHzOfTb8VAqeuDotWLovQ3V+vUTadVF5/I3I0SGWmA6uvHiODIIdIHd+OkT9vuu6z4h2LIhbRvVs3lNffiAkTYuOCoPPbkUtOeNrv3ahFM6/0zE9qvS6VtE6IvTIuCDq/HdOpuKf95JzhxfgzLedQa+zFZCD1uDEqCLofF00jJ8M6JsR+GBUEXY+LpnqZfmXMmRkTBF2Pi6aSL49Maq8xQdDxuGiyMF8e1VM3CJZlRYM8CV2Pi6Yysb0N3yyuOnBiExG9by/d9tpYhb9+PB/Gua09dOaswZflubw0RDRpL0UhjtfdseHP0HV3tqxuOxTLHeHotNeBjiLAcvKp2LFwZ8s31kKIYjOXqKkguB7MsqrBqAalukih/MORNlftWGdnc+cLIZS+dVMaBE8Vvh0WcowsUdNvQYoU7U4mRwfP/00I4e3Nl0KBB8Erx22IakLTWRMWE25Lzo4le7vg2K4O000P2UExNgh+OUYcp1ZGGjnhqqV8aA4VEf0LkON7Lll6FgYAAAAASUVORK5CYII=" />
                                     </g>
                                 </g>

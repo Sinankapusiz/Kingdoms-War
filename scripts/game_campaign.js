@@ -48,10 +48,15 @@ class Game {
     map = new Map();
     gameActions = new GameActions();
     constructor() {
+        this._gameSituation = true;
         this.countryArray = new Array();
         this.playerArray = new Array();
         this.cityArray = new Array();
         this.buildingArray = new Array();
+        this._loopSituation = false;
+        this._gameLoopTimeSpeed = 1000;
+        this._time = 0;
+        this._gameLoop;
     }
     async getBuildingData(path, buildingArray) {
         try {
@@ -137,7 +142,7 @@ class Game {
         console.log(this.buildingArray);
         //this.playerArray.forEach(player => this.writeConcoleAllPlayerInfo(player));
         this.map.createCampaignMap();
-        this.gameLoop(0, 20, 5, true);
+        this.gameLoopStart( 20, 5);
     };
     update() {
         console.log("Update Fonsiyonu Çalıştırıldı.");
@@ -168,22 +173,69 @@ class Game {
             }
         });
     };
-    gameLoop(time, gameDuraction, infoInterval, loop) {
+    gameLoopStart( gameDuraction, infoInterval) {
         console.log("Döngü Başladı");
-        if (loop) {
-            const loop = setInterval(() => {
-                time++;
-                if (time % infoInterval === 0) {
+        this._gameLoop = setInterval(() => {
+            if (this._loopSituation) {
+                this._time++;
+                console.log(this._time);
+                console.log(this._gameLoopTimeSpeed);
+                if (this._time % infoInterval === 0) {
                     this.update();
                 }
-                if (time >= gameDuraction) {
-                    clearInterval(loop);
+                if (this._time >= gameDuraction) {
+                    this.gameloopFinish();
                     //console.clear();
                     console.log("Oyun bitti.");
                 }
-            }, 1000);
-        }
+            }
+        }, this._gameLoopTimeSpeed);
+
     };
+    gameloopFinish(){
+        clearInterval(this._gameLoop);
+    };
+    gameLoopPause() {
+        if (this._loopSituation) {
+            const playGameBtn = document.getElementById("play-game-btn");
+            playGameBtn.style.display = "block";
+            const pauseGameBtn = document.getElementById("pause-game-btn");
+            pauseGameBtn.style.display = "none";
+            this._loopSituation = false;
+            console.log("Oyun duraktırdı... " + this._loopSituation);
+        }
+        else
+            console.log("Oyun zaten durmuş durumda... " + this._loopSituation);
+    };
+    gameLoopPlay() {
+        if (!this._loopSituation) {
+            const playGameBtn = document.getElementById("play-game-btn");
+            playGameBtn.style.display = "none";
+            const pauseGameBtn = document.getElementById("pause-game-btn");
+            pauseGameBtn.style.display = "block";
+            this._loopSituation = true;
+            console.log("Oyun devam ediyor..." + this._loopSituation);
+        }
+        else
+            console.log("Oyun zaten devam ediyor..." + this._loopSituation);
+    };
+    
+    gameLoopTimeSpeedHalf() {
+        this._gameLoopTimeSpeed = 2000;
+        this.gameloopFinish();
+        this.gameLoopStart( 20, 5);
+    };
+    gameLoopTimeSpeedNormal() {
+        this._gameLoopTimeSpeed = 1000;
+        this.gameloopFinish();
+        this.gameLoopStart( 20, 5);
+    };
+    gameLoopTimeSpeedDouble() {
+        this._gameLoopTimeSpeed = 500;
+        this.gameloopFinish();
+        this.gameLoopStart( 20, 5);
+    };
+
 };
 class GameActions {
     economicActions() {
@@ -265,7 +317,30 @@ class City {
     }
 }
 const game = new Game();
-game.start();
 
+const newGameBtn = document.getElementById("new-game-btn");
+const pauseGameBtn = document.getElementById("pause-game-btn");
+const playGameBtn = document.getElementById("play-game-btn");
+newGameBtn.addEventListener("click", () => {
+    game.start();
+});
+pauseGameBtn.addEventListener("click", () => {
+    game.gameLoopPause();
+});
+playGameBtn.addEventListener("click", () => {
+    game.gameLoopPlay();
+});
 
+const timeSpeedHalf = document.getElementById("time-speed-half-btn");
+const timeSpeedNormal = document.getElementById("time-speed-normal-btn");
+const timeSpeedDouble = document.getElementById("time-speed-double-btn");
 
+timeSpeedHalf.addEventListener("click", () => {
+    game.gameLoopTimeSpeedHalf();
+});
+timeSpeedNormal.addEventListener("click", () => {
+    game.gameLoopTimeSpeedNormal();
+});
+timeSpeedDouble.addEventListener("click", () => {
+    game.gameLoopTimeSpeedDouble();
+});
