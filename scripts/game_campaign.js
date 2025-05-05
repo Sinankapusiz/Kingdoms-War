@@ -57,6 +57,7 @@ class Game {
         this._gameLoopTimeSpeed = 1000;
         this._time = 0;
         this._gameLoop;
+        this._gameLoopTime = 30;
     }
     async getBuildingData(path, buildingArray) {
         try {
@@ -142,7 +143,7 @@ class Game {
         console.log(this.buildingArray);
         //this.playerArray.forEach(player => this.writeConcoleAllPlayerInfo(player));
         this.map.createCampaignMap();
-        this.gameLoopStart( 20, 5);
+        this.gameLoopStart( this._gameLoopTime, 5);
     };
     update() {
         console.log("Update Fonsiyonu Çalıştırıldı.");
@@ -152,17 +153,17 @@ class Game {
                 console.log(randomActionIndex);
                 switch (randomActionIndex) {
                     case 1:
-                        console.log(player.playerCountry.countryName + " ülkesi(" + player.playerName + ") aşağıdaki eylem gerçekleşti.");
+                        console.log(player.playerCountry.countryName + " ülkesi(" + player.playerName + ") aşağıdaki eylemi gerçekleşti.");
                         this.gameActions.economicActions();
                         console.log("-------------------------------");
                         break;
                     case 2:
-                        console.log(player.playerCountry.countryName + " ülkesi(" + player.playerName + ") aşağıdaki eylem gerçekleşti.");
+                        console.log(player.playerCountry.countryName + " ülkesi(" + player.playerName + ") aşağıdaki eylemi gerçekleşti.");
                         this.gameActions.militaryActions();
                         console.log("-------------------------------");
                         break;
                     case 3:
-                        console.log(player.playerCountry.countryName + " ülkesi(" + player.playerName + ") aşağıdaki eylem gerçekleşti.");
+                        console.log(player.playerCountry.countryName + " ülkesi(" + player.playerName + ") aşağıdaki eylemi gerçekleşti.");
                         this.gameActions.diplomaticActions();
                         console.log("-------------------------------");
                         break;
@@ -174,7 +175,7 @@ class Game {
         });
     };
     gameLoopStart( gameDuraction, infoInterval) {
-        console.log("Döngü Başladı");
+        console.log("Oyun döngüsü başladı");
         this._gameLoop = setInterval(() => {
             if (this._loopSituation) {
                 this._time++;
@@ -202,10 +203,10 @@ class Game {
             const pauseGameBtn = document.getElementById("pause-game-btn");
             pauseGameBtn.style.display = "none";
             this._loopSituation = false;
-            console.log("Oyun duraktırdı... " + this._loopSituation);
+            console.log("Oyun duraktırdı...");
         }
         else
-            console.log("Oyun zaten durmuş durumda... " + this._loopSituation);
+            console.log("Oyun zaten durmuş durumda...");
     };
     gameLoopPlay() {
         if (!this._loopSituation) {
@@ -214,33 +215,48 @@ class Game {
             const pauseGameBtn = document.getElementById("pause-game-btn");
             pauseGameBtn.style.display = "block";
             this._loopSituation = true;
-            console.log("Oyun devam ediyor..." + this._loopSituation);
+            console.log("Oyun devam ediyor...");
         }
         else
-            console.log("Oyun zaten devam ediyor..." + this._loopSituation);
+            console.log("Oyun zaten devam ediyor...");
     };
     
     gameLoopTimeSpeedHalf() {
         this._gameLoopTimeSpeed = 2000;
         this.gameloopFinish();
-        this.gameLoopStart( 20, 5);
+        this.gameLoopStart( this._gameLoopTime, 5);
     };
     gameLoopTimeSpeedNormal() {
         this._gameLoopTimeSpeed = 1000;
         this.gameloopFinish();
-        this.gameLoopStart( 20, 5);
+        this.gameLoopStart( this._gameLoopTime, 5);
     };
     gameLoopTimeSpeedDouble() {
         this._gameLoopTimeSpeed = 500;
         this.gameloopFinish();
-        this.gameLoopStart( 20, 5);
+        this.gameLoopStart( this._gameLoopTime, 5);
     };
-
+    showGameBarPanel(){
+        const gameTimeBar = document.getElementById("game-time-bar");
+        gameTimeBar.style.display = "flex";
+        const playerCountryInfoBar = document.getElementById("player-country-info-bar");
+        playerCountryInfoBar.style.display = "flex";
+        const gameMenuPanel = document.querySelector(".game-menu");
+        gameMenuPanel.style.display = "none";
+        /*const gameFooterBar = document.getElementById("game-footer");
+        gameFooterBar.style.display = "flex";*/
+        const gameWallPaper = document.getElementById("game-wall-paper");
+        gameWallPaper.style.display = "none";
+    };
 };
 class GameActions {
+    //Ana eylemler
     economicActions() {
         //Ekomik eylemler.
         console.log("Ekonomik Eylem Gerçekleştirildi.");
+        //Para ile ilgili eylem.
+        //Kaynak ile ilgili eylem.
+        //Gelişim ile ilgili eylem.
     };
     militaryActions() {
         //Askeri eylemler.
@@ -250,6 +266,8 @@ class GameActions {
         // Diplomatik eylemler.
         console.log("Diplomatik Eylem Gerçekleştirildi.");
     };
+
+
 }
 class Building {
     constructor(
@@ -323,6 +341,11 @@ const pauseGameBtn = document.getElementById("pause-game-btn");
 const playGameBtn = document.getElementById("play-game-btn");
 newGameBtn.addEventListener("click", () => {
     game.start();
+    game.showGameBarPanel();
+    const gameStartSound = new Audio("sounds/game-start-sound.mp3");
+    gameStartSound.volume = 0.5;
+    mainSoundPause();
+    gameStartSound.play();
 });
 pauseGameBtn.addEventListener("click", () => {
     game.gameLoopPause();
@@ -344,3 +367,48 @@ timeSpeedNormal.addEventListener("click", () => {
 timeSpeedDouble.addEventListener("click", () => {
     game.gameLoopTimeSpeedDouble();
 });
+
+const mainSoundControlBtn = document.getElementById("main-sound-btn");
+const mainSound = new Audio("sounds/main_music.mp3");
+let mainSoundSituation = false;
+
+mainSoundControlBtn.addEventListener("click", () => {
+    if (!mainSoundSituation) {
+        mainSoundPlay();
+        mainSoundSituation = true;
+    } else {
+        mainSoundPause();
+        mainSoundSituation = false;
+    }
+});
+
+function mainSoundPlay() {
+    mainSound.play();
+    mainSound.loop = true;
+    mainSound.volume = 0.5;
+    const mainSoundControlBtnOffIcon = document.getElementById("main-sound-off");
+    mainSoundControlBtnOffIcon.style.display = "none";
+    const mainSoundControlBtnOnIcon = document.getElementById("main-sound-on");
+    mainSoundControlBtnOnIcon.style.display = "inline";
+}
+
+function mainSoundPause() {
+    mainSound.pause();
+    const mainSoundControlBtnOffIcon = document.getElementById("main-sound-off");
+    mainSoundControlBtnOffIcon.style.display = "inline";
+    const mainSoundControlBtnOnIcon = document.getElementById("main-sound-on");
+    mainSoundControlBtnOnIcon.style.display = "none";
+}
+
+const btnEffectSound = new Audio("sounds/effect-Sound1.mp3");
+const gameMenuBtns = document.querySelectorAll(".game-menu-btn");
+gameMenuBtns.forEach(btn => {
+    btn.addEventListener('mouseover', () => {
+        btnEffectSound.volume = 0.5;
+        btnEffectSound.play();
+    })
+    btn.addEventListener('mouseout', () => {
+        btnEffectSound.pause();
+        btnEffectSound.currentTime = 0;
+    })
+})

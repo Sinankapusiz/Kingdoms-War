@@ -314,4 +314,10 @@ class Mucadele {
     }
 }
 
-export{Oyuncu,oyuncu_turu,oyuncu_karakteri,Ulke};
+export {
+    Oyuncu,
+    oyuncu_turu,
+    oyuncu_karakteri,
+    Ulke
+};
+

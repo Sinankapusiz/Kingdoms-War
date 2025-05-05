@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kingdoms War</title>
+    <link rel="icon" type="image/png" href="/image/game-logo.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/city.css">
     <link rel="stylesheet" href="css/flag.css">
@@ -16,15 +18,41 @@
     <div class="container">
         <div class="game-container">
             <div class="game-menu">
-                <img src="" alt="Game Logo" title="Game Logo" class="game-logo">
+
+                <img src="image/game-logo.png" alt="Game Logo" title="Büyük bir strateji tabanlı macera oyunu" class="game-logo">
                 <div class="menu">
                     <button class="game-menu-btn" id="new-game-btn">YENİ OYUN</button>
                     <button class="game-menu-btn">OYUNA DURDUR</button>
                     <button class="game-menu-btn">OYUNA DEVAM ET</button>
                     <button class="game-menu-btn">OYUN YÜKLE</button>
                     <button class="game-menu-btn">AYARLAR</button>
+                    <button class="game-menu-btn" id="main-sound-btn">
+                        <svg id="main-sound-off" version="1.0" xmlns="http://www.w3.org/2000/svg" width="30.000000pt" height="30.000000pt"
+                            viewBox="0 0 64.000000 64.000000" preserveAspectRatio="xMidYMid meet">
+
+                            <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)" 
+                                stroke="none">
+                                <path d="M3 624 c-4 -11 17 -38 65 -87 l71 -72 -25 -18 c-23 -17 -24 -23 -24 -126 0 -132 6 -141 97 -141 l61 0 112 -90 c62 -50 118 -89 124 -87 6 2 13 25 16 51 l5 47 50 -50 c52 -53 72 -62 82 -35 4 12 -79 101 -298 320 -167 167 -310 304 -317 304 -7 0 -15 -7 -19 -16z" />
+                                <path d="M372 559 c-56 -44 -102 -84 -102 -88 0 -3 52 -58 115 -121 l115 -115 -2 199 c-2 132 -7 201 -14 203 -6 2 -56 -33 -112 -78z" />
+                            </g>
+                        </svg>
+                        <svg id="main-sound-on" version="1.0" xmlns="http://www.w3.org/2000/svg" width="64.000000pt" height="64.000000pt"
+                            viewBox="0 0 64.000000 64.000000" preserveAspectRatio="xMidYMid meet">
+                            <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)" stroke="none">
+                                <path
+                                    d="M496 553 c-4 -10 1 -28 12 -42 79 -107 87 -246 21 -355 -35 -57 -34 -81 1 -81 56 0 119 168 106 282 -15 127 -114 265 -140 196z" />
+                                <path
+                                    d="M196 472 c-73 -62 -84 -67 -135 -72 l-56 -5 -3 -68 c-4 -84 5 -97 67 -97 42 0 53 -6 129 -70 46 -39 87 -70 92 -70 26 0 30 35 28 236 -4 252 -1 249 -122 146z" />
+                                <path
+                                    d="M396 454 c-4 -9 3 -32 14 -52 26 -43 28 -111 5 -162 -20 -44 -15 -70 14 -70 40 0 79 104 67 182 -12 81 -81 152 -100 102z" />
+                            </g>
+                        </svg>
+                    </button>
                 </div>
+                <div><span class="game-menu-btn">v 1.0.0</span></div>
+                <div><span class="game-menu-btn">By Sinan KAPUSIZ</span></div>
             </div>
+            <img src="./image/game-wall-paper.gif" alt="" srcset="" id="game-wall-paper">
             <div class="game-content">
 
                 <div class="game-campaign-map">
@@ -465,7 +493,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="game-footer"></div>
+                <div id="game-footer"></div>
             </div>
         </div>
     </div>
