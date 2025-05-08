@@ -1,196 +1,236 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nova+Mono&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tagesschrift&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nova+Mono&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tagesschrift&display=swap");
 
 * {
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
 
 :root {
-    --game-campaign-map-height: 100%;
-    --select-color: #acff2f71;
-    --enemy-color: rgba(255, 0, 0, 0.5);
-    --ally-color: rgba(0, 128, 0, 0.5);
-    --neutral-color: rgba(255, 255, 255, 0.5);
-    --player-color: rgba(0, 0, 139, 0.5);
-
+  --game-campaign-map-height: 100%;
+  --select-color: #acff2f71;
+  --enemy-color: rgba(255, 0, 0, 0.5);
+  --ally-color: rgba(0, 128, 0, 0.5);
+  --neutral-color: rgba(255, 255, 255, 0.5);
+  --player-color: rgba(0, 0, 139, 0.5);
+  --game-ui-panel-color:#222;
 }
 
 body {
-    background-color: #2bc9cf;
-    background-image: url("/image/wave.jpg");
-    background-size: 200px;
+  background-color: #2bc9cf;
+  background-image: url("/image/wave.jpg");
+  background-size: 200px;
 }
 
 .game-container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
 }
 
 .game-campaign-map {
-    height: var(--game-campaign-map-height);
-    padding: 20px;
-    display: flex;
-    justify-content: center;
+  height: var(--game-campaign-map-height);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 #map1,
 #kita-arazi,
 .map-gc,
 map {
-    height: 100%;
+  height: 100%;
 }
 
 .map {
-    position: relative;
+  position: relative;
 }
 
 .game-content {
-    width: 100%;
+  width: 100%;
 }
 
 .game-menu {
-    width: 15%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+  width: 15%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .game-menu,
 .menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 7;
 }
 
 .menu {
-    width: 100%;
-    gap: 5px;
-    padding: 5px;
-    margin-bottom: 50px;
+  width: 100%;
+  gap: 5px;
+  padding: 5px;
+  margin-bottom: 50px;
 }
 
 .game-menu-btn {
-    width: 100%;
-    height: 50px;
-    background-color: #00000000;
-    border-style: none;
-    color: #d59637;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    font-family: "Tagesschrift", system-ui;;
-    font-size: 1.0rem;
-    cursor: pointer;
-    transition: 0.5s;
+  width: 100%;
+  height: 50px;
+  background-color: #00000000;
+  border-style: none;
+  color: #d59637;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-family: "Tagesschrift", system-ui;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.5s;
 }
-.game-menu-btn:hover{
-    font-size: 1.2rem;
-    background-color: #00000030;
-    color: #fcb03e;
+.game-menu-btn:hover {
+  font-size: 1.2rem;
+  background-color: #00000030;
+  filter: brightness(1.9);
 }
-#main-sound-btn>svg{
-    height: 50%;
-    fill: #d59637;
-    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.8));
-    transition: 0.5s;
+#main-sound-btn > svg {
+  height: 50%;
+  fill: #d59637;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.8));
+  transition: 0.5s;
 }
-#main-sound-btn>svg:hover{
-    height: 80%;
-    color: #fcb03e;
+#main-sound-btn > svg:hover {
+  height: 80%;
 }
-#main-sound-on{
-    display: none;
+#main-sound-on {
+  display: none;
 }
 
 .game-logo {
-    height: 100px;
-    margin-bottom: 50px;
-    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.8));
-    transition: 0.5s;
+  height: 100px;
+  margin-bottom: 50px;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.8));
+  transition: 0.5s;
 }
-.game-logo:hover{
-    height: 120px;
-}
-
-.bolge {
-    stroke: #0000007d;
-    stroke-width: 5px;
-    fill: rgba(200, 255, 1, 0);
+.game-logo:hover {
+  height: 120px;
 }
 
-.bolge:hover {
-    stroke-width: 10px;
-    stroke: var(--select-color);
-    fill: rgba(200, 255, 1, 0.329);
+.region {
+  stroke: #0000007d;
+  stroke-width: 5px;
+  fill: rgba(200, 255, 1, 0);
+}
+
+.region:hover {
+  stroke-width: 10px;
+  stroke: var(--select-color);
+  fill: rgba(200, 255, 1, 0.329);
+  filter: brightness(1.9);
 }
 
 #game-footer {
-    height: 20%;
-    width: 60%;
-    background-color: aqua;
-    position: absolute;
-    transform: translate(-50%, -100%);
-    left: 50%;
-    display: none;
+  height: 25%;
+  width: 70%;
+  position: absolute;
+  transform: translate(-50%, -100%);
+  left: 50%;
+  display: none;
+  flex-direction: column;
+  padding: 4px;
+  background-color: var(--game-ui-panel-color);;
 }
-
-#bolgeler {
-    position: relative;
-    z-index: 1;
+#select-gameObje-content-name{
+    background-color: var(--game-ui-panel-color);;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    display: inline-block;
+    font-family: sans-serif;
+    border-bottom: 2px solid #333;
 }
-
-#player-country-info-bar{
-    z-index: 5;
-    top: 0px;
-    left: 0px;
-    position: absolute;
-    height: 8%;
-    width: 100vw;
-    background-color: rgba(255, 255, 0, 1);
-    display: none;
-}
-#game-time-bar{
-    position: absolute;
-    width: 10%;
-    height: 14%;
-    background-color: brown;
-    z-index: 5;
-    transform-origin: right;
-    top: 0px;
-    right: 0px;
-    display: none;
-    padding: 0.2%;
-    gap: 1%;
-    
-}
-#play-pause-btn-div{
-    height: 100%;
-    width: 50%;   
-    display: flex;
-    flex-direction: row;
-}
-#play-game-btn,#pause-game-btn{
-    height: 100%;
+#select-gameObje-content-info-panel{
+    background-color: var(--game-ui-panel-color);
     width: 100%;
-}
-#pause-game-btn{
-    display: none;
-}
-#time-speed-btn-div{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-}
-#time-speed-half-btn,#time-speed-normal-btn,#time-speed-double-btn{
     height: 100%;
 }
 
-#game-wall-paper{
-    width: 100vw; /* Ekran genişliğinin tamamını kaplar */
-    height: 100vh; /* Ekran yüksekliğinin tamamını kaplar */
-    object-fit: cover; /* Resmi orantılı şekilde kaplar, kırpma yapabilir */
-    z-index: 6;
-    position: absolute;
+#regionler {
+  position: relative;
+  z-index: 1;
+}
+
+#player-country-info-bar {
+  z-index: 5;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  height: 8%;
+  width: 100vw;
+  background-color: var(--game-ui-panel-color);
+  display: none;
+}
+#game-time-bar {
+  position: absolute;
+  width: 10%;
+  height: 14%;
+  background-color: var(--game-ui-panel-color);
+  z-index: 5;
+  transform-origin: right;
+  top: 0px;
+  right: 0px;
+  display: none;
+  padding: 0.2%;
+  gap: 2px;
+}
+#play-pause-btn-div {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+}
+#play-game-btn,
+#pause-game-btn {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border-style: none;
+  cursor: pointer;
+}
+#play-game-btn:hover,
+#pause-game-btn:hover {
+  border: 5px solid #d59637;
+}
+#play-game-btn svg,
+#pause-game-btn svg {
+  width: 100%;
+  padding: 20px;
+  fill: #d59637;
+}
+
+#pause-game-btn {
+  display: none;
+}
+#time-speed-btn-div {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 2px;
+}
+#time-speed-half-btn,
+#time-speed-normal-btn,
+#time-speed-double-btn {
+  height: 100%;
+  border-style: none;
+  cursor: pointer;
+}
+#time-speed-half-btn:hover,
+#time-speed-normal-btn:hover,
+#time-speed-double-btn:hover {
+  border: 5px solid #d59637;
+}
+#game-wall-paper {
+  width: 100vw; /* Ekran genişliğinin tamamını kaplar */
+  height: 100vh; /* Ekran yüksekliğinin tamamını kaplar */
+  object-fit: cover; /* Resmi orantılı şekilde kaplar, kırpma yapabilir */
+  z-index: 6;
+  position: absolute;
 }

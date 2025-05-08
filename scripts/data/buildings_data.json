@@ -1,6 +1,6 @@
 [
     {
-        "buildingId": "01",
+        "buildingId": 1,
         "buildingName": "Çiftlik",     
         "buildingImage": "./image/Buildings/farm-img.png",
         "buildingLevel": 1,
@@ -12,7 +12,7 @@
         "buildingCraftMaterial": ""
     },
     {
-        "buildingId": "02",
+        "buildingId": 2,
         "buildingName": "Pazar",   
         "buildingImage": "./image/Buildings/bazaar-img.png",
         "buildingLevel": 1,
@@ -24,7 +24,7 @@
         "buildingCraftMaterial": ""
     },
     {
-        "buildingId": "03",
+        "buildingId": 3,
         "buildingName": "Oduncu",      
         "buildingImage": "./image/Buildings/woodcutter-img.png",
         "buildingLevel": 1,
@@ -36,7 +36,7 @@
         "buildingCraftMaterial": ""
     },
     {
-        "buildingId": "04",
+        "buildingId": 4,
         "buildingName": "Taş Madeni",
         "buildingImage": "./image/Buildings/stone-mine-img.png",
         "buildingLevel": 1,
@@ -48,7 +48,7 @@
         "buildingCraftMaterial": ""
     },
     {
-        "buildingId": "05",
+        "buildingId": 5,
         "buildingName": "Demir Madeni",     
         "buildingImage": "",
         "buildingLevel": 1,
@@ -60,7 +60,7 @@
         "buildingCraftMaterial": ""
     },
     {
-        "buildingId": "06",
+        "buildingId": 6,
         "buildingName": "Altın Madeni",    
         "buildingImage": "",
         "buildingLevel": 1,
@@ -72,7 +72,7 @@
         "buildingCraftMaterial": ""
     },
     {
-        "buildingId": "07",
+        "buildingId": 7,
         "buildingName": "Demirci",
         "buildingImage": "",
         "buildingLevel": 1,
@@ -84,7 +84,7 @@
         "buildingCraftMaterial": ""
     },
     {
-        "buildingId": "08",
+        "buildingId": 8,
         "buildingName": "Silahçı",
         "buildingImage": "",
         "buildingLevel": 1,
@@ -100,7 +100,7 @@
         ]
     },
     {
-        "buildingId": "09",
+        "buildingId": 9,
         "buildingName": "Mücevherci",
         "buildingImage": "",
         "buildingLevel": 1,

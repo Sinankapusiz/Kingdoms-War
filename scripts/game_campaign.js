@@ -1,4 +1,11 @@
 class Map {
+    _UIControl = new UIControl();
+    constructor() {
+        this.selectedCity = new City();
+    }
+    getSelectedCity() {
+        return this.selectedCity;
+    };
     createCampaignMap() {
         this.createCity('./scripts/data/cities_data.json');
         this.setCityOwnerFlag('./scripts/data/countries_data.json');
@@ -24,26 +31,206 @@ class Map {
                     const cityDiv = document.getElementById(city.cityId);
                     const cityFlagSembol = cityDiv.querySelector("path");
                     const cityFlagBackground = cityDiv.querySelector("polygon");
-
+                    // Bayrak ataması.
                     cityFlagSembol.setAttribute('d', country.countryFlag.countryFlagSymbol);
                     cityFlagSembol.id = country.countryFlag.countryFlagSymbolColor;
                     cityFlagBackground.id = country.countryFlag.countryFlagBackgroundId;
-
+                    // Bölge rengi ataması.
                     const cityRegion = document.getElementById(city.cityRegionId);
                     cityRegion.style.fill = country.countryRegion.regionColor;
                     cityRegion.style.stroke = country.countryRegion.regionBorderColor;
                     cityRegion.style.strokeWidth = "10px";
+
+                    cityRegion.addEventListener("mousedown", () => {
+                        this.mouseDownRegionColorChange(country.countryRegion, cityRegion);
+                        this.selectedCity = city;
+                        console.log(this.selectedCity.cityName);
+
+                        const _ui = this._UIControl.getAllGameUIList();
+                        const _displayValues = this._UIControl.getDisplayValues();
+                        this._UIControl.showUI(_ui.GameFootherBar, _displayValues.flex);
+
+                        _ui.SelectGameObjeContentNameDiv.textContent = this.selectedCity.cityName;
+
+                    });
+                    cityRegion.addEventListener("mouseleave", () => {
+                        this.mouseLeaveRegionColorChange(country.countryRegion, cityRegion);
+                    });
+                    cityRegion.addEventListener("mouseover", () => {
+                        this.mouseOverRegionColorChange(country.countryRegion, cityRegion);
+                    });
+                    cityDiv.addEventListener("mousedown", () => {
+                        this.mouseDownRegionColorChange(country.countryRegion, cityRegion);
+                        this.selectedCity = city;
+                        console.log(this.selectedCity.cityName);
+
+                        const _ui = this._UIControl.getAllGameUIList();
+                        const _displayValues = this._UIControl.getDisplayValues();
+                        this._UIControl.showUI(_ui.GameFootherBar, _displayValues.flex);
+
+                        _ui.SelectGameObjeContentNameDiv.textContent = this.selectedCity.cityName;
+                    });
+                    cityDiv.addEventListener("mouseleave", () => {
+                        this.mouseLeaveRegionColorChange(country.countryRegion, cityRegion);
+                    });
+                    cityDiv.addEventListener("mouseover", () => {
+                        this.mouseOverRegionColorChange(country.countryRegion, cityRegion);
+                    });
                 })
 
             });
 
         } catch (error) {
             console.error('Ülke bayrakları yüklenirken hata oluştu:', error);
-        }
+        };
 
     }
-};
+    mouseOverRegionColorChange(region, cityRegion) {
+        // RGB veya RGBA ise işleyelim
+        const rgbRegex = /rgb\((\d+)\s*,?\s*(\d+)\s*,?\s*(\d+)(?:\s*\/\s*(\d+%?))?\)/;
 
+        const match = region.regionColor.match(rgbRegex);
+
+        if (match) {
+            const r = match[1];
+            const g = match[2];
+            const b = match[3];
+            const regionNewAlpha = "50%";
+            const regionStrokeNewAlpha = "100%";
+            // Yeni rgba olarak ayarla
+            cityRegion.style.fill = `rgba(${r}, ${g}, ${b}, ${regionNewAlpha})`;
+            cityRegion.style.stroke = `rgba(${r}, ${g}, ${b}, ${regionStrokeNewAlpha})`;
+        }
+    };
+    mouseLeaveRegionColorChange(region, cityRegion) {
+        // RGB veya RGBA ise işleyelim
+        const rgbRegex = /rgb\((\d+)\s*,?\s*(\d+)\s*,?\s*(\d+)(?:\s*\/\s*(\d+%?))?\)/;
+
+        const match = region.regionColor.match(rgbRegex);
+
+        if (match) {
+            const r = match[1];
+            const g = match[2];
+            const b = match[3];
+            const regionNewAlpha = "30%";
+            const regionStrokeNewAlpha = "70%";
+            // Yeni rgba olarak ayarla
+            cityRegion.style.fill = `rgba(${r}, ${g}, ${b}, ${regionNewAlpha})`;
+            cityRegion.style.stroke = `rgba(${r}, ${g}, ${b}, ${regionStrokeNewAlpha})`;
+        }
+    };
+    mouseDownRegionColorChange(region, cityRegion) {
+        // RGB veya RGBA ise işleyelim
+        const rgbRegex = /rgb\((\d+)\s*,?\s*(\d+)\s*,?\s*(\d+)(?:\s*\/\s*(\d+%?))?\)/;
+
+        const match = region.regionColor.match(rgbRegex);
+
+        if (match) {
+            const r = match[1];
+            const g = match[2];
+            const b = match[3];
+            const regionNewAlpha = "60%";
+            const regionStrokeNewAlpha = "100%";
+            // Yeni rgba olarak ayarla
+            cityRegion.style.fill = `rgba(${r}, ${g}, ${b}, ${regionNewAlpha})`;
+            cityRegion.style.stroke = `rgba(${r}, ${g}, ${b}, ${regionStrokeNewAlpha})`;
+        }
+    };
+};
+class UIControl {
+    constructor() {
+        this.gameFooterBar = document.getElementById("game-footer");
+        this.gameTimeBar = document.getElementById("game-time-bar");
+        this.playerCountryInfoBar = document.getElementById("player-country-info-bar");
+        this.selectGameObjectContentNameDiv = document.getElementById("select-gameObje-content-name");
+        this.allGameUIList = {
+            GameFootherBar: this.gameFooterBar,
+            GameTimeBar: this.gameTimeBar,
+            PlayerCountryInfoBar: this.playerCountryInfoBar,
+            SelectGameObjeContentNameDiv: this.selectGameObjectContentNameDiv
+        };
+        this.DisplayValues = {
+            none: "none",
+            flex: "flex",
+            block: "block",
+            inline: "inline"
+        };
+    }
+    getAllGameUIList() {
+        return this.allGameUIList;
+    }
+    showUI(showUI, displayValue) {
+        showUI.style.display = displayValue;
+    }
+    getDisplayValues() {
+        return this.DisplayValues;
+    }
+}
+class Building {
+    constructor(
+        buildingId,
+        buildingName,
+        buildingImage,
+        buildingLevel,
+        buildingProfit,
+        buildingDefinition,
+        buildingCondition,
+        buildingCraftMaterial
+    ) {
+        this.buildingId = buildingId;
+        this.buildingName = buildingName;
+        this.buildingImage = buildingImage;
+        this.buildingLevel = buildingLevel;
+        this.buildingProfit = buildingProfit;
+        this.buildingDefinition = buildingDefinition;
+        this.buildingCondition = buildingCondition;
+        this.buildingCraftMaterial = buildingCraftMaterial;
+    }
+};
+class Player {
+    constructor(playerId, playerName, playerCountry, playerType) {
+        this.playerId = playerId;
+        this.playerName = playerName;
+        this.playerCountry = playerCountry;
+        this.playerType = playerType;
+    }
+};
+class Country {
+    constructor(
+        countryName,
+        countryFlag,
+        countryLeader,
+        countryOwnedCities,
+        countryRegion,
+        countryResource
+    ) {
+        this.countryName = countryName;
+        this.countryFlag = countryFlag;
+        this.countryLeader = countryLeader;
+        this.countryOwnedCities = countryOwnedCities;
+        this.countryRegion = countryRegion;
+        this.countryResource = countryResource;
+    }
+};
+class City {
+    constructor(
+        cityName,
+        cityOwner,
+        cityPopulation,
+        cityWallLevel,
+        cityRegion,
+        cityRegionResource,
+        cityBuildings
+    ) {
+        this.cityName = cityName;
+        this.cityOwner = cityOwner;
+        this.cityPopulation = cityPopulation;
+        this.cityWallLevel = cityWallLevel;
+        this.cityRegion = cityRegion;
+        this.cityRegionResource = cityRegionResource;
+        this.cityBuildings = cityBuildings;
+    }
+};
 class Game {
     map = new Map();
     gameActions = new GameActions();
@@ -57,7 +244,8 @@ class Game {
         this._gameLoopTimeSpeed = 1000;
         this._time = 0;
         this._gameLoop;
-        this._gameLoopTime = 30;
+        this._gameLoopTime = 200;
+        this.selectedCity = new City();
     }
     async getBuildingData(path, buildingArray) {
         try {
@@ -143,18 +331,21 @@ class Game {
         console.log(this.buildingArray);
         //this.playerArray.forEach(player => this.writeConcoleAllPlayerInfo(player));
         this.map.createCampaignMap();
-        this.gameLoopStart( this._gameLoopTime, 5);
+        this.gameLoopStart(this._gameLoopTime, 5);
     };
     update() {
+        this.selectedCity = this.map.getSelectedCity();
+        console.log(this.selectedCity.cityName);
         console.log("Update Fonsiyonu Çalıştırıldı.");
         this.playerArray.forEach(player => {
             if (player.playerType === "computer") {
-                const randomActionIndex = Math.floor(Math.random() * 3);
+                const randomActionIndex = this.gameActions.makeRandomActionNumber(0, 3);
+
                 console.log(randomActionIndex);
                 switch (randomActionIndex) {
                     case 1:
                         console.log(player.playerCountry.countryName + " ülkesi(" + player.playerName + ") aşağıdaki eylemi gerçekleşti.");
-                        this.gameActions.economicActions();
+                        this.gameActions.economicActions(player.playerCountry.countryOwnedCities, this.cityArray, this.buildingArray);
                         console.log("-------------------------------");
                         break;
                     case 2:
@@ -168,19 +359,19 @@ class Game {
                         console.log("-------------------------------");
                         break;
                     default:
+                        console.log(player.playerCountry.countryName + " ülkesi(" + player.playerName + ") eylem gerçekleştirmedi.");
                         console.log("Eylem gerçekleşmedi.");
                         break;
                 }
             }
         });
     };
-    gameLoopStart( gameDuraction, infoInterval) {
+    gameLoopStart(gameDuraction, infoInterval) {
         console.log("Oyun döngüsü başladı");
         this._gameLoop = setInterval(() => {
             if (this._loopSituation) {
                 this._time++;
-                console.log(this._time);
-                console.log(this._gameLoopTimeSpeed);
+                console.log("Geçen oyun süresi : " + this._time + " oyun hızı : " + this._gameLoopTimeSpeed);
                 if (this._time % infoInterval === 0) {
                     this.update();
                 }
@@ -193,19 +384,18 @@ class Game {
         }, this._gameLoopTimeSpeed);
 
     };
-    gameloopFinish(){
+    gameloopFinish() {
         clearInterval(this._gameLoop);
     };
     gameLoopPause() {
         if (this._loopSituation) {
             const playGameBtn = document.getElementById("play-game-btn");
-            playGameBtn.style.display = "block";
+            playGameBtn.style.display = "flex";
             const pauseGameBtn = document.getElementById("pause-game-btn");
             pauseGameBtn.style.display = "none";
             this._loopSituation = false;
             console.log("Oyun duraktırdı...");
-        }
-        else
+        } else
             console.log("Oyun zaten durmuş durumda...");
     };
     gameLoopPlay() {
@@ -213,30 +403,29 @@ class Game {
             const playGameBtn = document.getElementById("play-game-btn");
             playGameBtn.style.display = "none";
             const pauseGameBtn = document.getElementById("pause-game-btn");
-            pauseGameBtn.style.display = "block";
+            pauseGameBtn.style.display = "flex";
             this._loopSituation = true;
             console.log("Oyun devam ediyor...");
-        }
-        else
+        } else
             console.log("Oyun zaten devam ediyor...");
     };
-    
+
     gameLoopTimeSpeedHalf() {
         this._gameLoopTimeSpeed = 2000;
         this.gameloopFinish();
-        this.gameLoopStart( this._gameLoopTime, 5);
+        this.gameLoopStart(this._gameLoopTime, 5);
     };
     gameLoopTimeSpeedNormal() {
         this._gameLoopTimeSpeed = 1000;
         this.gameloopFinish();
-        this.gameLoopStart( this._gameLoopTime, 5);
+        this.gameLoopStart(this._gameLoopTime, 5);
     };
     gameLoopTimeSpeedDouble() {
         this._gameLoopTimeSpeed = 500;
         this.gameloopFinish();
-        this.gameLoopStart( this._gameLoopTime, 5);
+        this.gameLoopStart(this._gameLoopTime, 5);
     };
-    showGameBarPanel(){
+    showGameBarPanel() {
         const gameTimeBar = document.getElementById("game-time-bar");
         gameTimeBar.style.display = "flex";
         const playerCountryInfoBar = document.getElementById("player-country-info-bar");
@@ -251,9 +440,39 @@ class Game {
 };
 class GameActions {
     //Ana eylemler
-    economicActions() {
+    economicActions(playerCityArray, cityArray, buildingArray) {
         //Ekomik eylemler.
         console.log("Ekonomik Eylem Gerçekleştirildi.");
+
+        /*const randomEconomyAction = this.makeRandomActionNumber(0, 3);
+        console.log("randomEconomyAction = " + randomEconomyAction);*/
+
+        // Oyuncunun bir şehri seçiliyor.
+        const randomSelectionCitygAction = this.makeRandomActionNumber(0, playerCityArray.length - 1);
+        const selectedCity = cityArray.find(city => city.cityName === playerCityArray[randomSelectionCitygAction].cityName);
+        console.log("randomSelectionCitygAction " + randomSelectionCitygAction);
+        //Rastgele bir yapı seçiliyor.(değişecek)
+        const randomSelectionBuilding = this.makeRandomActionNumber(1, buildingArray.length);
+        const selectedBuilding = buildingArray.find(building => building.buildingId === randomSelectionBuilding);
+        //Yapı kontrolü yapılıyor. Eğer varsa eklenmiyor.
+        if (selectedCity.cityBuildings.find(building => building.buildingId === selectedBuilding.buildingId) === undefined) {
+            this.makeBuilding(selectedCity, selectedBuilding);
+        } else {
+            console.log(selectedBuilding.buildingName + " zaten bu şehirde var!");
+        }
+        /*switch (randomEconomyAction) {
+            case 1:
+
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+                break;
+            default:
+                break;
+        }*/
         //Para ile ilgili eylem.
         //Kaynak ile ilgili eylem.
         //Gelişim ile ilgili eylem.
@@ -266,80 +485,34 @@ class GameActions {
         // Diplomatik eylemler.
         console.log("Diplomatik Eylem Gerçekleştirildi.");
     };
+    /////
 
+    /// Yardımcı eylem fonksiyonları
 
-}
-class Building {
-    constructor(
-        buildingId,
-        buildingName,
-        buildingImage,
-        buildingLevel,
-        buildingProfit,
-        buildingDefinition,
-        buildingCondition,
-        buildingCraftMaterial
-    ) {
-        this.buildingId = buildingId;
-        this.buildingName = buildingName;
-        this.buildingImage = buildingImage;
-        this.buildingLevel = buildingLevel;
-        this.buildingProfit = buildingProfit;
-        this.buildingDefinition = buildingDefinition;
-        this.buildingCondition = buildingCondition;
-        this.buildingCraftMaterial = buildingCraftMaterial;
+    // Minumum ve maksimum değer verilerek arasında bir değer döndürür.
+    makeRandomActionNumber(minV, maxV) {
+        if (minV === undefined)
+            minV = 0;
+        const randomActionNumber = Math.floor(Math.random() * (maxV - minV + 1)) + minV;
+        return randomActionNumber;
+    }
+
+    makeBuilding(selectedCity, building) {
+        console.log(selectedCity);
+        console.log(building);
+        console.log(building.buildingName + " yapısı " + selectedCity.cityName + " şehrine eklendi.");
+        selectedCity.cityBuildings.push(building);
     }
 }
-class Player {
-    constructor(playerId, playerName, playerCountry, playerType) {
-        this.playerId = playerId;
-        this.playerName = playerName;
-        this.playerCountry = playerCountry;
-        this.playerType = playerType;
-    }
-}
-class Country {
-    constructor(
-        countryName,
-        countryFlag,
-        countryLeader,
-        countryOwnedCities,
-        countryRegion,
-        countryResource
-    ) {
-        this.countryName = countryName;
-        this.countryFlag = countryFlag;
-        this.countryLeader = countryLeader;
-        this.countryOwnedCities = countryOwnedCities;
-        this.countryRegion = countryRegion;
-        this.countryResource = countryResource;
-    }
-}
-class City {
-    constructor(
-        cityName,
-        cityOwner,
-        cityPopulation,
-        cityWallLevel,
-        cityRegion,
-        cityRegionResource,
-        cityBuildings
-    ) {
-        this.cityName = cityName;
-        this.cityOwner = cityOwner;
-        this.cityPopulation = cityPopulation;
-        this.cityWallLevel = cityWallLevel;
-        this.cityRegion = cityRegion;
-        this.cityRegionResource = cityRegionResource;
-        this.cityBuildings = cityBuildings;
-    }
-}
+
 const game = new Game();
 
 const newGameBtn = document.getElementById("new-game-btn");
 const pauseGameBtn = document.getElementById("pause-game-btn");
 const playGameBtn = document.getElementById("play-game-btn");
+
 newGameBtn.addEventListener("click", () => {
+
     game.start();
     game.showGameBarPanel();
     const gameStartSound = new Audio("sounds/game-start-sound.mp3");
@@ -347,6 +520,7 @@ newGameBtn.addEventListener("click", () => {
     mainSoundPause();
     gameStartSound.play();
 });
+
 pauseGameBtn.addEventListener("click", () => {
     game.gameLoopPause();
 });
@@ -354,18 +528,31 @@ playGameBtn.addEventListener("click", () => {
     game.gameLoopPlay();
 });
 
+//Oyun Hızı işlemleri.
 const timeSpeedHalf = document.getElementById("time-speed-half-btn");
 const timeSpeedNormal = document.getElementById("time-speed-normal-btn");
 const timeSpeedDouble = document.getElementById("time-speed-double-btn");
 
+function timeBtnSelectStyleClear() {
+    timeSpeedHalf.style.border = "none";
+    timeSpeedNormal.style.border = "none";
+    timeSpeedDouble.style.border = "none";
+}
+
 timeSpeedHalf.addEventListener("click", () => {
+    timeBtnSelectStyleClear();
     game.gameLoopTimeSpeedHalf();
+    timeSpeedHalf.style.border = "5px solid #d59637";
 });
 timeSpeedNormal.addEventListener("click", () => {
+    timeBtnSelectStyleClear();
     game.gameLoopTimeSpeedNormal();
+    timeSpeedNormal.style.border = "5px solid #d59637";
 });
 timeSpeedDouble.addEventListener("click", () => {
+    timeBtnSelectStyleClear();
     game.gameLoopTimeSpeedDouble();
+    timeSpeedDouble.style.border = "5px solid #d59637";
 });
 
 const mainSoundControlBtn = document.getElementById("main-sound-btn");

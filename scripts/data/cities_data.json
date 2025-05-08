@@ -13,7 +13,7 @@
         "cityRegionTradeValue": 85,
         "cityRegionResource": "food",
         "cityRoads":"",
-        "cityBuildings":""
+        "cityBuildings":[]
     },
     {
         "cityName": "Drakenhold",
@@ -29,7 +29,7 @@
         "cityRegionTradeValue": 70,
         "cityRegionResource": "wood",
         "cityRoads":"",
-        "cityBuildings":""
+        "cityBuildings":[]
     },
     {
         "cityName": "Vorthal",
@@ -45,7 +45,7 @@
         "cityRegionTradeValue": 90,
         "cityRegionResource": "stone",
         "cityRoads":"",
-        "cityBuildings":""
+        "cityBuildings":[]
     },
     {
         "cityName": "Grimspire",
@@ -61,7 +61,7 @@
         "cityRegionTradeValue": 60,
         "cityRegionResource": "iron",
         "cityRoads":"",
-        "cityBuildings":""
+        "cityBuildings":[]
     },
     {
         "cityName": "Mythralis",
@@ -77,7 +77,7 @@
         "cityRegionTradeValue": 50,
         "cityRegionResource": "food",
         "cityRoads":"",
-        "cityBuildings":""
+        "cityBuildings":[]
     },
     {
         "cityName": "Stormmere",
@@ -93,7 +93,7 @@
         "cityRegionTradeValue": 75,
         "cityRegionResource": "gold",
         "cityRoads":"",
-        "cityBuildings":""
+        "cityBuildings":[]
     },
     {
         "cityName": "Darkhaven",
@@ -109,7 +109,7 @@
         "cityRegionTradeValue": 55,
         "cityRegionResource": "wood",
         "cityRoads":"",
-        "cityBuildings":""
+        "cityBuildings":[]
     },
     {
         "cityName": "Silverkeep",
@@ -125,7 +125,7 @@
         "cityRegionTradeValue": 80,
         "cityRegionResource": "food",
         "cityRoads":"",
-        "cityBuildings":""
+        "cityBuildings":[]
     },
     {
         "cityName": "Ironvale",
@@ -141,7 +141,7 @@
         "cityRegionTradeValue": 68,
         "cityRegionResource": "iron",
         "cityRoads":"",
-        "cityBuildings":""
+        "cityBuildings":[]
     },
     {
         "cityName": "Frosthelm",
@@ -157,7 +157,7 @@
         "cityRegionTradeValue": 45,
         "cityRegionResource": "food",
         "cityRoads":"",
-        "cityBuildings":""
+        "cityBuildings":[]
     },
     {
         "cityName": "Shadowfen",
@@ -173,7 +173,7 @@
         "cityRegionTradeValue": 40,
         "cityRegionResource": "food",
         "cityRoads":"",
-        "cityBuildings":""
+        "cityBuildings":[]
     },
     {
         "cityName": "Ravenhold",
@@ -189,7 +189,7 @@
         "cityRegionTradeValue": 58,
         "cityRegionResource": "wood",
         "cityRoads":"",
-        "cityBuildings":""
+        "cityBuildings":[]
     },
     {
         "cityName": "Brighthaven",
@@ -205,7 +205,7 @@
         "cityRegionTradeValue": 88,
         "cityRegionResource": "stone",
         "cityRoads":"",
-        "cityBuildings":""
+        "cityBuildings":[]
     },
     {
         "cityName": "Daggerfall",
@@ -221,7 +221,7 @@
         "cityRegionTradeValue": 77,
         "cityRegionResource": "iron",
         "cityRoads":"",
-        "cityBuildings":""
+        "cityBuildings":[]
     },
     {
         "cityName": "Moonshade",
@@ -237,7 +237,7 @@
         "cityRegionTradeValue": 38,
         "cityRegionResource": "food",
         "cityRoads":"",
-        "cityBuildings":""
+        "cityBuildings":[]
     },
     {
         "cityName": "Thundertide",
@@ -253,6 +253,6 @@
         "cityRegionTradeValue": 72,
         "cityRegionResource": "gold",
         "cityRoads":"",
-        "cityBuildings":""
+        "cityBuildings":[]
     }
 ]

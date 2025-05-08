@@ -20,9 +20,6 @@
     text-align: center;
     transform: translate(-50%,-50%);
 }
-.city:hover{
-    border: 2px solid var(--select-color);
-}
 #city1{
     top: 81%;
     left: 14%;
