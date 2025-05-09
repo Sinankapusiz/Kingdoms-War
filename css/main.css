@@ -13,7 +13,7 @@
   --ally-color: rgba(0, 128, 0, 0.5);
   --neutral-color: rgba(255, 255, 255, 0.5);
   --player-color: rgba(0, 0, 139, 0.5);
-  --game-ui-panel-color:#222;
+  --game-ui-panel-color: #222;
 }
 
 body {
@@ -133,23 +133,24 @@ map {
   transform: translate(-50%, -100%);
   left: 50%;
   display: none;
+  
   flex-direction: column;
   padding: 4px;
-  background-color: var(--game-ui-panel-color);;
+  background-color: var(--game-ui-panel-color);
 }
-#select-gameObje-content-name{
-    background-color: var(--game-ui-panel-color);;
-    color: white;
-    text-align: center;
-    padding: 5px;
-    display: inline-block;
-    font-family: sans-serif;
-    border-bottom: 2px solid #333;
+#select-gameObje-content-name {
+  background-color: var(--game-ui-panel-color);
+  color: white;
+  text-align: center;
+  padding: 5px;
+  display: inline-block;
+  font-family: sans-serif;
+  border-bottom: 2px solid #333;
 }
-#select-gameObje-content-info-panel{
-    background-color: var(--game-ui-panel-color);
-    width: 100%;
-    height: 100%;
+#select-gameObje-content-info-panel {
+  background-color: var(--game-ui-panel-color);
+  width: 100%;
+  height: 100%;
 }
 
 #regionler {
@@ -221,6 +222,9 @@ map {
   height: 100%;
   border-style: none;
   cursor: pointer;
+}
+#time-speed-normal-btn {
+  border: 5px solid #d59637;
 }
 #time-speed-half-btn:hover,
 #time-speed-normal-btn:hover,

@@ -41,7 +41,7 @@ class Map {
                     cityRegion.style.stroke = country.countryRegion.regionBorderColor;
                     cityRegion.style.strokeWidth = "10px";
 
-                    cityRegion.addEventListener("mousedown", () => {
+                    cityRegion.addEventListener("click", () => {
                         this.mouseDownRegionColorChange(country.countryRegion, cityRegion);
                         this.selectedCity = city;
                         console.log(this.selectedCity.cityName);
@@ -49,7 +49,7 @@ class Map {
                         const _ui = this._UIControl.getAllGameUIList();
                         const _displayValues = this._UIControl.getDisplayValues();
                         this._UIControl.showUI(_ui.GameFootherBar, _displayValues.flex);
-
+                        //UI başlık.
                         _ui.SelectGameObjeContentNameDiv.textContent = this.selectedCity.cityName;
 
                     });
@@ -57,23 +57,6 @@ class Map {
                         this.mouseLeaveRegionColorChange(country.countryRegion, cityRegion);
                     });
                     cityRegion.addEventListener("mouseover", () => {
-                        this.mouseOverRegionColorChange(country.countryRegion, cityRegion);
-                    });
-                    cityDiv.addEventListener("mousedown", () => {
-                        this.mouseDownRegionColorChange(country.countryRegion, cityRegion);
-                        this.selectedCity = city;
-                        console.log(this.selectedCity.cityName);
-
-                        const _ui = this._UIControl.getAllGameUIList();
-                        const _displayValues = this._UIControl.getDisplayValues();
-                        this._UIControl.showUI(_ui.GameFootherBar, _displayValues.flex);
-
-                        _ui.SelectGameObjeContentNameDiv.textContent = this.selectedCity.cityName;
-                    });
-                    cityDiv.addEventListener("mouseleave", () => {
-                        this.mouseLeaveRegionColorChange(country.countryRegion, cityRegion);
-                    });
-                    cityDiv.addEventListener("mouseover", () => {
                         this.mouseOverRegionColorChange(country.countryRegion, cityRegion);
                     });
                 })
@@ -162,6 +145,9 @@ class UIControl {
     showUI(showUI, displayValue) {
         showUI.style.display = displayValue;
     }
+    hideUI(hideUI) {
+        hideUI.style.display = "none";
+    }
     getDisplayValues() {
         return this.DisplayValues;
     }
@@ -214,6 +200,8 @@ class Country {
 };
 class City {
     constructor(
+        cityID,
+        cityDivID,
         cityName,
         cityOwner,
         cityPopulation,
@@ -222,6 +210,8 @@ class City {
         cityRegionResource,
         cityBuildings
     ) {
+        this.cityID = cityID;
+        this.cityDivID = cityDivID;
         this.cityName = cityName;
         this.cityOwner = cityOwner;
         this.cityPopulation = cityPopulation;
@@ -245,7 +235,7 @@ class Game {
         this._time = 0;
         this._gameLoop;
         this._gameLoopTime = 200;
-        this.selectedCity = new City();
+        //this.selectedCity = new City();
     }
     async getBuildingData(path, buildingArray) {
         try {
@@ -294,7 +284,7 @@ class Game {
             const cities = await response.json();
             cities.forEach(city => {
                 cityArray.push(
-                    new City(city.cityName, city.cityOwner, city.cityPopulation, city.cityWallLevel, city.cityRegion, city.cityRegionResource, city.cityBuildings)
+                    new City(city.cityID, city.cityDivID, city.cityName, city.cityOwner, city.cityPopulation, city.cityWallLevel, city.cityRegion, city.cityRegionResource, city.cityBuildings)
                 );
             });
         } catch (error) {
@@ -321,6 +311,38 @@ class Game {
             `);
     }
     async start() {
+
+        const footerDiv = document.getElementById("game-footer");
+        footerDiv.addEventListener("click", () => {
+            console.log("footera tıklandı");
+        });
+
+        document.body.addEventListener("click", (e) => {
+            const _uiControl = new UIControl();
+            const excludedElements = [
+                document.getElementById("game-footer"),
+                document.getElementById("player-country-info-bar"),
+                document.getElementById("game-time-bar")
+            ];
+            const cities = document.querySelectorAll(".city");
+            const regions = document.querySelectorAll(".region");
+
+            cities.forEach(city => {
+                excludedElements.push(city);
+            });
+            regions.forEach(region => {
+                excludedElements.push(region);
+            });
+
+            const clickedInsideExcluded = excludedElements.some((el) => el && el.contains(e.target));
+            console.log(clickedInsideExcluded);
+
+            if (!clickedInsideExcluded) {
+                console.log("Kod çalıştı");
+                _uiControl.hideUI(_uiControl.allGameUIList.GameFootherBar);          
+            } 
+
+        });
         await this.getCountriesData('./scripts/data/countries_data.json', this.countryArray);
         console.log(this.countryArray);
         await this.getPlayersData('./scripts/data/players_data.json', this.playerArray); // getPlayersData fonksiyonunu bekliyoruz
@@ -331,7 +353,10 @@ class Game {
         console.log(this.buildingArray);
         //this.playerArray.forEach(player => this.writeConcoleAllPlayerInfo(player));
         this.map.createCampaignMap();
+        this.selectedGameObjeVariabelClear();
         this.gameLoopStart(this._gameLoopTime, 5);
+
+        
     };
     update() {
         this.selectedCity = this.map.getSelectedCity();
@@ -432,11 +457,13 @@ class Game {
         playerCountryInfoBar.style.display = "flex";
         const gameMenuPanel = document.querySelector(".game-menu");
         gameMenuPanel.style.display = "none";
-        /*const gameFooterBar = document.getElementById("game-footer");
-        gameFooterBar.style.display = "flex";*/
         const gameWallPaper = document.getElementById("game-wall-paper");
         gameWallPaper.style.display = "none";
     };
+    selectedGameObjeVariabelClear() {
+
+    }
+
 };
 class GameActions {
     //Ana eylemler

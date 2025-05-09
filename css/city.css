@@ -19,6 +19,7 @@
     flex-direction: column;
     text-align: center;
     transform: translate(-50%,-50%);
+    pointer-events: none;
 }
 #city1{
     top: 81%;

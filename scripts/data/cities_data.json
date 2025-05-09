@@ -1,5 +1,7 @@
 [
     {
+        "cityID": 1,
+        "cityDivID": "city1",
         "cityName": "Eldoria",
         "cityOwner": "Vorthelia",
         "cityPopulation": 6250,
@@ -12,10 +14,12 @@
         "cityRegionCharacter": "Ilıman iklim, Düz Ova",
         "cityRegionTradeValue": 85,
         "cityRegionResource": "food",
-        "cityRoads":"",
-        "cityBuildings":[]
+        "cityRoads": "",
+        "cityBuildings": []
     },
     {
+        "cityID": 2,
+        "cityDivID": "city2",
         "cityName": "Drakenhold",
         "cityOwner": "Vorthelia",
         "cityPopulation": 4500,
@@ -28,10 +32,12 @@
         "cityRegionCharacter": "Ilıman iklim, Düz Ova",
         "cityRegionTradeValue": 70,
         "cityRegionResource": "wood",
-        "cityRoads":"",
-        "cityBuildings":[]
+        "cityRoads": "",
+        "cityBuildings": []
     },
     {
+        "cityID": 3,
+        "cityDivID": "city3",
         "cityName": "Vorthal",
         "cityOwner": "Vorthelia",
         "cityPopulation": 5500,
@@ -44,10 +50,12 @@
         "cityRegionCharacter": "Ilıman iklim, Düz Ova",
         "cityRegionTradeValue": 90,
         "cityRegionResource": "stone",
-        "cityRoads":"",
-        "cityBuildings":[]
+        "cityRoads": "",
+        "cityBuildings": []
     },
     {
+        "cityID": 4,
+        "cityDivID": "city4",
         "cityName": "Grimspire",
         "cityOwner": "Arcadia",
         "cityPopulation": 3750,
@@ -60,10 +68,12 @@
         "cityRegionCharacter": "Ilıman iklim, Düz Ova",
         "cityRegionTradeValue": 60,
         "cityRegionResource": "iron",
-        "cityRoads":"",
-        "cityBuildings":[]
+        "cityRoads": "",
+        "cityBuildings": []
     },
     {
+        "cityID": 5,
+        "cityDivID": "city5",
         "cityName": "Mythralis",
         "cityOwner": "Arcadia",
         "cityPopulation": 3000,
@@ -76,10 +86,12 @@
         "cityRegionCharacter": "Çöl iklim, Düz Çöl",
         "cityRegionTradeValue": 50,
         "cityRegionResource": "food",
-        "cityRoads":"",
-        "cityBuildings":[]
+        "cityRoads": "",
+        "cityBuildings": []
     },
     {
+        "cityID": 6,
+        "cityDivID": "city6",
         "cityName": "Stormmere",
         "cityOwner": "Aetheria",
         "cityPopulation": 4250,
@@ -92,10 +104,12 @@
         "cityRegionCharacter": "Ilıman iklim, Düz Ova",
         "cityRegionTradeValue": 75,
         "cityRegionResource": "gold",
-        "cityRoads":"",
-        "cityBuildings":[]
+        "cityRoads": "",
+        "cityBuildings": []
     },
     {
+        "cityID": 7,
+        "cityDivID": "city7",
         "cityName": "Darkhaven",
         "cityOwner": "Aetheria",
         "cityPopulation": 3500,
@@ -108,10 +122,12 @@
         "cityRegionCharacter": "Ilıman iklim, Düz Ova",
         "cityRegionTradeValue": 55,
         "cityRegionResource": "wood",
-        "cityRoads":"",
-        "cityBuildings":[]
+        "cityRoads": "",
+        "cityBuildings": []
     },
     {
+        "cityID": 8,
+        "cityDivID": "city8",
         "cityName": "Silverkeep",
         "cityOwner": "Aetheria",
         "cityPopulation": 5000,
@@ -124,10 +140,12 @@
         "cityRegionCharacter": "Ilıman iklim, Düz Ova",
         "cityRegionTradeValue": 80,
         "cityRegionResource": "food",
-        "cityRoads":"",
-        "cityBuildings":[]
+        "cityRoads": "",
+        "cityBuildings": []
     },
     {
+        "cityID": 9,
+        "cityDivID": "city9",
         "cityName": "Ironvale",
         "cityOwner": "Celestia",
         "cityPopulation": 4000,
@@ -140,10 +158,12 @@
         "cityRegionCharacter": "Çöl iklim, Düz Çöl",
         "cityRegionTradeValue": 68,
         "cityRegionResource": "iron",
-        "cityRoads":"",
-        "cityBuildings":[]
+        "cityRoads": "",
+        "cityBuildings": []
     },
     {
+        "cityID": 10,
+        "cityDivID": "city10",
         "cityName": "Frosthelm",
         "cityOwner": "Celestia",
         "cityPopulation": 2750,
@@ -156,10 +176,12 @@
         "cityRegionCharacter": "Çöl iklim, Düz Çöl",
         "cityRegionTradeValue": 45,
         "cityRegionResource": "food",
-        "cityRoads":"",
-        "cityBuildings":[]
+        "cityRoads": "",
+        "cityBuildings": []
     },
     {
+        "cityID": 11,
+        "cityDivID": "city11",
         "cityName": "Shadowfen",
         "cityOwner": "Zephyria",
         "cityPopulation": 2250,
@@ -172,10 +194,12 @@
         "cityRegionCharacter": "Soğuk iklim, Düz Ova",
         "cityRegionTradeValue": 40,
         "cityRegionResource": "food",
-        "cityRoads":"",
-        "cityBuildings":[]
+        "cityRoads": "",
+        "cityBuildings": []
     },
     {
+        "cityID": 12,
+        "cityDivID": "city12",
         "cityName": "Ravenhold",
         "cityOwner": "Zephyria",
         "cityPopulation": 3250,
@@ -188,10 +212,12 @@
         "cityRegionCharacter": "Soğuk iklim, Düz Ova",
         "cityRegionTradeValue": 58,
         "cityRegionResource": "wood",
-        "cityRoads":"",
-        "cityBuildings":[]
+        "cityRoads": "",
+        "cityBuildings": []
     },
     {
+        "cityID": 13,
+        "cityDivID": "city13",
         "cityName": "Brighthaven",
         "cityOwner": "Zephyria",
         "cityPopulation": 5250,
@@ -204,10 +230,12 @@
         "cityRegionCharacter": "",
         "cityRegionTradeValue": 88,
         "cityRegionResource": "stone",
-        "cityRoads":"",
-        "cityBuildings":[]
+        "cityRoads": "",
+        "cityBuildings": []
     },
     {
+        "cityID": 14,
+        "cityDivID": "city14",
         "cityName": "Daggerfall",
         "cityOwner": "Thalorien",
         "cityPopulation": 4875,
@@ -220,10 +248,12 @@
         "cityRegionCharacter": "Soğuk iklim, Düz Ova",
         "cityRegionTradeValue": 77,
         "cityRegionResource": "iron",
-        "cityRoads":"",
-        "cityBuildings":[]
+        "cityRoads": "",
+        "cityBuildings": []
     },
     {
+        "cityID": 15,
+        "cityDivID": "city15",
         "cityName": "Moonshade",
         "cityOwner": "Thalorien",
         "cityPopulation": 2500,
@@ -236,10 +266,12 @@
         "cityRegionCharacter": "Soğuk iklim, Düz Ova",
         "cityRegionTradeValue": 38,
         "cityRegionResource": "food",
-        "cityRoads":"",
-        "cityBuildings":[]
+        "cityRoads": "",
+        "cityBuildings": []
     },
     {
+        "cityID": 16,
+        "cityDivID": "city16",
         "cityName": "Thundertide",
         "cityOwner": "Thalorien",
         "cityPopulation": 4375,
@@ -252,7 +284,7 @@
         "cityRegionCharacter": "Soğuk iklim, Düz Ova",
         "cityRegionTradeValue": 72,
         "cityRegionResource": "gold",
-        "cityRoads":"",
-        "cityBuildings":[]
+        "cityRoads": "",
+        "cityBuildings": []
     }
 ]
