@@ -41,16 +41,27 @@ class Map {
                     cityRegion.style.stroke = country.countryRegion.regionBorderColor;
                     cityRegion.style.strokeWidth = "10px";
 
+                    //Bölge üzerine tıklanınca yapılacak işlemler.
                     cityRegion.addEventListener("click", () => {
                         this.mouseDownRegionColorChange(country.countryRegion, cityRegion);
                         this.selectedCity = city;
                         console.log(this.selectedCity.cityName);
 
                         const _ui = this._UIControl.getAllGameUIList();
-                        const _displayValues = this._UIControl.getDisplayValues();
-                        this._UIControl.showUI(_ui.GameFootherBar, _displayValues.flex);
+
+                        const footerBuildingsCards = _ui.GameFootherBar.querySelectorAll(".building-info-card");
+                        footerBuildingsCards.forEach(element => {
+                            element.remove();
+                        });
+
+                        //Buildings
+                        const selectedCityBuildings = game.cityArray.find(selectCity => selectCity.cityName === city.cityName);
+                        this._UIControl.getCityBuildingsInfo(selectedCityBuildings.cityBuildings);
+
+                        this._UIControl.showUI(_ui.GameFootherBar, this._UIControl.getDisplayValues().flex);
                         //UI başlık.
-                        _ui.SelectGameObjeContentNameDiv.textContent = this.selectedCity.cityName;
+                        const cityNameSpan = _ui.SelectGameObjeContentNameDiv.querySelector("#name");
+                        cityNameSpan.textContent = this.selectedCity.cityName;
 
                     });
                     cityRegion.addEventListener("mouseleave", () => {
@@ -126,13 +137,17 @@ class UIControl {
         this.gameTimeBar = document.getElementById("game-time-bar");
         this.playerCountryInfoBar = document.getElementById("player-country-info-bar");
         this.selectGameObjectContentNameDiv = document.getElementById("select-gameObje-content-name");
+        this.selectGameObjeContentInfoPanel = document.getElementById("select-gameObje-content-info-panel");
+        this.buildingModal = document.getElementById("building-modal");
         this.allGameUIList = {
             GameFootherBar: this.gameFooterBar,
             GameTimeBar: this.gameTimeBar,
             PlayerCountryInfoBar: this.playerCountryInfoBar,
-            SelectGameObjeContentNameDiv: this.selectGameObjectContentNameDiv
+            SelectGameObjeContentNameDiv: this.selectGameObjectContentNameDiv,
+            SelectGameObjeContentInfoPanel: this.selectGameObjeContentInfoPanel,
+            BuildingModal: this.buildingModal
         };
-        this.DisplayValues = {
+        this.displayValues = {
             none: "none",
             flex: "flex",
             block: "block",
@@ -149,7 +164,60 @@ class UIControl {
         hideUI.style.display = "none";
     }
     getDisplayValues() {
-        return this.DisplayValues;
+        return this.displayValues;
+    }
+    getCityBuildingsInfo(buildings) {
+        if (buildings) {
+            buildings.forEach((building) => {
+                this.allGameUIList.SelectGameObjeContentInfoPanel.appendChild(this.createBuildingCard(building));
+            });
+        }
+        if (!buildings) {
+            console.log("HATA! buildings " + buildings);
+        }
+
+        console.log("getCityBuildingsInfo() Fonksiyonu çalıştı");
+
+        const createBuildingBtn = document.createElement("div");
+        createBuildingBtn.classList.add("building-info-card");
+        createBuildingBtn.classList.add("building-new-build-card");
+        createBuildingBtn.innerHTML = `<span class="building-name">Yeni Yapı</span>
+                            <div>
+                                <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.000000 64.000000"
+                                    preserveAspectRatio="xMidYMid meet">
+
+                                    <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)">
+                                        <path
+                                            d="M223 622 c-109 -39 -178 -112 -210 -221 -29 -102 4 -228 82 -306 122 -121 328 -121 450 0 91 92 118 241 64 356 -69 146 -241 223 -386 171z m214 -60 c51 -27 98 -73 126 -126 31 -58 31 -174 0 -232 -28 -53 -74 -99 -127 -127 -58 -31 -174 -31 -232 0 -217 115 -197 413 33 499 51 19 148 12 200 -14z" />
+                                        <path
+                                            d="M307 464 c-4 -4 -7 -31 -7 -61 l0 -53 -54 0 c-36 0 -58 -5 -66 -15 -19 -23 -2 -33 60 -37 l55 -3 3 -57 c3 -49 6 -58 22 -58 16 0 19 9 22 58 l3 57 55 3 c62 4 79 14 60 37 -8 10 -30 15 -66 15 l-53 0 -3 57 c-3 52 -14 73 -31 57z" />
+                                    </g>
+                                </svg>
+                            </div>`;
+        createBuildingBtn.addEventListener("click",()=>{
+            this.showUI(this.allGameUIList.BuildingModal,this.displayValues.flex);
+        });
+        this.allGameUIList.SelectGameObjeContentInfoPanel.appendChild(createBuildingBtn);
+    }
+    createBuildingCard(building) {
+
+        const buildingInfoCard = document.createElement("div");
+        buildingInfoCard.classList.add("building-info-card");
+
+        const buildingImgDiv = document.createElement("div");
+        buildingImgDiv.classList.add("building-img");
+        buildingInfoCard.appendChild(buildingImgDiv);
+
+        const buildingImg = document.createElement("img");
+        buildingImg.src = building.buildingImage;
+        buildingImgDiv.appendChild(buildingImg);
+
+        const buildingNameSpan = document.createElement("span");
+        buildingNameSpan.classList.add("building-name");
+        buildingNameSpan.textContent = building.buildingName;
+        buildingInfoCard.appendChild(buildingNameSpan);
+
+        return buildingInfoCard;
     }
 }
 class Building {
@@ -311,38 +379,23 @@ class Game {
             `);
     }
     async start() {
-
-        const footerDiv = document.getElementById("game-footer");
-        footerDiv.addEventListener("click", () => {
-            console.log("footera tıklandı");
-        });
-
         document.body.addEventListener("click", (e) => {
-            const _uiControl = new UIControl();
-            const excludedElements = [
-                document.getElementById("game-footer"),
-                document.getElementById("player-country-info-bar"),
-                document.getElementById("game-time-bar")
-            ];
-            const cities = document.querySelectorAll(".city");
-            const regions = document.querySelectorAll(".region");
-
-            cities.forEach(city => {
-                excludedElements.push(city);
-            });
-            regions.forEach(region => {
-                excludedElements.push(region);
-            });
-
-            const clickedInsideExcluded = excludedElements.some((el) => el && el.contains(e.target));
-            console.log(clickedInsideExcluded);
-
-            if (!clickedInsideExcluded) {
-                console.log("Kod çalıştı");
-                _uiControl.hideUI(_uiControl.allGameUIList.GameFootherBar);          
-            } 
-
+            this.footerInfoPanelClose(e);
+            this.buildingModalClose(e);
         });
+
+        const footerCloseBtn = document.getElementById("close-footer-panel-btn");
+        footerCloseBtn.addEventListener("click", () => {
+            const _uiControl = new UIControl();
+            _uiControl.hideUI(_uiControl.allGameUIList.GameFootherBar);        
+        });
+
+        const buildingModalCloseBtn = document.getElementById("close-building-modal-btn");
+        buildingModalCloseBtn.addEventListener("click", () => {
+            const _uiControl = new UIControl();
+            _uiControl.hideUI(_uiControl.allGameUIList.BuildingModal);
+        });
+
         await this.getCountriesData('./scripts/data/countries_data.json', this.countryArray);
         console.log(this.countryArray);
         await this.getPlayersData('./scripts/data/players_data.json', this.playerArray); // getPlayersData fonksiyonunu bekliyoruz
@@ -353,10 +406,8 @@ class Game {
         console.log(this.buildingArray);
         //this.playerArray.forEach(player => this.writeConcoleAllPlayerInfo(player));
         this.map.createCampaignMap();
-        this.selectedGameObjeVariabelClear();
         this.gameLoopStart(this._gameLoopTime, 5);
 
-        
     };
     update() {
         this.selectedCity = this.map.getSelectedCity();
@@ -365,8 +416,8 @@ class Game {
         this.playerArray.forEach(player => {
             if (player.playerType === "computer") {
                 const randomActionIndex = this.gameActions.makeRandomActionNumber(0, 3);
+                console.log("randomActionIndex " + randomActionIndex);
 
-                console.log(randomActionIndex);
                 switch (randomActionIndex) {
                     case 1:
                         console.log(player.playerCountry.countryName + " ülkesi(" + player.playerName + ") aşağıdaki eylemi gerçekleşti.");
@@ -460,10 +511,44 @@ class Game {
         const gameWallPaper = document.getElementById("game-wall-paper");
         gameWallPaper.style.display = "none";
     };
-    selectedGameObjeVariabelClear() {
+    footerInfoPanelClose(e) {
+        const _uiControl = new UIControl();
+        const excludedElements = [
+            _uiControl.allGameUIList.GameFootherBar,
+            _uiControl.allGameUIList.PlayerCountryInfoBar,
+            _uiControl.allGameUIList.GameTimeBar,
+            _uiControl.allGameUIList.BuildingModal
+        ];
+        const cities = document.querySelectorAll(".city");
+        const regions = document.querySelectorAll(".region");
 
-    }
+        cities.forEach(city => {
+            excludedElements.push(city);
+        });
+        regions.forEach(region => {
+            excludedElements.push(region);
+        });
 
+        const clickedInsideExcluded = excludedElements.some((el) => el && el.contains(e.target));
+
+        if (!clickedInsideExcluded) {
+            _uiControl.hideUI(_uiControl.allGameUIList.GameFootherBar);
+        }
+    };
+    buildingModalClose(e) {
+        const _uiControl = new UIControl();
+        const excludedElements = [
+            _uiControl.allGameUIList.GameFootherBar,
+            _uiControl.allGameUIList.PlayerCountryInfoBar,
+            _uiControl.allGameUIList.GameTimeBar,
+            _uiControl.allGameUIList.BuildingModal
+        ];
+        const clickedInsideExcluded = excludedElements.some((el) => el && el.contains(e.target));
+
+        if (!clickedInsideExcluded) {
+            _uiControl.hideUI(_uiControl.allGameUIList.BuildingModal);
+        }
+    };
 };
 class GameActions {
     //Ana eylemler
@@ -478,9 +563,11 @@ class GameActions {
         const randomSelectionCitygAction = this.makeRandomActionNumber(0, playerCityArray.length - 1);
         const selectedCity = cityArray.find(city => city.cityName === playerCityArray[randomSelectionCitygAction].cityName);
         console.log("randomSelectionCitygAction " + randomSelectionCitygAction);
+
         //Rastgele bir yapı seçiliyor.(değişecek)
         const randomSelectionBuilding = this.makeRandomActionNumber(1, buildingArray.length);
         const selectedBuilding = buildingArray.find(building => building.buildingId === randomSelectionBuilding);
+
         //Yapı kontrolü yapılıyor. Eğer varsa eklenmiyor.
         if (selectedCity.cityBuildings.find(building => building.buildingId === selectedBuilding.buildingId) === undefined) {
             this.makeBuilding(selectedCity, selectedBuilding);

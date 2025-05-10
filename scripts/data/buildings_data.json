@@ -50,7 +50,7 @@
     {
         "buildingId": 5,
         "buildingName": "Demir Madeni",     
-        "buildingImage": "",
+        "buildingImage": "./image/Buildings/iron-mine-img.png",
         "buildingLevel": 1,
         "buildingProfit": {
             "iron": 10
@@ -62,7 +62,7 @@
     {
         "buildingId": 6,
         "buildingName": "Altın Madeni",    
-        "buildingImage": "",
+        "buildingImage": "./image/Buildings/gold-mine-img.png",
         "buildingLevel": 1,
         "buildingProfit": {
             "gold": 10
@@ -74,7 +74,7 @@
     {
         "buildingId": 7,
         "buildingName": "Demirci",
-        "buildingImage": "",
+        "buildingImage": "./image/Buildings/blacksmith-img.png",
         "buildingLevel": 1,
         "buildingProfit": {
             "gold": 2
@@ -86,7 +86,7 @@
     {
         "buildingId": 8,
         "buildingName": "Silahçı",
-        "buildingImage": "",
+        "buildingImage": "./image/Buildings/house-of-arms-img.png",
         "buildingLevel": 1,
         "buildingProfit": {
             "gold": 2
@@ -102,7 +102,7 @@
     {
         "buildingId": 9,
         "buildingName": "Mücevherci",
-        "buildingImage": "",
+        "buildingImage": "./image/Buildings/",
         "buildingLevel": 1,
         "buildingProfit": {
             "gold": 2

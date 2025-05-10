@@ -79,8 +79,10 @@
                                     preserveAspectRatio="xMidYMid meet">
 
                                     <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)">
-                                        <path d="M109 625 c-43 -23 -49 -60 -49 -305 0 -248 6 -282 51 -305 42 -22 67 -18 100 14 l29 29 0 262 0 262 -29 29 c-32 32 -62 36 -102 14z" />
-                                        <path d="M429 611 l-29 -29 0 -262 0 -262 29 -29 c33 -32 58 -36 100 -14 45 23 51 57 51 305 0 248 -6 282 -51 305 -42 22 -67 18 -100 -14z" />
+                                        <path
+                                            d="M109 625 c-43 -23 -49 -60 -49 -305 0 -248 6 -282 51 -305 42 -22 67 -18 100 14 l29 29 0 262 0 262 -29 29 c-32 32 -62 36 -102 14z" />
+                                        <path
+                                            d="M429 611 l-29 -29 0 -262 0 -262 29 -29 c33 -32 58 -36 100 -14 45 23 51 57 51 305 0 248 -6 282 -51 305 -42 22 -67 18 -100 -14z" />
                                     </g>
                                 </svg>
                             </button>
@@ -517,9 +519,95 @@
                     </div>
                 </div>
                 <div id="game-footer">
-                    <div id="select-gameObje-content-name">Select GameObject Name</div>
-                    <div id="select-gameObje-content-info-panel"></div>          
+                    <div id="select-gameObje-content-name">
+                        <span id="name">Select GameObject Name</span>
+                        <button id="close-footer-panel-btn">
+                            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 64.000000 64.000000"
+                                preserveAspectRatio="xMidYMid meet">
+
+                                <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)" >
+                                    <path d="M244 580 c-99 -31 -180 -130 -191 -232 -15 -146 94 -280 239 -295 146 -15 280 94 295 239 15 152 -98 285 -250 294 -34 2 -76 -1 -93 -6z m161 -69 c134 -61 165 -233 61 -337 -105 -105 -274 -75 -337 61 -79 171 104 354 276 276z" />
+                                    <path d="M227 413 c-16 -16 -15 -19 20 -55 l37 -38 -37 -38 c-35 -36 -36 -39 -20 -55 16 -16 19 -15 55 20 l38 37 38 -37 c36 -35 39 -36 55 -20 16 16 15 19 -20 55 l-37 38 37 38 c35 36 36 39 20 55 -16 16 -19 15 -55 -20 l-38 -37 -38 37 c-36 35 -39 36 -55 20z" />
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="select-gameObje-content-info-panel">
+                        <!--<div class="building-info-card">
+                            <div class="building-img">
+                                <img src="image/Buildings/farm-img.png" alt="">
+                            </div>
+                            <span class="building-name">Çiftlik</span>
+                        </div>-->
+                        <div class="building-info-card building-new-build-card">
+                            <span class="building-name">Yeni Yapı</span>
+                            <div>
+                                <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.000000 64.000000"
+                                    preserveAspectRatio="xMidYMid meet">
+
+                                    <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)">
+                                        <path
+                                            d="M223 622 c-109 -39 -178 -112 -210 -221 -29 -102 4 -228 82 -306 122 -121 328 -121 450 0 91 92 118 241 64 356 -69 146 -241 223 -386 171z m214 -60 c51 -27 98 -73 126 -126 31 -58 31 -174 0 -232 -28 -53 -74 -99 -127 -127 -58 -31 -174 -31 -232 0 -217 115 -197 413 33 499 51 19 148 12 200 -14z" />
+                                        <path
+                                            d="M307 464 c-4 -4 -7 -31 -7 -61 l0 -53 -54 0 c-36 0 -58 -5 -66 -15 -19 -23 -2 -33 60 -37 l55 -3 3 -57 c3 -49 6 -58 22 -58 16 0 19 9 22 58 l3 57 55 3 c62 4 79 14 60 37 -8 10 -30 15 -66 15 l-53 0 -3 57 c-3 52 -14 73 -31 57z" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div id="building-modal">
+                    <div class="building-modal-title-bar">
+                        <span>İNŞA LİSTESİ</span>
+                        <button id="close-building-modal-btn">
+                            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 64.000000 64.000000"
+                                preserveAspectRatio="xMidYMid meet">
+
+                                <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)" >
+                                    <path d="M244 580 c-99 -31 -180 -130 -191 -232 -15 -146 94 -280 239 -295 146 -15 280 94 295 239 15 152 -98 285 -250 294 -34 2 -76 -1 -93 -6z m161 -69 c134 -61 165 -233 61 -337 -105 -105 -274 -75 -337 61 -79 171 104 354 276 276z" />
+                                    <path d="M227 413 c-16 -16 -15 -19 20 -55 l37 -38 -37 -38 c-35 -36 -36 -39 -20 -55 16 -16 19 -15 55 20 l38 37 38 -37 c36 -35 39 -36 55 -20 16 16 15 19 -20 55 l-37 38 37 38 c35 36 36 39 20 55 -16 16 -19 15 -55 -20 l-38 -37 -38 37 c-36 35 -39 36 -55 20z" />
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="content">
+                        <div class="building-card">
+                            <div class="building-img">
+                                <img src="image/Buildings/farm-img.png" alt="">
+                            </div>
+                            <span class="building-name">Çiftlik</span>
+                            <div></div>
+                            <button class="build-add"></button>
+                        </div>
+                        <div class="building-card">
+                            <div class="building-img">
+                                <img src="image/Buildings/farm-img.png" alt="">
+                            </div>
+                            <span class="building-name">Çiftlik</span>
+                        </div>
+                        <div class="building-card">
+                            <div class="building-img">
+                                <img src="image/Buildings/farm-img.png" alt="">
+                            </div>
+                            <span class="building-name">Çiftlik</span>
+                        </div>
+                        <div class="building-card">
+                            <div class="building-img">
+                                <img src="image/Buildings/farm-img.png" alt="">
+                            </div>
+                            <span class="building-name">Çiftlik</span>
+                        </div>
+                        <div class="building-card">
+                            <div class="building-img">
+                                <img src="image/Buildings/farm-img.png" alt="">
+                            </div>
+                            <span class="building-name">Çiftlik</span>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>
