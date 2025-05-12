@@ -62,6 +62,7 @@ class Map {
                         //UI başlık.
                         const cityNameSpan = _ui.SelectGameObjeContentNameDiv.querySelector("#name");
                         cityNameSpan.textContent = this.selectedCity.cityName;
+                        game.selectedCity = game.cityArray.find(selectCity => selectCity.cityName === city.cityName);
 
                     });
                     cityRegion.addEventListener("mouseleave", () => {
@@ -167,6 +168,7 @@ class UIControl {
         return this.displayValues;
     }
     getCityBuildingsInfo(buildings) {
+        this.allGameUIList.SelectGameObjeContentInfoPanel.innerHTML = "";
         if (buildings) {
             buildings.forEach((building) => {
                 this.allGameUIList.SelectGameObjeContentInfoPanel.appendChild(this.createBuildingCard(building));
@@ -175,13 +177,13 @@ class UIControl {
         if (!buildings) {
             console.log("HATA! buildings " + buildings);
         }
-
-        console.log("getCityBuildingsInfo() Fonksiyonu çalıştı");
-
-        const createBuildingBtn = document.createElement("div");
-        createBuildingBtn.classList.add("building-info-card");
-        createBuildingBtn.classList.add("building-new-build-card");
-        createBuildingBtn.innerHTML = `<span class="building-name">Yeni Yapı</span>
+        const condition = buildings.length === game.buildingArray.length ? false : true;
+        if (condition) {
+            //Yeni Yapı Kartı. İnşa listesini açar..
+            const createBuildingBtn = document.createElement("div");
+            createBuildingBtn.classList.add("building-info-card");
+            createBuildingBtn.classList.add("building-new-build-card");
+            createBuildingBtn.innerHTML = `<span class="building-name">Yeni Yapı</span>
                             <div>
                                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.000000 64.000000"
                                     preserveAspectRatio="xMidYMid meet">
@@ -194,10 +196,13 @@ class UIControl {
                                     </g>
                                 </svg>
                             </div>`;
-        createBuildingBtn.addEventListener("click",()=>{
-            this.showUI(this.allGameUIList.BuildingModal,this.displayValues.flex);
-        });
-        this.allGameUIList.SelectGameObjeContentInfoPanel.appendChild(createBuildingBtn);
+            createBuildingBtn.addEventListener("click", () => {
+                this.showBuildingModal();
+            });
+            this.allGameUIList.SelectGameObjeContentInfoPanel.appendChild(createBuildingBtn);
+
+        }
+
     }
     createBuildingCard(building) {
 
@@ -218,7 +223,43 @@ class UIControl {
         buildingInfoCard.appendChild(buildingNameSpan);
 
         return buildingInfoCard;
-    }
+    };
+    showBuildingModal() {
+
+        this.showUI(this.allGameUIList.BuildingModal, this.displayValues.flex);
+
+        const buildContent = this.allGameUIList.BuildingModal.querySelector(".content");
+        buildContent.innerHTML = ""; //div içerisini temizliyoruz.
+        game.buildingArray.forEach((building) => {
+            const buildCard = `<div class="building-card">
+                            <div class="building-img">
+                                <img src="${building.buildingImage}" alt="">
+                            </div>
+                            <span class="building-name">${building.buildingName}</span>
+                            <div class="building-profit">
+                                <span class="profit">+2 GIDA</span>
+                                <span class="profit">+3 ALTIN</span>
+                                <span class="profit">+1 MUTLULUK</span>      
+                                <span class="cost">-1 TEMİZLİK</span>            
+                            </div>
+                            <button class="build-add" id="building-${building.buildingId}">İNŞA ET</button>
+                        </div`;
+            const newBuildCard = document.createElement("div");
+            newBuildCard.innerHTML = buildCard;
+            buildContent.appendChild(newBuildCard);
+
+            const buildAddBtn = buildContent.querySelector(`#building-${building.buildingId}`);
+            buildAddBtn.addEventListener("click", () => {
+                const condition = game.selectedCity.cityBuildings.find(cityBuilding => cityBuilding === building);
+                if (condition === false || condition === undefined) {
+                    game.gameActions.makeBuilding(game.selectedCity, building);
+                    this.getCityBuildingsInfo(game.selectedCity.cityBuildings);
+                } else
+                    console.log("Bu " + building.buildingName + " zaten var!");
+            });
+
+        });
+    };
 }
 class Building {
     constructor(
@@ -303,7 +344,7 @@ class Game {
         this._time = 0;
         this._gameLoop;
         this._gameLoopTime = 200;
-        //this.selectedCity = new City();
+        this.selectedCity = new City();
     }
     async getBuildingData(path, buildingArray) {
         try {
@@ -387,7 +428,7 @@ class Game {
         const footerCloseBtn = document.getElementById("close-footer-panel-btn");
         footerCloseBtn.addEventListener("click", () => {
             const _uiControl = new UIControl();
-            _uiControl.hideUI(_uiControl.allGameUIList.GameFootherBar);        
+            _uiControl.hideUI(_uiControl.allGameUIList.GameFootherBar);
         });
 
         const buildingModalCloseBtn = document.getElementById("close-building-modal-btn");

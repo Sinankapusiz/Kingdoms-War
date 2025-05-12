@@ -102,7 +102,7 @@
     {
         "buildingId": 9,
         "buildingName": "Mücevherci",
-        "buildingImage": "./image/Buildings/",
+        "buildingImage": "./image/Buildings/jeweler-img.png",
         "buildingLevel": 1,
         "buildingProfit": {
             "gold": 2
