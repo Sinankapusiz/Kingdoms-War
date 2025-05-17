@@ -33,8 +33,10 @@ class Map {
                     const cityFlagBackground = cityDiv.querySelector("polygon");
                     // Bayrak ataması.
                     cityFlagSembol.setAttribute('d', country.countryFlag.countryFlagSymbol);
-                    cityFlagSembol.id = country.countryFlag.countryFlagSymbolColor;
+                    cityFlagSembol.style.fill = country.countryFlag.countryFlagSymbolColor;
+                    cityFlagSembol.style.transform = "translate(44%, 18%)";
                     cityFlagBackground.id = country.countryFlag.countryFlagBackgroundId;
+                    cityFlagBackground.style.fill = country.countryFlag.countryFlagBackgroundColor;
                     // Bölge rengi ataması.
                     const cityRegion = document.getElementById(city.cityRegionId);
                     cityRegion.style.fill = country.countryRegion.regionColor;
@@ -345,6 +347,7 @@ class Game {
         this._gameLoop;
         this._gameLoopTime = 200;
         this.selectedCity = new City();
+        this.selectedCountry = new Country();
     }
     async getBuildingData(path, buildingArray) {
         try {
@@ -423,6 +426,7 @@ class Game {
         document.body.addEventListener("click", (e) => {
             this.footerInfoPanelClose(e);
             this.buildingModalClose(e);
+
         });
 
         const footerCloseBtn = document.getElementById("close-footer-panel-btn");
@@ -449,6 +453,10 @@ class Game {
         this.map.createCampaignMap();
         this.gameLoopStart(this._gameLoopTime, 5);
 
+        this.selectedCountry = this.countryArray[3];
+        console.log(this.selectedCountry);
+        this.setCountryDataToUI(this.selectedCountry);
+        this.setCounrtyChangeBar(this.playerArray);
     };
     update() {
         this.selectedCity = this.map.getSelectedCity();
@@ -590,6 +598,64 @@ class Game {
             _uiControl.hideUI(_uiControl.allGameUIList.BuildingModal);
         }
     };
+    setCountryDataToUI(country) {
+        //Ülke ismi
+        const playerCountryName = document.getElementById("player-country-name");
+        playerCountryName.textContent = country.countryName;
+        //Ülke Bayrağı
+        const playerCountryFlag = document.getElementById("player-country-flag");
+        const playerCountryFlagBackground = playerCountryFlag.querySelector("svg");
+        playerCountryFlagBackground.style.fill = country.countryFlag.countryFlagBackgroundColor;
+        const playerCountryFlagSymbol = playerCountryFlag.querySelector("path");
+        playerCountryFlagSymbol.setAttribute("d", country.countryFlag.countryFlagSymbol);
+        playerCountryFlagSymbol.style.fill = country.countryFlag.countryFlagSymbolColor;
+        //Kaynak verisi 
+        const resourceFood = document.querySelector(".resource-food");
+        const resourceWood = document.querySelector(".resource-wood");
+        const resourceStone = document.querySelector(".resource-stone");
+        const resourceIron = document.querySelector(".resource-iron");
+        const resourceGold = document.querySelector(".resource-gold");
+        const resourcePeople = document.querySelector(".resource-people");
+        resourceFood.textContent = country.countryResource[0].food;
+        resourceWood.textContent = country.countryResource[0].wood;
+        resourceStone.textContent = country.countryResource[0].stone;
+        resourceIron.textContent = country.countryResource[0].iron;
+        resourceGold.textContent = country.countryResource[0].gold;
+
+    };
+    setCounrtyChangeBar(playerArray) {
+        const countryChangeMenu = document.getElementById("country-change-menu");
+        const buttonsDiv = countryChangeMenu.querySelector("#buttons");
+        playerArray.forEach(player => {
+            const countryButton = document.createElement("button");
+            countryButton.innerHTML = this.createCountyChangeButton(player);
+            countryButton.addEventListener("click", () => {
+                this.setCountryDataToUI(player.playerCountry);
+                this.selectedCountry = player.playerCountry;
+            });
+            buttonsDiv.appendChild(countryButton);
+        });
+
+    };
+    createCountyChangeButton(player) {
+        const button = `<button class="country">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" style="background-color:${player.playerCountry.countryFlag.countryFlagBackgroundColor}" >
+                                    <g id="katman_2" data-name="katman 2">
+                                        <g id="">
+                                            <g transform="translate(6, 0) scale(1,1)" >
+                                                <path id="player-country-flag-sembol"
+                                                    d="${player.playerCountry.countryFlag.countryFlagSymbol}" fill="${player.playerCountry.countryFlag.countryFlagSymbolColor}"> 
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <span>${player.playerCountry.countryName} (${player.playerName})</span>
+                            </div>
+                        </button>`;
+        return button;
+    }
 };
 class GameActions {
     //Ana eylemler
