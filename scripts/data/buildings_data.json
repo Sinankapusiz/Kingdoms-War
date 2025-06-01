@@ -1,114 +1,508 @@
 [
-    {
-        "buildingId": 1,
-        "buildingName": "Çiftlik",     
-        "buildingImage": "./image/Buildings/farm-img.png",
-        "buildingLevel": 1,
-        "buildingProfit": {
-            "food": 10
-        },
-        "buildingDefinition": "Çiftlik, yiyecek üretmeni sağlar.",
-        "buildingCondition": "food",
-        "buildingCraftMaterial": ""
+  {
+    "buildingId": 1,
+    "buildingName": "Çiftlik",
+    "buildingImage": "./image/Buildings/farm-img.png",
+    "buildingLevel": 1,
+    "buildingType": "economy",
+    "buildingProfit": {
+      "food": 15,
+      "happiness": 1,
+      "cleaning": -1
     },
-    {
-        "buildingId": 2,
-        "buildingName": "Pazar",   
-        "buildingImage": "./image/Buildings/bazaar-img.png",
-        "buildingLevel": 1,
-        "buildingProfit": {
-            "gold": 5
-        },
-        "buildingDefinition": "Pazar, şehir içi ticaret yapmanı ve para kazanmanı sağlar. Ticaret ortaklarına yakın şehirlerdeki pazarlar daha çok kazandırır.",
-        "buildingCondition": "",
-        "buildingCraftMaterial": ""
+    "buildingDefinition": "Çiftlik, yiyecek üretmeni sağlar.",
+    "buildingCondition": "food",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -300,
+      "wood": -100,
+      "stone": -20,
+      "iron": -5
     },
-    {
-        "buildingId": 3,
-        "buildingName": "Oduncu",      
-        "buildingImage": "./image/Buildings/woodcutter-img.png",
-        "buildingLevel": 1,
-        "buildingProfit": {
-            "wood": 10
-        },
-        "buildingDefinition": "Oduncu, odun üretmeni sağlar. Üretilen odunlar ile yapıların seviyesini arttırabilirsin.",
-        "buildingCondition": "wood",
-        "buildingCraftMaterial": ""
+    "buildingBuildTime": 3
+  },
+  {
+    "buildingId": 2,
+    "buildingName": "Pazar",
+    "buildingImage": "./image/Buildings/bazaar-img.png",
+    "buildingLevel": 1,
+    "buildingType": "economy",
+    "buildingProfit": {
+      "gold": 5,
+      "happiness": 1,
+      "cleaning": -1
     },
-    {
-        "buildingId": 4,
-        "buildingName": "Taş Madeni",
-        "buildingImage": "./image/Buildings/stone-mine-img.png",
-        "buildingLevel": 1,
-        "buildingProfit": {
-            "stone": 10
-        },
-        "buildingDefinition": "Taş Madeni, taş üretmeni sağlar. Üretilen taşlar ile yapıların seviyesini arttırabilirsin.",
-        "buildingCondition": "stone",
-        "buildingCraftMaterial": ""
+    "buildingDefinition": "Pazar, şehir içi ticaret yapmanı ve para kazanmanı sağlar.",
+    "buildingCondition": "",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -250,
+      "wood": -100,
+      "stone": -10,
+      "iron": -10
     },
-    {
-        "buildingId": 5,
-        "buildingName": "Demir Madeni",     
-        "buildingImage": "./image/Buildings/iron-mine-img.png",
-        "buildingLevel": 1,
-        "buildingProfit": {
-            "iron": 10
-        },
-        "buildingDefinition": "Demir Madeni, demir üretmeni sağlar. Üretilen demirler ile yapılar ve askerler için silahlar yapabilirsin.",
-        "buildingCondition": "iron",
-        "buildingCraftMaterial": ""
+    "buildingBuildTime": 2
+  },
+  {
+    "buildingId": 3,
+    "buildingName": "Oduncu",
+    "buildingImage": "./image/Buildings/woodcutter-img.png",
+    "buildingLevel": 1,
+    "buildingType": "economy",
+    "buildingProfit": {
+      "wood": 15,
+      "happiness": -1
     },
-    {
-        "buildingId": 6,
-        "buildingName": "Altın Madeni",    
-        "buildingImage": "./image/Buildings/gold-mine-img.png",
-        "buildingLevel": 1,
-        "buildingProfit": {
-            "gold": 10
-        },
-        "buildingDefinition": "Altın Madeni, altın üretmeni sağlar. Üretilen altinlar ile asker üretebilir veya ticarette kullanabilirsin.",
-        "buildingCondition": "gold",
-        "buildingCraftMaterial": ""
+    "buildingDefinition": "Oduncu, odun üretmeni sağlar.",
+    "buildingCondition": "wood",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -150,
+      "wood": -50,
+      "iron": -5
     },
-    {
-        "buildingId": 7,
-        "buildingName": "Demirci",
-        "buildingImage": "./image/Buildings/blacksmith-img.png",
-        "buildingLevel": 1,
-        "buildingProfit": {
-            "gold": 2
-        },
-        "buildingDefinition": "Demirci, halkın kullanması içi aletler üretir. Yapılı olduğu şehirlerde çiftliklere ve pazar yeri getirilerine ekstra getiri sağlar.Pazar için +1 gold, Çiftlik için +5 food",
-        "buildingCondition": "Demir Madeni",
-        "buildingCraftMaterial": ""
+    "buildingBuildTime": 1
+  },
+  {
+    "buildingId": 4,
+    "buildingName": "Taş Madeni",
+    "buildingImage": "./image/Buildings/stone-mine-img.png",
+    "buildingLevel": 1,
+    "buildingType": "economy",
+    "buildingProfit": {
+      "stone": 15,
+      "happiness": -1,
+      "cleaning": -1
     },
-    {
-        "buildingId": 8,
-        "buildingName": "Silahçı",
-        "buildingImage": "./image/Buildings/house-of-arms-img.png",
-        "buildingLevel": 1,
-        "buildingProfit": {
-            "gold": 2
-        },
-        "buildingDefinition": "Silahçı, asker üretmek için gerekli silahları üretirsin. Kılıç, Kalkan, Yay, Zırh",
-        "buildingCondition": "",
-        "buildingCraftMaterial": [
-            "sword",
-            "shield",
-            "armor"
-        ]
+    "buildingDefinition": "Taş Madeni, taş üretmeni sağlar.",
+    "buildingCondition": "stone",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -350,
+      "wood": -150,
+      "iron": -15
     },
-    {
-        "buildingId": 9,
-        "buildingName": "Mücevherci",
-        "buildingImage": "./image/Buildings/jeweler-img.png",
-        "buildingLevel": 1,
-        "buildingProfit": {
-            "gold": 2
-        },
-        "buildingDefinition": "Mücevherci, yapılı olduğu şehirde pazar +2 gold kazandırır.",
-        "buildingCondition": "Altın Madeni",
-        "buildingCraftMaterial": ""
-    }
+    "buildingBuildTime": 4
+  },
+  {
+    "buildingId": 5,
+    "buildingName": "Demir Madeni",
+    "buildingImage": "./image/Buildings/iron-mine-img.png",
+    "buildingLevel": 1,
+    "buildingType": "economy",
+    "buildingProfit": {
+      "iron": 15,
+      "happiness": -1,
+      "cleaning": -1
+    },
+    "buildingDefinition": "Demir Madeni, demir üretmeni sağlar.",
+    "buildingCondition": "iron",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -400,
+      "wood": -200,
+      "iron": -20
+    },
+    "buildingBuildTime": 5
+  },
+  {
+    "buildingId": 6,
+    "buildingName": "Altın Madeni",
+    "buildingImage": "./image/Buildings/gold-mine-img.png",
+    "buildingLevel": 1,
+    "buildingType": "economy",
+    "buildingProfit": {
+      "gold": 15,
+      "happiness": -1,
+      "cleaning": -1
+    },
+    "buildingDefinition": "Altın Madeni, altın üretmeni sağlar.",
+    "buildingCondition": "gold",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -500,
+      "wood": -200,
+      "iron": -20
+    },
+    "buildingBuildTime": 6
+  },
+  {
+    "buildingId": 7,
+    "buildingName": "Demirci",
+    "buildingImage": "./image/Buildings/blacksmith-img.png",
+    "buildingLevel": 1,
+    "buildingType": "economy",
+    "buildingProfit": {
+      "gold": 2,
+      "happiness": 1,
+      "cleaning": -1
+    },
+    "buildingDefinition": "Demirci, halkın kullanması içi aletler üretir.",
+    "buildingCondition": "Demir Madeni",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -300,
+      "wood": -50,
+      "stone": -50,
+      "iron": -10
+    },
+    "buildingBuildTime": 3
+  },
+  {
+    "buildingId": 8,
+    "buildingName": "Silahçı",
+    "buildingImage": "./image/Buildings/house-of-arms-img.png",
+    "buildingLevel": 1,
+    "buildingType": "military",
+    "buildingProfit": {
+      "gold": 3,
+      "happiness": 1,
+      "cleaning": -1
+    },
+    "buildingDefinition": "Silahçı, asker üretmek için gerekli silahları üretirsin. Kılıç, Kalkan, Yay, Zırh",
+    "buildingCondition": "",
+    "buildingCraftMaterial": [
+      "sword",
+      "shield",
+      "armor"
+    ],
+    "buildingCost": {
+      "gold": -300,
+      "wood": -50,
+      "stone": -50,
+      "iron": -10
+    },
+    "buildingBuildTime": 3
+  },
+  {
+    "buildingId": 9,
+    "buildingName": "Mücevherci",
+    "buildingImage": "./image/Buildings/jeweler-img.png",
+    "buildingLevel": 1,
+    "buildingType": "economy",
+    "buildingProfit": {
+      "gold": 4,
+      "happiness": 1,
+      "cleaning": -1
+    },
+    "buildingDefinition": "Mücevherci, yapılı olduğu şehirde pazar +2 gold kazandırır.",
+    "buildingCondition": "Altın Madeni",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -300,
+      "wood": -50,
+      "stone": -50,
+      "iron": -10
+    },
+    "buildingBuildTime": 3
+  },
+  {
+    "buildingId": 10,
+    "buildingName": "Çeşme",
+    "buildingImage": "./image/Buildings/fountain-img.png",
+    "buildingLevel": 1,
+    "buildingType": "economy",
+    "buildingProfit": {
+      "gold": -1,
+      "happiness": 2,
+      "cleaning": 3
+    },
+    "buildingDefinition": "",
+    "buildingCondition": "",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -200,
+      "wood": -10,
+      "stone": -100,
+      "iron": -10
+    },
+    "buildingBuildTime": 2
+  },
+  {
+    "buildingId": 11,
+    "buildingName": "Arena",
+    "buildingImage": "./image/Buildings/arena-img.png",
+    "buildingLevel": 1,
+    "buildingType": "economy",
+    "buildingProfit": {
+      "gold": -3,
+      "happiness": 5,
+      "cleaning": -1
+    },
+    "buildingDefinition": "",
+    "buildingCondition": "",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -250,
+      "wood": -150,
+      "stone": -250,
+      "iron": -50
+    },
+    "buildingBuildTime": 4
+  },
+  {
+    "buildingId": 12,
+    "buildingName": "Hamam",
+    "buildingImage": "./image/Buildings/baths-img.png",
+    "buildingLevel": 1,
+    "buildingType": "economy",
+    "buildingProfit": {
+      "gold": 1,
+      "happiness": 3,
+      "cleaning": 3
+    },
+    "buildingDefinition": "",
+    "buildingCondition": "",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -250,
+      "wood": -50,
+      "stone": -100,
+      "iron": -20
+    },
+    "buildingBuildTime": 3
+  },
+  {
+    "buildingId": 13,
+    "buildingName": "Evler",
+    "buildingImage": "./image/Buildings/houses-img.png",
+    "buildingLevel": 1,
+    "buildingType": "economy",
+    "buildingProfit": {
+      "population": 200,
+      "happiness": 1,
+      "cleaning": -2
+    },
+    "buildingDefinition": "",
+    "buildingCondition": "",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -300,
+      "wood": -200,
+      "stone": -200,
+      "iron": -50
+    },
+    "buildingBuildTime": 5
+  },
+  {
+    "buildingId": 14,
+    "buildingName": "Taş Yol",
+    "buildingImage": "./image/Buildings/stone-road-img.png",
+    "buildingLevel": 1,
+    "buildingType": "economy",
+    "buildingProfit": {
+      "gold": 1,
+      "happiness": 2,
+      "cleaning": 1
+    },
+    "buildingDefinition": "",
+    "buildingCondition": "",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -350,
+      "wood": -100,
+      "stone": -300,
+      "iron": -50
+    },
+    "buildingBuildTime": 5
+  },
+  {
+    "buildingId": 15,
+    "buildingName": "Kanalizasyon",
+    "buildingImage": "./image/Buildings/sewage-img.png",
+    "buildingLevel": 1,
+    "buildingType": "economy",
+    "buildingProfit": {
+      "gold": -2,
+      "happiness": 2,
+      "cleaning": 5
+    },
+    "buildingDefinition": "",
+    "buildingCondition": "",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -350,
+      "wood": -100,
+      "stone": -400,
+      "iron": -50
+    },
+    "buildingBuildTime": 6
+  },
+  {
+    "buildingId": 16,
+    "buildingName": "Su Kemeri",
+    "buildingImage": "./image/Buildings/aqueduct-img.png",
+    "buildingLevel": 1,
+    "buildingType": "economy",
+    "buildingProfit": {
+      "gold": -2,
+      "happiness": 3,
+      "cleaning": 3
+    },
+    "buildingDefinition": "",
+    "buildingCondition": "",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -400,
+      "wood": -100,
+      "stone": -450,
+      "iron": -100
+    },
+    "buildingBuildTime": 6
+  },
+  {
+    "buildingId": 17,
+    "buildingName": "Askeri Kışla",
+    "buildingImage": "./image/Buildings/military-barracks-img.png",
+    "buildingLevel": 1,
+    "buildingType": "military",
+    "buildingProfit": {
+      "gold": -3,
+      "happiness": 1,
+      "cleaning": -2
+    },
+    "buildingDefinition": "",
+    "buildingCondition": "",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -400,
+      "wood": -200,
+      "stone": -300,
+      "iron": -150
+    },
+    "buildingBuildTime": 4
+  },
+  {
+    "buildingId": 18,
+    "buildingName": "Tapınak",
+    "buildingImage": "./image/Buildings/temple-img.png",
+    "buildingLevel": 1,
+    "buildingType": "government",
+    "buildingProfit": {
+      "gold": -3,
+      "happiness": 2,
+      "cleaning": 1
+    },
+    "buildingDefinition": "",
+    "buildingCondition": "",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -300,
+      "wood": -100,
+      "stone": -200,
+      "iron": -50
+    },
+    "buildingBuildTime": 4
+  },
+  {
+    "buildingId": 19,
+    "buildingName": "Taş Duvar",
+    "buildingImage": "./image/Buildings/stone-wall-img.png",
+    "buildingLevel": 1,
+    "buildingType": "military",
+    "buildingProfit": {
+      "gold": -3,
+      "happiness": 2,
+      "cleaning": -1
+    },
+    "buildingDefinition": "",
+    "buildingCondition": "",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -400,
+      "wood": -150,
+      "stone": -450,
+      "iron": -100
+    },
+    "buildingBuildTime": 6
+  },
+  {
+    "buildingId": 20,
+    "buildingName": "Liman",
+    "buildingImage": "./image/Buildings/seaport-img.png",
+    "buildingLevel": 1,
+    "buildingType": "economy",
+    "buildingProfit": {
+      "gold": 3,
+      "happiness": 1,
+      "cleaning": -2
+    },
+    "buildingDefinition": "",
+    "buildingCondition": "",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -300,
+      "wood": -300,
+      "stone": -100,
+      "iron": -50
+    },
+    "buildingBuildTime": 3
+  },
+  {
+    "buildingId": 21,
+    "buildingName": "Köprü",
+    "buildingImage": "./image/Buildings/bridge-img.png",
+    "buildingLevel": 1,
+    "buildingType": "economy",
+    "buildingProfit": {
+      "gold": 2,
+      "happiness": 2,
+      "cleaning": -1
+    },
+    "buildingDefinition": "",
+    "buildingCondition": "",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -300,
+      "wood": -100,
+      "stone": -250,
+      "iron": -50
+    },
+    "buildingBuildTime": 3
+  },
+  {
+    "buildingId": 22,
+    "buildingName": "Mera",
+    "buildingImage": "./image/Buildings/grassland-img.png",
+    "buildingLevel": 1,
+    "buildingType": "economy",
+    "buildingProfit": {
+      "gold": 1,
+      "food": 10,
+      "happiness": 1,
+      "cleaning": -1
+    },
+    "buildingDefinition": "",
+    "buildingCondition": "",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -200,
+      "wood": -50,
+      "stone": -50,
+      "iron": -10
+    },
+    "buildingBuildTime": 3
+  },
+  {
+    "buildingId": 23,
+    "buildingName": "Saray",
+    "buildingImage": "./image/Buildings/palace-img.png",
+    "buildingLevel": 1,
+    "buildingType": "goverment",
+    "buildingProfit": {
+      "gold": 5,
+      "happiness": -1,
+      "cleaning": -1
+    },
+    "buildingDefinition": "",
+    "buildingCondition": "",
+    "buildingCraftMaterial": "",
+    "buildingCost": {
+      "gold": -350,
+      "wood": -100,
+      "stone": -300,
+      "iron": -100
+    },
+    "buildingBuildTime": 5
+  }
 ]
