@@ -76,6 +76,7 @@ class Map {
                     cityRegion.addEventListener("mouseover", () => {
                         this.mouseOverRegionColorChange(country.countryRegion, cityRegion);
                     });
+                    gameSoundControl.setGameBtnClickEffect(cityRegion);
                 })
 
             });
@@ -203,6 +204,7 @@ class UIControl {
                                     </g>
                                 </svg>
                             </div>`;
+            gameSoundControl.setGameBtnClickEffect(createBuildingBtn);
             createBuildingBtn.addEventListener("click", () => {
                 this.showBuildingModal();
             });
@@ -330,10 +332,9 @@ class UIControl {
             buildingProfitContent.appendChild(spanProfit);
         });
 
-
         buildingProfit.appendChild(buildingProfitContent);
         buildingInfoCard.appendChild(buildingProfit);
-
+        gameSoundControl.setGameBtnClickEffect(buildingInfoCard);
         return buildingInfoCard;
     };
     showBuildingModal() {
@@ -522,6 +523,7 @@ class UIControl {
                         </div`;
             const newBuildCard = document.createElement("div");
             newBuildCard.innerHTML = buildCard;
+            gameSoundControl.setGameBtnClickEffect(newBuildCard);
             buildContent.appendChild(newBuildCard);
             // Buildind Add butona tıklanınca yapılan işlemler.
             const buildAddBtn = buildContent.querySelector(`#building-${building.buildingId}`);
@@ -530,8 +532,12 @@ class UIControl {
                 if (condition === false || condition === undefined) {
                     game.gameActions.makeBuilding(game.selectedCity, building);
                     this.getCityBuildingsInfo(game.selectedCity.cityBuildings);
-                } else
-                    console.log("Bu " + building.buildingName + " zaten var!");
+                } else {
+                    if (!document.querySelector(".game-alert")) {
+                        this.showGameAlert("Bu " + building.buildingName + " yapısı zaten bu şehirde var!", 2000);
+                    }
+                }
+
             });
 
         });
@@ -539,6 +545,28 @@ class UIControl {
             this.allGameUIList.BuildingModal.style.setProperty("top", "50%");
         }, 100);
 
+    };
+    showGameAlert(alertText, countDown) {
+        const alertDiv = document.createElement("div");
+        alertDiv.classList.add("game-alert");
+        const alertTextSpan = document.createElement("span");
+        alertTextSpan.textContent = alertText;
+        alertDiv.appendChild(alertTextSpan);
+        const gameContent = document.querySelector(".game-content");
+        gameContent.appendChild(alertDiv);
+        if (countDown) {
+            setTimeout(() => {
+                alertDiv.remove();
+            }, countDown);
+        }
+    };
+    addEventGameAllActionLogBar(logEvent){
+        const gameAllActionLongBar = document.getElementById("game-all-action-log-bar");
+        const spanEvent = document.createElement("span");
+        spanEvent.innerHTML = logEvent;
+        const logContent = gameAllActionLongBar.querySelector(".log-content");
+        logContent.appendChild(spanEvent);
+        logContent.scrollTop = logContent.scrollHeight;
     };
 }
 class Building {
@@ -619,6 +647,7 @@ class City {
 class Game {
     map = new Map();
     gameActions = new GameActions();
+    _uiControl = new UIControl();
     constructor() {
         this._gameSituation = true;
         this.countryArray = new Array();
@@ -644,7 +673,8 @@ class Game {
             });
 
         } catch (error) {
-            console.error('Ülke verisi alınırken hata oluştu:', error);
+            console.error('Building verisi alınırken hata oluştu:', error);
+            this._uiControl.showGameAlert("Building verisi alınırken hata oluştu!",4000);
         }
     };
     async getCountriesData(path, countryArray) {
@@ -659,6 +689,7 @@ class Game {
 
         } catch (error) {
             console.error('Ülke verisi alınırken hata oluştu:', error);
+            this._uiControl.showGameAlert("Ülke verisi alınırken hata oluştu!",4000);
         }
     };
     async getPlayersData(path, playerArray) {
@@ -672,6 +703,7 @@ class Game {
             });
         } catch (error) {
             console.error('Oyuncu verisi alınırken hata oluştu:', error);
+            this._uiControl.showGameAlert("Oyuncu verisi alınırken hata oluştu!",4000);
         }
     };
     async getCitiesData(path, cityArray) {
@@ -685,9 +717,10 @@ class Game {
             });
         } catch (error) {
             console.error('Şehir verisi alınırken hata oluştu:', error);
+            this._uiControl.showGameAlert("Şehir verisi alınırken hata oluştu!",4000);
         }
     };
-    async writeConcoleAllPlayerInfo(player) {
+    /*async writeConcoleAllPlayerInfo(player) {
         console.log(`
             ${player.playerName} oyuncusu ve ${player.playerCountry.countryName} ülkesi oluşturuldu.
             ${player.playerCountry.countryName} ülkesi genel bilgiler;
@@ -705,7 +738,7 @@ class Game {
                 Iron(Demir) : ${player.playerCountry.countryResource.map(resource => resource.iron)},
                 Gold(Altın) : ${player.playerCountry.countryResource.map(resource => resource.gold)}
             `);
-    }
+    }*/
     async start() {
         document.body.addEventListener("click", (e) => {
             this.footerInfoPanelClose(e);
@@ -743,9 +776,7 @@ class Game {
         //this.playerArray.forEach(player => this.writeConcoleAllPlayerInfo(player));
         this.map.createCampaignMap();
         this.gameLoopStart(this._gameLoopTime, 5);
-
         this.selectedCountry = this.countryArray[3];
-        console.log(this.selectedCountry);
         this.setCountryDataToUI(this.selectedCountry);
         this.setCounrtyChangeBar(this.playerArray);
     };
@@ -933,6 +964,7 @@ class Game {
                 this.setCountryDataToUI(player.playerCountry);
                 this.selectedCountry = player.playerCountry;
             });
+            gameSoundControl.setGameBtnClickEffect(countryButton);
             buttonsDiv.appendChild(countryButton);
         });
 
@@ -956,6 +988,7 @@ class Game {
                         </button>`;
         return button;
     }
+    
 };
 class GameActions {
     //Ana eylemler
@@ -1022,25 +1055,113 @@ class GameActions {
         console.log(selectedCity);
         console.log(building);
         console.log(building.buildingName + " yapısı " + selectedCity.cityName + " şehrine eklendi.");
+        const _uiControl = new UIControl();
+        _uiControl.addEventGameAllActionLogBar(`<span class="yellow bold">${building.buildingName}</span> yapısı <span class="blue bold">${selectedCity.cityName}</span> şehrine eklendi.`);
         selectedCity.cityBuildings.push(building);
     }
 }
 
+class GameSoundControl {
+    constructor(
+        gameAllSoundMute,
+        gameStartChampaignSound,
+        gameMainMusicSound,
+        gameBtnClickEffectSound,
+
+    ) {
+        this.gameAllSoundMute = gameAllSoundMute;
+        this.gameStartChampaignSound = new Audio(gameStartChampaignSound);
+        this.gameMainMusicSound = new Audio(gameMainMusicSound);
+        this.gameBtnClickEffectSound = new Audio(gameBtnClickEffectSound);
+    };
+    playSound(gameSound, gameSoundVolume, gameSoundLoop) {
+        gameSound.loop = gameSoundLoop;
+        if (!gameSoundVolume)
+            gameSound.volume = _gameSoundVolume;
+        gameSound.play();
+    };
+    pauseSound(gameSound) {
+        gameSound.pause();
+    };
+    setCurrentTimeSoundZero(gameSound) {
+        gameSound.currentTime = 0;
+    };
+    setGameBtnClickEffect(gameBtnObject) {
+        gameBtnObject.addEventListener('mouseover', () => {
+            if (!this.gameAllSoundMute)
+                this.playSound(this.gameBtnClickEffectSound, 1);
+        })
+        gameBtnObject.addEventListener('mouseout', () => {
+            if (!this.gameAllSoundMute) {
+                this.pauseSound(this.gameBtnClickEffectSound);
+                this.setCurrentTimeSoundZero(this.gameBtnClickEffectSound);
+            }
+        })
+    };
+}
+
 const game = new Game();
+// Varsayılan oyun içi ses seviyesi.
+const _gameSoundVolume = 0.5;
+const gameSoundControl = new GameSoundControl(true, "sounds/game-start-sound.mp3", "sounds/main_music.mp3", "sounds/effect-Sound1.mp3");
 
 const newGameBtn = document.getElementById("new-game-btn");
-const pauseGameBtn = document.getElementById("pause-game-btn");
-const playGameBtn = document.getElementById("play-game-btn");
+const mainSoundControlBtn = document.getElementById("main-sound-btn");
+const gameMenuBtns = document.querySelectorAll(".game-btn-sound");
 
 newGameBtn.addEventListener("click", () => {
-
     game.start();
     game.showGameBarPanel();
-    const gameStartSound = new Audio("sounds/game-start-sound.mp3");
-    gameStartSound.volume = 0.5;
-    mainSoundPause();
-    gameStartSound.play();
+    if (!gameSoundControl.gameAllSoundMute) {
+        gameSoundControl.playSound(gameSoundControl.gameStartChampaignSound);
+        gameSoundControl.pauseSound(gameSoundControl.gameMainMusicSound);
+    }
 });
+
+let mainSoundSituation = false;
+
+mainSoundControlBtn.addEventListener("click", () => {
+    if (!mainSoundSituation) {
+        if (gameSoundControl.gameAllSoundMute)
+            mainSoundPlay();
+        mainSoundSituation = true;
+    } else {
+        if (!gameSoundControl.gameAllSoundMute)
+            mainSoundPause();
+        mainSoundSituation = false;
+    }
+});
+
+function mainSoundPlay() {
+    gameSoundControl.playSound(gameSoundControl.gameMainMusicSound, _gameSoundVolume, true);
+    gameSoundControl.gameAllSoundMute = false;
+
+    const mainSoundControlBtnOffIcon = document.getElementById("main-sound-off");
+    mainSoundControlBtnOffIcon.style.display = "none";
+    const mainSoundControlBtnOnIcon = document.getElementById("main-sound-on");
+    mainSoundControlBtnOnIcon.style.display = "inline";
+}
+
+function mainSoundPause() {
+    gameSoundControl.pauseSound(gameSoundControl.gameMainMusicSound);
+    gameSoundControl.gameAllSoundMute = true;
+
+    const mainSoundControlBtnOffIcon = document.getElementById("main-sound-off");
+    mainSoundControlBtnOffIcon.style.display = "inline";
+    const mainSoundControlBtnOnIcon = document.getElementById("main-sound-on");
+    mainSoundControlBtnOnIcon.style.display = "none";
+}
+
+gameMenuBtns.forEach(btn => {
+    gameSoundControl.setGameBtnClickEffect(btn);
+})
+
+//Oyun Hızı işlemleri.
+const pauseGameBtn = document.getElementById("pause-game-btn");
+const playGameBtn = document.getElementById("play-game-btn");
+const timeSpeedHalf = document.getElementById("time-speed-half-btn");
+const timeSpeedNormal = document.getElementById("time-speed-normal-btn");
+const timeSpeedDouble = document.getElementById("time-speed-double-btn");
 
 pauseGameBtn.addEventListener("click", () => {
     game.gameLoopPause();
@@ -1048,11 +1169,6 @@ pauseGameBtn.addEventListener("click", () => {
 playGameBtn.addEventListener("click", () => {
     game.gameLoopPlay();
 });
-
-//Oyun Hızı işlemleri.
-const timeSpeedHalf = document.getElementById("time-speed-half-btn");
-const timeSpeedNormal = document.getElementById("time-speed-normal-btn");
-const timeSpeedDouble = document.getElementById("time-speed-double-btn");
 
 function timeBtnSelectStyleClear() {
     timeSpeedHalf.style.border = "none";
@@ -1075,48 +1191,3 @@ timeSpeedDouble.addEventListener("click", () => {
     game.gameLoopTimeSpeedDouble();
     timeSpeedDouble.style.border = "5px solid #d59637";
 });
-
-const mainSoundControlBtn = document.getElementById("main-sound-btn");
-const mainSound = new Audio("sounds/main_music.mp3");
-let mainSoundSituation = false;
-
-mainSoundControlBtn.addEventListener("click", () => {
-    if (!mainSoundSituation) {
-        mainSoundPlay();
-        mainSoundSituation = true;
-    } else {
-        mainSoundPause();
-        mainSoundSituation = false;
-    }
-});
-
-function mainSoundPlay() {
-    mainSound.play();
-    mainSound.loop = true;
-    mainSound.volume = 0.5;
-    const mainSoundControlBtnOffIcon = document.getElementById("main-sound-off");
-    mainSoundControlBtnOffIcon.style.display = "none";
-    const mainSoundControlBtnOnIcon = document.getElementById("main-sound-on");
-    mainSoundControlBtnOnIcon.style.display = "inline";
-}
-
-function mainSoundPause() {
-    mainSound.pause();
-    const mainSoundControlBtnOffIcon = document.getElementById("main-sound-off");
-    mainSoundControlBtnOffIcon.style.display = "inline";
-    const mainSoundControlBtnOnIcon = document.getElementById("main-sound-on");
-    mainSoundControlBtnOnIcon.style.display = "none";
-}
-
-const btnEffectSound = new Audio("sounds/effect-Sound1.mp3");
-const gameMenuBtns = document.querySelectorAll(".game-menu-btn");
-gameMenuBtns.forEach(btn => {
-    btn.addEventListener('mouseover', () => {
-        btnEffectSound.volume = 0.5;
-        btnEffectSound.play();
-    })
-    btn.addEventListener('mouseout', () => {
-        btnEffectSound.pause();
-        btnEffectSound.currentTime = 0;
-    })
-})

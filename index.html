@@ -19,14 +19,14 @@
         <div class="game-container">
             <div class="game-menu">
                 <img src="image/game-logo.png" alt="Game Logo" title="Büyük bir strateji tabanlı macera oyunu"
-                    class="game-logo">
+                    class="game-logo game-btn-sound">
                 <div class="menu">
-                    <button class="game-menu-btn" id="new-game-btn">YENİ OYUN</button>
-                    <button class="game-menu-btn">OYUNA DURDUR</button>
-                    <button class="game-menu-btn">OYUNA DEVAM ET</button>
-                    <button class="game-menu-btn">OYUN YÜKLE</button>
-                    <button class="game-menu-btn">AYARLAR</button>
-                    <button class="game-menu-btn" id="main-sound-btn">
+                    <button class="game-menu-btn game-btn-sound" id="new-game-btn">YENİ OYUN</button>
+                    <button class="game-menu-btn game-btn-sound">OYUNA DURDUR</button>
+                    <button class="game-menu-btn game-btn-sound">OYUNA DEVAM ET</button>
+                    <button class="game-menu-btn game-btn-sound">OYUN YÜKLE</button>
+                    <button class="game-menu-btn game-btn-sound">AYARLAR</button>
+                    <button class="game-menu-btn game-btn-sound" id="main-sound-btn">
                         <svg id="main-sound-off" version="1.0" xmlns="http://www.w3.org/2000/svg" width="30.000000pt"
                             height="30.000000pt" viewBox="0 0 64.000000 64.000000" preserveAspectRatio="xMidYMid meet">
 
@@ -50,8 +50,8 @@
                         </svg>
                     </button>
                 </div>
-                <div><span class="game-menu-btn">v 1.0.0</span></div>
-                <div><span class="game-menu-btn">By Sinan KAPUSIZ</span></div>
+                <div><span class="game-menu-btn game-btn-sound">v 1.0.0</span></div>
+                <div><span class="game-menu-btn game-btn-sound">By Sinan KAPUSIZ</span></div>
             </div>
             <img src="image/game-wall-paper.gif" alt="" srcset="" id="game-wall-paper">
             <div class="game-content">
@@ -154,7 +154,7 @@
                             <span class="resource resource-people">300</span>
                         </div>
                     </div>
-                    <div id="player-country-flag">
+                    <div id="player-country-flag" class="game-btn-sound">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.79 47.87">
                             <g id="katman_2" data-name="katman 2">
                                 <g id="">
@@ -170,7 +170,7 @@
                     </div>
                     <div id="game-time-bar">
                         <div id="play-pause-btn-div">
-                            <button id="play-game-btn">
+                            <button id="play-game-btn" class="game-btn-sound">
                                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="64.000000pt"
                                     height="64.000000pt" viewBox="0 0 64.000000 64.000000"
                                     preserveAspectRatio="xMidYMid meet">
@@ -182,7 +182,7 @@
                                 </svg>
 
                             </button>
-                            <button id="pause-game-btn">
+                            <button id="pause-game-btn" class="game-btn-sound">
                                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="64.000000pt"
                                     height="64.000000pt" viewBox="0 0 64.000000 64.000000"
                                     preserveAspectRatio="xMidYMid meet">
@@ -197,9 +197,9 @@
                             </button>
                         </div>
                         <div id="time-speed-btn-div">
-                            <button id="time-speed-half-btn">0.5X</button>
-                            <button id="time-speed-normal-btn">1.0X</button>
-                            <button id="time-speed-double-btn">2.0X</button>
+                            <button id="time-speed-half-btn" class="game-btn-sound">0.5X</button>
+                            <button id="time-speed-normal-btn" class="game-btn-sound">1.0X</button>
+                            <button id="time-speed-double-btn" class="game-btn-sound">2.0X</button>
                         </div>
                     </div>
                     <div class="map">
@@ -630,7 +630,7 @@
                 <div id="game-footer">
                     <div id="select-gameObje-content-name">
                         <span id="name">Select GameObject Name</span>
-                        <button id="close-footer-panel-btn">
+                        <button id="close-footer-panel-btn" class="game-btn-sound">
                             <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.000000 64.000000"
                                 preserveAspectRatio="xMidYMid meet">
 
@@ -644,12 +644,6 @@
                         </button>
                     </div>
                     <div id="select-gameObje-content-info-panel">
-                        <!--<div class="building-info-card">
-                            <div class="building-img">
-                                <img src="image/Buildings/farm-img.png" alt="">
-                            </div>
-                            <span class="building-name">Çiftlik</span>
-                        </div>-->
                         <div class="building-info-card building-new-build-card">
                             <span class="building-name">Yeni Yapı</span>
                             <div>
@@ -670,7 +664,7 @@
                 <div id="building-modal">
                     <div class="building-modal-title-bar">
                         <span>İNŞA LİSTESİ</span>
-                        <button id="close-building-modal-btn">
+                        <button id="close-building-modal-btn" class="game-btn-sound">
                             <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.000000 64.000000"
                                 preserveAspectRatio="xMidYMid meet">
 
@@ -688,6 +682,10 @@
                 <div id="country-change-menu">
                     <h3>ÜLKELER</h3>
                     <div id="buttons">
+                    </div>
+                </div>
+                <div id="game-all-action-log-bar">
+                    <div class="log-content">
                     </div>
                 </div>
             </div>
