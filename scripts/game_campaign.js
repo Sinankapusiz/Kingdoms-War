@@ -534,7 +534,7 @@ class UIControl {
                     this.getCityBuildingsInfo(game.selectedCity.cityBuildings);
                 } else {
                     if (!document.querySelector(".game-alert")) {
-                        this.showGameAlert("Bu " + building.buildingName + " yapısı zaten bu şehirde var!", 2000);
+                        this.showGameAlert(`Bu <span class="yellow bold">${building.buildingName}</span> yapısı zaten bu şehirde var!`, 2000);
                     }
                 }
 
@@ -550,7 +550,7 @@ class UIControl {
         const alertDiv = document.createElement("div");
         alertDiv.classList.add("game-alert");
         const alertTextSpan = document.createElement("span");
-        alertTextSpan.textContent = alertText;
+        alertTextSpan.innerHTML = alertText;
         alertDiv.appendChild(alertTextSpan);
         const gameContent = document.querySelector(".game-content");
         gameContent.appendChild(alertDiv);
@@ -560,7 +560,11 @@ class UIControl {
             }, countDown);
         }
     };
-    addEventGameAllActionLogBar(logEvent){
+    deletGameAlert() {
+        const gameAlert = document.querySelector(".game-alert");
+        gameAlert.remove();
+    }
+    addEventGameAllActionLogBar(logEvent) {
         const gameAllActionLongBar = document.getElementById("game-all-action-log-bar");
         const spanEvent = document.createElement("span");
         spanEvent.innerHTML = logEvent;
@@ -674,7 +678,7 @@ class Game {
 
         } catch (error) {
             console.error('Building verisi alınırken hata oluştu:', error);
-            this._uiControl.showGameAlert("Building verisi alınırken hata oluştu!",4000);
+            this._uiControl.showGameAlert("Building verisi alınırken hata oluştu!", 4000);
         }
     };
     async getCountriesData(path, countryArray) {
@@ -689,7 +693,7 @@ class Game {
 
         } catch (error) {
             console.error('Ülke verisi alınırken hata oluştu:', error);
-            this._uiControl.showGameAlert("Ülke verisi alınırken hata oluştu!",4000);
+            this._uiControl.showGameAlert("Ülke verisi alınırken hata oluştu!", 4000);
         }
     };
     async getPlayersData(path, playerArray) {
@@ -703,7 +707,7 @@ class Game {
             });
         } catch (error) {
             console.error('Oyuncu verisi alınırken hata oluştu:', error);
-            this._uiControl.showGameAlert("Oyuncu verisi alınırken hata oluştu!",4000);
+            this._uiControl.showGameAlert("Oyuncu verisi alınırken hata oluştu!", 4000);
         }
     };
     async getCitiesData(path, cityArray) {
@@ -717,7 +721,7 @@ class Game {
             });
         } catch (error) {
             console.error('Şehir verisi alınırken hata oluştu:', error);
-            this._uiControl.showGameAlert("Şehir verisi alınırken hata oluştu!",4000);
+            this._uiControl.showGameAlert("Şehir verisi alınırken hata oluştu!", 4000);
         }
     };
     /*async writeConcoleAllPlayerInfo(player) {
@@ -776,6 +780,8 @@ class Game {
         //this.playerArray.forEach(player => this.writeConcoleAllPlayerInfo(player));
         this.map.createCampaignMap();
         this.gameLoopStart(this._gameLoopTime, 5);
+        this._uiControl.showGameAlert(`<span class="dark-orange bold">Oyun duraktıldı...</span>`);
+        this._uiControl.addEventGameAllActionLogBar(`<span class="dark-orange bold">Oyun duraktıldı...</span>`);
         this.selectedCountry = this.countryArray[3];
         this.setCountryDataToUI(this.selectedCountry);
         this.setCounrtyChangeBar(this.playerArray);
@@ -824,8 +830,9 @@ class Game {
                 }
                 if (this._time >= gameDuraction) {
                     this.gameloopFinish();
-                    //console.clear();
                     console.log("Oyun bitti.");
+                    this._uiControl.showGameAlert(`<span class="dark-red bold">Oyun Bitti</span>`);
+                    this._uiControl.addEventGameAllActionLogBar(`<span class="dark-red bold">Oyun Bitti</span>`);
                 }
             }
         }, this._gameLoopTimeSpeed);
@@ -841,9 +848,10 @@ class Game {
             const pauseGameBtn = document.getElementById("pause-game-btn");
             pauseGameBtn.style.display = "none";
             this._loopSituation = false;
-            console.log("Oyun duraktırdı...");
-        } else
-            console.log("Oyun zaten durmuş durumda...");
+            console.log("Oyun duraktıldı...");
+            this._uiControl.showGameAlert(`<span class="dark-orange bold">Oyun duraktıldı...</span>`);
+            this._uiControl.addEventGameAllActionLogBar(`<span class="dark-orange bold">Oyun duraktıldı...</span>`);
+        }
     };
     gameLoopPlay() {
         if (!this._loopSituation) {
@@ -852,25 +860,34 @@ class Game {
             const pauseGameBtn = document.getElementById("pause-game-btn");
             pauseGameBtn.style.display = "flex";
             this._loopSituation = true;
+            if (document.querySelector(".game-alert"))
+                this._uiControl.deletGameAlert();
             console.log("Oyun devam ediyor...");
-        } else
-            console.log("Oyun zaten devam ediyor...");
+            this._uiControl.showGameAlert(`<span class="yellow bold">Oyun devam ediyor...</span>`, 2000);
+            this._uiControl.addEventGameAllActionLogBar(`<span class="yellow bold">Oyun devam ediyor...</span>`);
+        }
     };
 
     gameLoopTimeSpeedHalf() {
         this._gameLoopTimeSpeed = 2000;
         this.gameloopFinish();
         this.gameLoopStart(this._gameLoopTime, 5);
+        this._uiControl.showGameAlert(`<span class="yellow bold">Oyun hızı yavaşlatıldı.</span>`, 2000);
+        this._uiControl.addEventGameAllActionLogBar(`<span class="yellow bold">Oyun hızı yavaşlatıldı.</span>`);
     };
     gameLoopTimeSpeedNormal() {
         this._gameLoopTimeSpeed = 1000;
         this.gameloopFinish();
         this.gameLoopStart(this._gameLoopTime, 5);
+        this._uiControl.showGameAlert(`<span class="yellow bold">Oyun hızı normal hıza alındı.</span>`, 2000);
+        this._uiControl.addEventGameAllActionLogBar(`<span class="yellow bold">Oyun hızı normal hıza alındı.</span>`);
     };
     gameLoopTimeSpeedDouble() {
         this._gameLoopTimeSpeed = 500;
         this.gameloopFinish();
         this.gameLoopStart(this._gameLoopTime, 5);
+        this._uiControl.showGameAlert(`<span class="yellow bold">Oyun hızı hızlandırıldı.</span>`, 2000);
+        this._uiControl.addEventGameAllActionLogBar(`<span class="yellow bold">Oyun hızı hızlandırıldı.</span>`);
     };
     showGameBarPanel() {
         const gameTimeBar = document.getElementById("game-time-bar");
@@ -988,7 +1005,7 @@ class Game {
                         </button>`;
         return button;
     }
-    
+
 };
 class GameActions {
     //Ana eylemler
@@ -1056,7 +1073,7 @@ class GameActions {
         console.log(building);
         console.log(building.buildingName + " yapısı " + selectedCity.cityName + " şehrine eklendi.");
         const _uiControl = new UIControl();
-        _uiControl.addEventGameAllActionLogBar(`<span class="yellow bold">${building.buildingName}</span> yapısı <span class="blue bold">${selectedCity.cityName}</span> şehrine eklendi.`);
+        _uiControl.addEventGameAllActionLogBar(`<span class="yellow bold">${building.buildingName}</span> yapısı <span class="light-green bold">${selectedCity.cityName}</span> şehrine eklendi.`);
         selectedCity.cityBuildings.push(building);
     }
 }

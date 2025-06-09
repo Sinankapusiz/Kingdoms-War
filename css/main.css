@@ -628,14 +628,23 @@ map {
 .red{
   color: red;
 }
+.dark-red{
+  color: rgb(201, 1, 1);
+}
 .green{
   color: green;
+}
+.light-green{
+  color: rgb(13, 255, 0);
 }
 .yellow{
   color: yellow;
 }
 .blue{
   color: blue;
+}
+.dark-orange{
+  color: orangered;
 }
 .bold{
   font-weight:bold;
